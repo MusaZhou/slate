@@ -43,10 +43,10 @@ search: true
 }
 ```
 
-## 获得手机验证码
+### 获得手机验证码
 
-## Method:   POST
-## Path:   /get_verification_code
+### Method:   POST
+### Path:   /get_verification_code
 
 ### Request
 
@@ -82,10 +82,12 @@ msg | String | true |
 }
 ```
 
-## 注册
+### 注册
 
-## Method:   POST
-## Path:   /registration
+### Method:   POST
+### Path:   /registration
+
+### Request
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
@@ -120,10 +122,12 @@ msg | String | true |
 }
 ```
 
-## 登录
+### 登录
 
-## Method:   POST
-## Path:   /login
+### Method:   POST
+### Path:   /login
+
+### Request
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
