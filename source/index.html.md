@@ -23,7 +23,7 @@ search: true
 
 # Login-Registration
 
-## 获得手机验证码
+## get verification code
 
 > Request:
 
@@ -59,7 +59,7 @@ Name | Type | Default | Description
 status | String | true | 1.成功 -3.短信发送失败
 msg | String | true | 
 
-## 注册
+## registration
 
 > Request:
 
@@ -100,7 +100,7 @@ Name | Type | Default | Description
 status | String | true | 1.成功 -3.验证码不正确 -4.验证码已过期 -5.手机号已注册
 msg | String | true | 
 
-## 登录
+## Login
 
 > Request:
 
