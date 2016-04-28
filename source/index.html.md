@@ -21,7 +21,7 @@ search: true
 
 `Base URL: "/caraccessories"`
 
-# 登录注册
+# Login-Registration
 
 ## 获得手机验证码
 
