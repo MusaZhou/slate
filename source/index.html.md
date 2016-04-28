@@ -97,5 +97,44 @@ password | String | true | 密码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | String | true | 1.成功 -3.验证码不正确 -4.验证码已过期
+status | String | true | 1.成功 -3.验证码不正确 -4.验证码已过期 -5.手机号已注册
+msg | String | true | 
+
+## 登录
+
+> Request:
+
+```json
+{
+"mobile": "17791865815",
+"password": "12345",
+}
+
+> Response
+
+```json
+{
+"status": "1",
+"msg": "Ok",
+}
+```
+
+登录
+
+### PATH
+
+`POST /login`
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+mobile | String | true | 手机号码
+password | String | true | 密码
+
+### Response
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+status | String | true | 1.成功 -3.手机号未注册 -4.密码不正确
 msg | String | true | 
