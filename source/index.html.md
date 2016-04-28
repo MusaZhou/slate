@@ -14,12 +14,12 @@ search: true
 ---
 
 # Introduction
-
+  所有请求和返回参数都是JSON格式
 ## 易配-API
 
-## HOST: "http://121.42.137.124"
+#### HOST: "http://121.42.137.124"
 
-## Base URL: "/caraccessories"
+#### Base URL: "/caraccessories"
 
 
 # Login-Registration
@@ -43,9 +43,10 @@ search: true
 }
 ```
 
-获得手机验证码
+## 获得手机验证码
 
-### POST /get_verification_code
+## Method:   POST
+## Path:   /get_verification_code
 
 ### Request
 
@@ -81,11 +82,10 @@ msg | String | true |
 }
 ```
 
-注册
+## 注册
 
-### POST /registration
-
-### Request
+## Method:   POST
+## Path:   /registration
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
@@ -120,11 +120,10 @@ msg | String | true |
 }
 ```
 
-登录
+## 登录
 
-### POST /login
-
-### Request:
+## Method:   POST
+## Path:   /login
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
