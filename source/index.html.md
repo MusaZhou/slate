@@ -26,7 +26,7 @@ search: true
 
 # Login
 
-## 获得手机验证码
+## Get verification code
 
 > Request:
 
