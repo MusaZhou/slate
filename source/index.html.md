@@ -24,14 +24,15 @@ search: true
 
 `Base URL: "/caraccessories"`
 
-# 登录，注册
+# Login
 
 ## 获得手机验证码
 
 > Request:
 
-```josn
+```json
 { "mobile": 17791865815, }
+```
 
 > Response:
 
