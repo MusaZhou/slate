@@ -17,12 +17,9 @@ search: true
 
 ## 易配-API
 
-<aside class="success">
-HOST: "http://121.42.137.124"
+## HOST: "http://121.42.137.124"
 
-Base URL: "/caraccessories"
-</aside>
-
+## Base URL: "/caraccessories"
 
 
 # Login-Registration
@@ -32,7 +29,9 @@ Base URL: "/caraccessories"
 > Request:
 
 ```json
-{ "mobile": "17791865815", }
+{ 
+"mobile": "17791865815", 
+}
 ```
 
 > Response:
@@ -46,11 +45,7 @@ Base URL: "/caraccessories"
 
 获得手机验证码
 
-### PATH
-<aside class="success">
-POST /get_verification_code
-</aside>
-
+### POST /get_verification_code
 
 ### Request
 
@@ -75,6 +70,7 @@ msg | String | true |
 "code": "21342",
 "password": "12345",
 }
+```
 
 > Response:
 
@@ -87,11 +83,7 @@ msg | String | true |
 
 注册
 
-### PATH
-
-<aside class="success">
-POST /registration
-</aside>
+### POST /registration
 
 ### Request
 
@@ -117,6 +109,7 @@ msg | String | true |
 "mobile": "17791865815",
 "password": "12345",
 }
+```
 
 > Response:
 
@@ -129,11 +122,7 @@ msg | String | true |
 
 登录
 
-### PATH
-
-<aside class="success">
-POST /login
-</aside>
+### POST /login
 
 ### Request:
 
