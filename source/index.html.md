@@ -19,7 +19,7 @@ search: true
 
 #### HOST: "http://121.42.137.124"
 
-#### Base URL: "/caraccessories"
+#### Base URL: "/caraccessories/app"
 
 
 # Login-Registration
@@ -139,4 +139,45 @@ password | String | true | 密码
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 status | String | true | 1.成功 -3.手机号未注册 -4.密码不正确
+msg | String | true | 
+
+## Forget password
+
+> Request:
+
+```json
+{
+"mobile": "17791865815",
+"code": "21342",
+"password": "12345",
+}
+```
+
+> Response:
+
+```json
+{
+"status": "1",
+"msg": "Ok",
+}
+```
+
+### 忘记密码
+
+### Method:   POST
+### Path:   /forget_password
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+mobile | String | true | 手机号码
+code | String | true | 验证码
+password | String | true | 密码
+
+### Response
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+status | String | true | 1.成功 -4.验证码不正确 -5.验证码已过期 -3.手机号没有注册
 msg | String | true | 
