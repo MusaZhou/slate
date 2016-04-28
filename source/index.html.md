@@ -17,9 +17,13 @@ search: true
 
 ## 易配-API
 
-`HOST: "http://121.42.137.124"`
+<aside class="success">
+HOST: "http://121.42.137.124"
 
-`Base URL: "/caraccessories"`
+Base URL: "/caraccessories"
+</aside>
+
+
 
 # Login-Registration
 
@@ -43,8 +47,10 @@ search: true
 获得手机验证码
 
 ### PATH
+<aside class="success">
+POST /get_verification_code
+</aside>
 
-`POST /get_verification_code`
 
 ### Request
 
@@ -70,7 +76,7 @@ msg | String | true |
 "password": "12345",
 }
 
-> Response
+> Response:
 
 ```json
 {
@@ -83,7 +89,9 @@ msg | String | true |
 
 ### PATH
 
-`POST /registration`
+<aside class="success">
+POST /registration
+</aside>
 
 ### Request
 
@@ -110,7 +118,7 @@ msg | String | true |
 "password": "12345",
 }
 
-> Response
+> Response:
 
 ```json
 {
@@ -123,16 +131,18 @@ msg | String | true |
 
 ### PATH
 
-`POST /login`
+<aside class="success">
+POST /login
+</aside>
 
-### Request
+### Request:
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 mobile | String | true | 手机号码
 password | String | true | 密码
 
-### Response
+### Response:
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
