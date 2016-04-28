@@ -58,7 +58,7 @@ mobile | String | true | 手机号码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | String | true | 1.成功 -3.短信发送失败
+status | int | true | 1.成功 -3.短信发送失败
 msg | String | true | 
 
 ## registration
@@ -99,7 +99,7 @@ password | String | true | 密码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | String | true | 1.成功 -3.验证码不正确 -4.验证码已过期 -5.手机号已注册
+status | int | true | 1.成功 -3.验证码不正确 -4.验证码已过期 -5.手机号已注册
 msg | String | true | 
 
 ## Login
@@ -138,7 +138,7 @@ password | String | true | 密码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | String | true | 1.成功 -3.手机号未注册 -4.密码不正确
+status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
 msg | String | true | 
 
 ## Forget password
@@ -179,5 +179,5 @@ password | String | true | 密码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | String | true | 1.成功 -4.验证码不正确 -5.验证码已过期 -3.手机号没有注册
+status | int | true | 1.成功 -4.验证码不正确 -5.验证码已过期 -3.手机号没有注册
 msg | String | true | 
