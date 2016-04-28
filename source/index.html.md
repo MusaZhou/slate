@@ -43,6 +43,7 @@ search: true
 }
 ```
 
+获得手机验证码
 
 ### HTTP Request
 
@@ -52,7 +53,7 @@ search: true
 
 Parameter | Default | Description
 --------- | ------- | -----------
-mobile | true | Mobile Number.
+mobile | true | 手机号码.
 
 ## Get a Specific Kitten
 
