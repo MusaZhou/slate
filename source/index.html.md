@@ -10,28 +10,25 @@ toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
   - <a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a>
 
-includes:
-  - errors
-
 search: true
 ---
 
 # Introduction
 
-## 易配-API` 
+## 易配-API
 
 `HOST: "http://121.42.137.124"`
 
 `Base URL: "/caraccessories"`
 
-# Login
+# 登录注册
 
-## Get verification code
+## 获得手机验证码
 
 > Request:
 
 ```json
-{ "mobile": 17791865815, }
+{ "mobile": "17791865815", }
 ```
 
 > Response:
@@ -45,60 +42,60 @@ search: true
 
 获得手机验证码
 
-### HTTP Request
+### PATH
 
 `POST /get_verification_code`
 
-### Query Parameters
+### Request
 
-Parameter | Default | Description
---------- | ------- | -----------
-mobile | true | 手机号码.
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+mobile | String | true | 手机号码
 
-## Get a Specific Kitten
+### Response
 
-```ruby
-require 'kittn'
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+status | String | true | 1.成功 -3.短信发送失败
+msg | String | true | 
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
-```
+## 注册
 
-```python
-import kittn
-
-api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
-```
-
-```shell
-curl "http://example.com/api/kittens/2"
-  -H "Authorization: meowmeowmeow"
-```
-
-> The above command returns JSON structured like this:
+> Request:
 
 ```json
 {
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
+"mobile": "17791865815",
+"code": "21342",
+"password": "12345",
+}
+
+> Response
+
+```json
+{
+"status": "1",
+"msg": "Ok",
 }
 ```
 
-This endpoint retrieves a specific kitten.
+注册
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+### PATH
 
-### HTTP Request
+`POST /registration`
 
-`GET http://example.com/kittens/<ID>`
+### Request
 
-### URL Parameters
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+mobile | String | true | 手机号码
+code | String | true | 验证码
+password | String | true | 密码
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
+### Response
 
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+status | String | true | 1.成功 -3.验证码不正确 -4.验证码已过期
+msg | String | true | 
