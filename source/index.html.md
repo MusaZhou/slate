@@ -15,7 +15,7 @@ search: true
 
 # Introduction
   所有请求和返回参数都是JSON格式
-## 易配-API http://121.42.137.124/caraccessories/app"
+## 易配-API http://121.42.137.124/caraccessories/app
 
 
 # Login-Registration
@@ -200,53 +200,53 @@ msg | String | true |
 "shops":
 		[
 			{
-				"id", "1",
-				"name", "abc",
-				"viewd_count",14,
-				"address", "abc",
-				"sale_description", "abc",
-				"service_time_start", "08:00",
-				"service_time_end", "20:00",
-				"description", "abc",
-				"phone1", "12312432211",
-				"image_url", "adfa"
+				"id":"1",
+				"name": "abc",
+				"viewd_count": 14,
+				"address": "abc",
+				"sale_description": "abc",
+				"service_time_start": "08:00",
+				"service_time_end: "20:00",
+				"description": "abc",
+				"phone1": "12312432211",
+				"image_url": "adfa",
 			},
 			{
-				"id", "2",
-				"name", "abc",
-				"viewd_count",14,
-				"address", "abc",
-				"sale_description", "abc",
-				"service_time_start", "08:00",
-				"service_time_end", "20:00",
-				"description", "abc",
-				"phone1", "12312432211",
-				"image_url", "dasfas"
+				"id": "2",
+				"name": "abc",
+				"viewd_count": 14,
+				"address": "abc",
+				"sale_description": "abc",
+				"service_time_start": "08:00",
+				"service_time_end": "20:00",
+				"description": "abc",
+				"phone1": "12312432211",
+				"image_url": "dasfas"
 			},
 		]
 "products":
 		[
 			{
-				"id", "1",
-				"name", "abc",
-				"price",14,
-				"quantity", 3,
-				"spec", "abc",
-				"model", "aaf",
-				"car_model", "sadf",
-				"description", "abc",
-				"image_url", "dsfaasdf"
+				"id": "1",
+				"name": "abc",
+				"price": 14,
+				"quantity": 3,
+				"spec": "abc",
+				"model": "aaf",
+				"car_model": "sadf",
+				"description": "abc",
+				"image_url": "dsfaasdf"
 			},
 			{
-				"id", "2",
-				"name", "abc",
-				"price",14,
-				"quantity", 3,
-				"spec", "abc",
-				"model", "aaf",
-				"car_model", "sadf",
-				"description", "abc",
-				"image_url", "dsfaasdf"
+				"id": "2",
+				"name": "abc",
+				"price": 14,
+				"quantity": 3,
+				"spec": "abc",
+				"model": "aaf",
+				"car_model": "sadf",
+				"description": "abc",
+				"image_url": "dsfaasdf"
 			},
 		]
 }
@@ -267,11 +267,11 @@ search | string | true | 搜索值
 ### Response
 
 Name | Type | Default | Description
---------- | ----------- | ------- | -----------
+--------- | ----------------- | ------- | -----------
 status | int | true | 1.成功 -3.短信发送失败
 msg | String | true | 
-shops | shop object | false | 店铺列表
-products | product object | false | 商品列表
+shops | array(shop object) | false | 店铺列表
+products | array(product object) | false | 商品列表
 
 #### shop object
 
