@@ -187,7 +187,7 @@ msg | String | true |
 ```json
 { 
 "type": "1", 
-"search", "abc",
+"search": "abc",
 }
 ```
 
@@ -206,7 +206,7 @@ msg | String | true |
 				"address": "abc",
 				"sale_description": "abc",
 				"service_time_start": "08:00",
-				"service_time_end: "20:00",
+				"service_time_end": "20:00",
 				"description": "abc",
 				"phone1": "12312432211",
 				"image_url": "adfa",
@@ -223,7 +223,7 @@ msg | String | true |
 				"phone1": "12312432211",
 				"image_url": "dasfas"
 			},
-		]
+		],
 "products":
 		[
 			{
@@ -235,7 +235,7 @@ msg | String | true |
 				"model": "aaf",
 				"car_model": "sadf",
 				"description": "abc",
-				"image_url": "dsfaasdf"
+				"image_url": "dsfaasdf",
 			},
 			{
 				"id": "2",
@@ -246,9 +246,9 @@ msg | String | true |
 				"model": "aaf",
 				"car_model": "sadf",
 				"description": "abc",
-				"image_url": "dsfaasdf"
+				"image_url": "dsfaasdf",
 			},
-		]
+		],
 }
 ```
 
@@ -286,7 +286,7 @@ service_time_start | time | true | 营业开始时间
 service_time_end | time | true | 营业结束时间
 description | string | true | 
 phone_1 | string | true |
-image_url | string | 图片URL
+image_url | string | true | 图片URL
 
 #### product object
 
@@ -302,3 +302,46 @@ model | string | true |
 car_model | string | true |
 description | string | true | 
 image_url | string | 图片URL
+
+## Get City By GPS
+
+> Request:
+
+```json
+{
+"latitude": 34.34,
+"longitude": 108.93,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"cityId": "10",
+"cityName": "西安"
+}
+```
+
+<b> 通过经纬度定位城市</b>
+
+### Method:   POST
+### Path:   /get_city_by_gps
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+latitude | String | true | 纬度
+longitude | String | true | 经度
+
+### Response:
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
+msg | String | true | 
+cityId | String | true | 城市Id
+cityName | String | true | 城市名称
