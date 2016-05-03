@@ -188,7 +188,7 @@ msg | String | true |
 { 
 "type": "1", 
 "search": "abc",
-"provinceId", "5",
+"provinceId": "5",
 }
 ```
 
@@ -303,7 +303,7 @@ spec | string | true | 规格
 model | string | true |
 car_model | string | true |
 description | string | true | 
-image_url | string | 图片URL
+image_url | string | true | 图片URL
 
 ## Get City By GPS
 
@@ -394,8 +394,8 @@ provinceId | int | true | 省份Id
 ### Response:
 
 Name | Type | Default | Description
---------- | ------- | ------- | -----------
-status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
 msg | String | true | 
 secondaryShopTypes | Array(secondaryShopType object) | true | 热门店铺列表
 
@@ -405,4 +405,4 @@ Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 secondary_shop_type_id | int | true | 店铺类型id
 secondary_shop_type_name | string | true | 店铺类型名称
-image_url | string | 图片url
+image_url | string | true | 图片url
