@@ -188,6 +188,7 @@ msg | String | true |
 { 
 "type": "1", 
 "search": "abc",
+"provinceId", "5",
 }
 ```
 
@@ -263,6 +264,7 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 type | int | true | 搜索类型 1.店铺 2.商品
 search | string | true | 搜索值
+provinceId | int | true | 省份id
 
 ### Response
 
@@ -345,3 +347,62 @@ status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
 msg | String | true | 
 cityId | String | true | 城市Id
 cityName | String | true | 城市名称
+provinceId | int | true | 省份Id
+
+## Get recommandated secondary shop types
+
+> Request:
+
+```json
+{
+"provinceId": 2,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"secondaryShopTypes": [
+						{
+							"secondary_shop_type_id": 1,
+							"secondary_shop_type_name": "test",
+							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+						},
+						{
+							"secondary_shop_type_id": 2,
+							"secondary_shop_type_name": "test",
+							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+						},
+						]
+}
+```
+
+<b> 首页热门店铺</b>
+
+### Method:   POST
+### Path:   /home_secondary_shop_type
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+
+### Response:
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
+msg | String | true | 
+secondaryShopTypes | Array(secondaryShopType object) | true | 热门店铺列表
+
+### SecondaryShopType Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+secondary_shop_type_id | int | true | 店铺类型id
+secondary_shop_type_name | string | true | 店铺类型名称
+image_url | string | 图片url
