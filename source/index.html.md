@@ -15,18 +15,18 @@ search: true
 
 # Introduction
   所有请求和返回参数都是JSON格式
-## 易配-API http://121.42.137.124/caraccessories/app
+## 易配-API <font color="green">http://121.42.137.124/caraccessories/app</font>
 
 
 # Login-Registration
 
-## get verification code
+## Get Verification Code
 
 > Request:
 
 ```json
 { 
-"mobile": "17791865815", 
+"mobile": "17791865815"
 }
 ```
 
@@ -35,14 +35,14 @@ search: true
 ```json
 {
 "status": 1,
-"msg": "Ok",
+"msg": "Ok"
 }
 ```
 
 <b> 获得手机验证码</b>
 
 ### Method:   POST
-### Path:   /get_verification_code
+### Path:   <font color="green">/get_verification_code</font>
 
 ### Request
 
@@ -57,7 +57,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.短信发送失败
 msg | String | true | 
 
-## registration
+## Registration
 
 > Request:
 
@@ -65,7 +65,7 @@ msg | String | true |
 {
 "mobile": "17791865815",
 "code": "21342",
-"password": "12345",
+"password": "12345"
 }
 ```
 
@@ -74,14 +74,14 @@ msg | String | true |
 ```json
 {
 "status": "1",
-"msg": "Ok",
+"msg": "Ok"
 }
 ```
 
 <b> 注册</b>
 
 ### Method:   POST
-### Path:   /registration
+### Path:   <font color="green">/registration</font>
 
 ### Request
 
@@ -105,7 +105,7 @@ msg | String | true |
 ```json
 {
 "mobile": "17791865815",
-"password": "12345",
+"password": "12345"
 }
 ```
 
@@ -114,14 +114,14 @@ msg | String | true |
 ```json
 {
 "status": "1",
-"msg": "Ok",
+"msg": "Ok"
 }
 ```
 
 <b> 登录</b>
 
 ### Method:   POST
-### Path:   /login
+### Path:   <font color="green">/login</font>
 
 ### Request
 
@@ -137,7 +137,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
 msg | String | true | 
 
-## Forget password
+## Forget Password
 
 > Request:
 
@@ -145,7 +145,7 @@ msg | String | true |
 {
 "mobile": "17791865815",
 "code": "21342",
-"password": "12345",
+"password": "12345"
 }
 ```
 
@@ -154,14 +154,14 @@ msg | String | true |
 ```json
 {
 "status": "1",
-"msg": "Ok",
+"msg": "Ok"
 }
 ```
 
 <b> 忘记密码</b>
 
 ### Method:   POST
-### Path:   /forget_password
+### Path:   <font color="green">/forget_password</font>
 
 ### Request
 
@@ -188,7 +188,7 @@ msg | String | true |
 { 
 "type": "1", 
 "search": "abc",
-"provinceId": "5",
+"provinceId": "5"
 }
 ```
 
@@ -210,7 +210,7 @@ msg | String | true |
 				"service_time_end": "20:00",
 				"description": "abc",
 				"phone1": "12312432211",
-				"image_url": "adfa",
+				"image_url": "adfa"
 			},
 			{
 				"id": "2",
@@ -223,7 +223,7 @@ msg | String | true |
 				"description": "abc",
 				"phone1": "12312432211",
 				"image_url": "dasfas"
-			},
+			}
 		],
 "products":
 		[
@@ -236,7 +236,7 @@ msg | String | true |
 				"model": "aaf",
 				"car_model": "sadf",
 				"description": "abc",
-				"image_url": "dsfaasdf",
+				"image_url": "dsfaasdf"
 			},
 			{
 				"id": "2",
@@ -247,8 +247,8 @@ msg | String | true |
 				"model": "aaf",
 				"car_model": "sadf",
 				"description": "abc",
-				"image_url": "dsfaasdf",
-			},
+				"image_url": "dsfaasdf"
+			}
 		],
 }
 ```
@@ -256,7 +256,7 @@ msg | String | true |
 <b> 首页搜索</b>
 
 ### Method:   POST
-### Path:   /home_search
+### Path:   <font color="green">/home_search</font>
 
 ### Request
 
@@ -275,7 +275,7 @@ msg | String | true |
 shops | array(shop object) | false | 店铺列表
 products | array(product object) | false | 商品列表
 
-#### shop object
+#### Shop object
 
 Name | Type | Default | Description
 --------- | ----------- | ------- | -----------
@@ -290,7 +290,7 @@ description | string | true |
 phone_1 | string | true |
 image_url | string | true | 图片URL
 
-#### product object
+#### Product object
 
 Name | Type | Default | Description
 --------- | ----------- | ------- | -----------
@@ -312,7 +312,7 @@ image_url | string | true | 图片URL
 ```json
 {
 "latitude": 34.34,
-"longitude": 108.93,
+"longitude": 108.93
 }
 ```
 
@@ -330,7 +330,7 @@ image_url | string | true | 图片URL
 <b> 通过经纬度定位城市</b>
 
 ### Method:   POST
-### Path:   /get_city_by_gps
+### Path:   <font color="green">/get_city_by_gps</font>
 
 ### Request
 
@@ -349,13 +349,13 @@ cityId | String | true | 城市Id
 cityName | String | true | 城市名称
 provinceId | int | true | 省份Id
 
-## Get recommended secondary shop types
+## Get Recommended Secondary Shop Types
 
 > Request:
 
 ```json
 {
-"provinceId": 2,
+"provinceId": 2
 }
 ```
 
@@ -375,7 +375,7 @@ provinceId | int | true | 省份Id
 							"secondary_shop_type_id": 2,
 							"secondary_shop_type_name": "test",
 							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
-						},
+						}
 						]
 }
 ```
@@ -383,7 +383,7 @@ provinceId | int | true | 省份Id
 <b> 首页热门店铺类型</b>
 
 ### Method:   POST
-### Path:   /home_secondary_shop_type
+### Path:   <font color="green">/home_secondary_shop_type</font>
 
 ### Request
 
@@ -407,13 +407,13 @@ secondary_shop_type_id | int | true | 店铺类型id
 secondary_shop_type_name | string | true | 店铺类型名称
 image_url | string | true | 图片url
 
-## Get recommended product types
+## Get Recommended Product Types
 
 > Request:
 
 ```json
 {
-"provinceId": 2,
+"provinceId": 2
 }
 ```
 
@@ -433,7 +433,7 @@ image_url | string | true | 图片url
 							"product_type_id": 2,
 							"product_type_name": "test",
 							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
-						},
+						}
 						]
 }
 ```
@@ -441,7 +441,7 @@ image_url | string | true | 图片url
 <b> 首页热门商品类型</b>
 
 ### Method:   POST
-### Path:   /home_product_type
+### Path:   <font color="green">/home_product_type</font>
 
 ### Request
 
@@ -457,7 +457,7 @@ status | int | true | 1.成功
 msg | String | true | 
 productTypeList | Array(productType object) | true | 热门商品类型列表
 
-### productType Object
+### ProductType Object
 
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
@@ -465,15 +465,7 @@ product_type_id | int | true | 商品类型id
 product_type_name | string | true | 商品类型名称
 image_url | string | true | 图片url
 
-### SecondaryShopType Object
-
-Name | Type | Default | Description
----------------------- | ------- | ------- | -----------
-secondary_shop_type_id | int | true | 店铺类型id
-secondary_shop_type_name | string | true | 店铺类型名称
-image_url | string | true | 图片url
-
-## Get province list
+## Get Province List
 
 > Request:
 
@@ -501,7 +493,7 @@ image_url | string | true | 图片url
 											{
 												"city_id": 2,
 												"city_name": "西安"
-											},
+											}
 										]
 						},
 						{
@@ -515,7 +507,7 @@ image_url | string | true | 图片url
 											{
 												"city_id": 4,
 												"city_name": "西安"
-											},
+											}
 										]
 						}
 						]
@@ -525,7 +517,7 @@ image_url | string | true | 图片url
 <b> 获得地区列表</b>
 
 ### Method:   POST
-### Path:   /get_province_list
+### Path:   <font color="green">/get_province_list</font>
 
 ### Request
 
@@ -540,7 +532,7 @@ status | int | true | 1.成功
 msg | String | true | 
 provinceList | Array(province object) | true | 省份列表
 
-### province Object
+### Province Object
 
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
@@ -548,9 +540,78 @@ province_id | int | true | 省份id
 province_name | string | true | 省份名称
 cityList | Array(city object) | true | 城市列表
 
-### city Object
+### City Object
 
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 city_id | int | true | 城市id
 city_name | string | true | 城市名称
+
+## Get Ad List
+
+> Request:
+
+```json
+{
+"provinceId": 1,
+"locationId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"adList": [
+						{
+							"ad_id": 1,
+							"ad_name": "abc",
+							"ad_type": 1,
+							"adable_id": 1,
+							"ad_url": "http://123.123.12.1/index.html",
+							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+						},
+						{
+							"ad_id": 1,
+							"ad_name": "abc",
+							"ad_type": 1,
+							"adable_id": 1,
+							"ad_url": "http://123.123.12.1/index.html",
+							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+						}
+			]
+}
+```
+
+<b> 获得广告列表</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_ads</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+locationId | int | true | 广告位置Id(1:首页1 2:首页2 3:展区 4:互动 5:单品 6:店铺二级类型)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+adList | Array(ad object) | true | 广告列表
+
+### Ad Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+ad_id | int | true | 广告id
+ad_name | string | false | 名称
+ad_type | int | true | 广告类型(1:店铺 2:产品 3:url 4:店铺(仅显示名字))
+adable_id | int | true | 广告实体id(商店Id或产品Id)
+ad_url | string | false | 若广告类型为3,为url地址
+image_url | string | false | 若广告类型为1,2,3,为广告图片
