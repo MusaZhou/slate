@@ -440,7 +440,7 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w"> 
 </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> 
 </span><span class="nt">"search"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"provinceId"</span><span class="err">,</span><span class="w"> </span><span class="nt">"5"</span><span class="err">,</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
 </span><span class="err">}</span><span class="w">
 </span></code></pre>
 
@@ -716,8 +716,8 @@
 <tr>
 <td>image_url</td>
 <td>string</td>
+<td>true</td>
 <td>图片URL</td>
-<td></td>
 </tr>
 </tbody></table>
 
@@ -815,7 +815,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="get-recommandated-secondary-shop-types">Get recommandated secondary shop types</h2>
+<h2 id="get-recommended-secondary-shop-types">Get recommended secondary shop types</h2>
 
 <blockquote>
 <p>Request:</p>
@@ -831,7 +831,7 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
 </span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"secondaryShopTypes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+</span><span class="nt">"secondaryShopTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"secondary_shop_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"secondary_shop_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
@@ -846,7 +846,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p><b> 首页热门店铺</b></p>
+<p><b> 首页热门店铺类型</b></p>
 
 <h3 id="method-post">Method:   POST</h3>
 
@@ -884,7 +884,7 @@
 <td>status</td>
 <td>int</td>
 <td>true</td>
-<td>1.成功 -3.手机号未注册 -4.密码不正确</td>
+<td>1.成功</td>
 </tr>
 <tr>
 <td>msg</td>
@@ -893,7 +893,7 @@
 <td></td>
 </tr>
 <tr>
-<td>secondaryShopTypes</td>
+<td>secondaryShopTypeList</td>
 <td>Array(secondaryShopType object)</td>
 <td>true</td>
 <td>热门店铺列表</td>
@@ -925,8 +925,304 @@
 <tr>
 <td>image_url</td>
 <td>string</td>
+<td>true</td>
 <td>图片url</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-recommended-product-types">Get recommended product types</h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"productTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"product_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"product_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://123.123.12.1/image_download/brand_logo_images/2.png"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"product_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"product_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://123.123.12.1/image_download/brand_logo_images/2.png"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 首页热门商品类型</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-home_product_type">Path:   /home_product_type</h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>provinceId</td>
+<td>int</td>
+<td>true</td>
+<td>省份Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
 <td></td>
+</tr>
+<tr>
+<td>productTypeList</td>
+<td>Array(productType object)</td>
+<td>true</td>
+<td>热门商品类型列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="producttype-object">productType Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>product_type_id</td>
+<td>int</td>
+<td>true</td>
+<td>商品类型id</td>
+</tr>
+<tr>
+<td>product_type_name</td>
+<td>string</td>
+<td>true</td>
+<td>商品类型名称</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>true</td>
+<td>图片url</td>
+</tr>
+</tbody></table>
+
+<h3 id="secondaryshoptype-object">SecondaryShopType Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>secondary_shop_type_id</td>
+<td>int</td>
+<td>true</td>
+<td>店铺类型id</td>
+</tr>
+<tr>
+<td>secondary_shop_type_name</td>
+<td>string</td>
+<td>true</td>
+<td>店铺类型名称</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>true</td>
+<td>图片url</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-province-list">Get province list</h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"provinceList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"province_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"province_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"陕西"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"cityList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"city_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"西安"</span><span class="w">
+                                            </span><span class="p">},</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"city_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"西安"</span><span class="w">
+                                            </span><span class="p">},</span><span class="w">
+                                        </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"province_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"province_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"陕西"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"cityList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"city_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"西安"</span><span class="w">
+                                            </span><span class="p">},</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"city_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"city_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"西安"</span><span class="w">
+                                            </span><span class="p">},</span><span class="w">
+                                        </span><span class="p">]</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 获得地区列表</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_province_list">Path:   /get_province_list</h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>provinceList</td>
+<td>Array(province object)</td>
+<td>true</td>
+<td>省份列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="province-object">province Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>province_id</td>
+<td>int</td>
+<td>true</td>
+<td>省份id</td>
+</tr>
+<tr>
+<td>province_name</td>
+<td>string</td>
+<td>true</td>
+<td>省份名称</td>
+</tr>
+<tr>
+<td>cityList</td>
+<td>Array(city object)</td>
+<td>true</td>
+<td>城市列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="city-object">city Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>city_id</td>
+<td>int</td>
+<td>true</td>
+<td>城市id</td>
+</tr>
+<tr>
+<td>city_name</td>
+<td>string</td>
+<td>true</td>
+<td>城市名称</td>
 </tr>
 </tbody></table>
 
