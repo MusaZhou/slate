@@ -349,7 +349,7 @@ cityId | String | true | 城市Id
 cityName | String | true | 城市名称
 provinceId | int | true | 省份Id
 
-## Get recommandated secondary shop types
+## Get recommended secondary shop types
 
 > Request:
 
@@ -365,7 +365,7 @@ provinceId | int | true | 省份Id
 {
 "status": 1,
 "msg": "Ok",
-"secondaryShopTypes": [
+"secondaryShopTypeList": [
 						{
 							"secondary_shop_type_id": 1,
 							"secondary_shop_type_name": "test",
@@ -380,7 +380,7 @@ provinceId | int | true | 省份Id
 }
 ```
 
-<b> 首页热门店铺</b>
+<b> 首页热门店铺类型</b>
 
 ### Method:   POST
 ### Path:   /home_secondary_shop_type
@@ -397,7 +397,7 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
-secondaryShopTypes | Array(secondaryShopType object) | true | 热门店铺列表
+secondaryShopTypeList | Array(secondaryShopType object) | true | 热门店铺列表
 
 ### SecondaryShopType Object
 
@@ -406,3 +406,151 @@ Name | Type | Default | Description
 secondary_shop_type_id | int | true | 店铺类型id
 secondary_shop_type_name | string | true | 店铺类型名称
 image_url | string | true | 图片url
+
+## Get recommended product types
+
+> Request:
+
+```json
+{
+"provinceId": 2,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"productTypeList": [
+						{
+							"product_type_id": 1,
+							"product_type_name": "test",
+							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+						},
+						{
+							"product_type_id": 2,
+							"product_type_name": "test",
+							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+						},
+						]
+}
+```
+
+<b> 首页热门商品类型</b>
+
+### Method:   POST
+### Path:   /home_product_type
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+productTypeList | Array(productType object) | true | 热门商品类型列表
+
+### productType Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+product_type_id | int | true | 商品类型id
+product_type_name | string | true | 商品类型名称
+image_url | string | true | 图片url
+
+### SecondaryShopType Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+secondary_shop_type_id | int | true | 店铺类型id
+secondary_shop_type_name | string | true | 店铺类型名称
+image_url | string | true | 图片url
+
+## Get province list
+
+> Request:
+
+```json
+{
+
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"provinceList": [
+						{
+							"province_id": 1,
+							"province_name": "陕西",
+							"cityList": [
+											{
+												"city_id": 1,
+												"city_name": "西安"
+											},
+											{
+												"city_id": 2,
+												"city_name": "西安"
+											},
+										]
+						},
+						{
+							"province_id": 2,
+							"province_name": "陕西",
+							"cityList": [
+											{
+												"city_id": 3,
+												"city_name": "西安"
+											},
+											{
+												"city_id": 4,
+												"city_name": "西安"
+											},
+										]
+						}
+						]
+}
+```
+
+<b> 获得地区列表</b>
+
+### Method:   POST
+### Path:   /get_province_list
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+provinceList | Array(province object) | true | 省份列表
+
+### province Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+province_id | int | true | 省份id
+province_name | string | true | 省份名称
+cityList | Array(city object) | true | 城市列表
+
+### city Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+city_id | int | true | 城市id
+city_name | string | true | 城市名称
