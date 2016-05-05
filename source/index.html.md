@@ -20,7 +20,7 @@ search: true
 
 # Login-Registration
 
-## <font color="green">Get Verification Code</font>
+## <font color="blue">Get Verification Code</font>
 
 > Request:
 
@@ -57,7 +57,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.短信发送失败
 msg | String | true | 
 
-## <font color="green">Registration</font>
+## <font color="blue">Registration</font>
 
 > Request:
 
@@ -98,7 +98,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.验证码不正确 -4.验证码已过期 -5.手机号已注册
 msg | String | true | 
 
-## <font color="green">Login</font>
+## <font color="blue">Login</font>
 
 > Request:
 
@@ -137,7 +137,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
 msg | String | true | 
 
-## <font color="green">Forget Password</font>
+## <font color="blue">Forget Password</font>
 
 > Request:
 
@@ -180,7 +180,7 @@ msg | String | true |
 
 # Home
 
-## <font color="green">Home Search</font>
+## <font color="blue">Home Search</font>
 
 > Request:
 
@@ -305,7 +305,7 @@ car_model | string | true |
 description | string | true | 
 image_url | string | true | 图片URL
 
-## <font color="green">Get City By GPS</font>
+## <font color="blue">Get City By GPS</font>
 
 > Request:
 
@@ -349,7 +349,7 @@ cityId | String | true | 城市Id
 cityName | String | true | 城市名称
 provinceId | int | true | 省份Id
 
-## <font color="green">Get Recommended Secondary Shop Types</font>
+## <font color="blue">Get Recommended Secondary Shop Types</font>
 
 > Request:
 
@@ -407,7 +407,7 @@ secondary_shop_type_id | int | true | 店铺类型id
 secondary_shop_type_name | string | true | 店铺类型名称
 image_url | string | true | 图片url
 
-## <font color="green">Get Recommended Product Types</font>
+## <font color="blue">Get Recommended Product Types</font>
 
 > Request:
 
@@ -465,7 +465,7 @@ product_type_id | int | true | 商品类型id
 product_type_name | string | true | 商品类型名称
 image_url | string | true | 图片url
 
-## <font color="green">Get Province List</font>
+## <font color="blue">Get Province List</font>
 
 > Request:
 
@@ -620,7 +620,7 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 
 # Shop
 
-## <font color="green">Get Shop Type List</font>
+## <font color="blue">Get Shop Type List</font>
 
 > Request:
 
@@ -753,7 +753,7 @@ secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
 
-## <font color="green">Shop Type Search</font>
+## <font color="blue">Shop Type Search</font>
 
 > Request:
 
@@ -813,3 +813,104 @@ secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
 primary_shop_type_name | string | true | 一级类型名称
+
+# Topic
+
+## <font color="blue">Get All Topics</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"topicList": [
+						{
+							"id": 1,
+							"title": "标题1",
+							"content": "内容1",
+							"user_name": "小明",
+							"user_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"created_time": "2016-05-05 17:33:00",
+							"comment_count": 10,
+							"like_count": 3,
+							"imageList": [
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+						{
+							"id": 1,
+							"title": "标题1",
+							"content": "内容1",
+							"user_name": "小明",
+							"user_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"created_time": "2016-05-05 17:33:00",
+							"comment_count": 10,
+							"like_count": 3,
+							"imageList": [
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						}
+			]
+}
+```
+
+<b> 获得所有帖子</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_all_topics</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+topicList | Array(Topic object) | true | 帖子列表
+
+### Topic Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 帖子id
+title | string | true | 帖子标题
+content | string | true | 帖子内容
+user_name | string | true | 发帖人名字
+user_url | string | true | 发帖人头像
+created_time | string | true | 发布时间
+comment_count | int | true | 评价次数
+like_count | int | true | 点赞次数
+imageList | Array(Image object) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
