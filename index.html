@@ -127,7 +127,7 @@
 
 <h1 id="login-registration">Login-Registration</h1>
 
-<h2 id="get-verification-code"><font color="green">Get Verification Code</font></h2>
+<h2 id="get-verification-code"><font color="blue">Get Verification Code</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -194,7 +194,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="registration"><font color="green">Registration</font></h2>
+<h2 id="registration"><font color="blue">Registration</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -275,7 +275,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="login"><font color="green">Login</font></h2>
+<h2 id="login"><font color="blue">Login</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -349,7 +349,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="forget-password"><font color="green">Forget Password</font></h2>
+<h2 id="forget-password"><font color="blue">Forget Password</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -432,7 +432,7 @@
 
 <h1 id="home">Home</h1>
 
-<h2 id="home-search"><font color="green">Home Search</font></h2>
+<h2 id="home-search"><font color="blue">Home Search</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -721,7 +721,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="get-city-by-gps"><font color="green">Get City By GPS</font></h2>
+<h2 id="get-city-by-gps"><font color="blue">Get City By GPS</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -815,7 +815,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="get-recommended-secondary-shop-types"><font color="green">Get Recommended Secondary Shop Types</font></h2>
+<h2 id="get-recommended-secondary-shop-types"><font color="blue">Get Recommended Secondary Shop Types</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -930,7 +930,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="get-recommended-product-types"><font color="green">Get Recommended Product Types</font></h2>
+<h2 id="get-recommended-product-types"><font color="blue">Get Recommended Product Types</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -1045,7 +1045,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="get-province-list"><font color="green">Get Province List</font></h2>
+<h2 id="get-province-list"><font color="blue">Get Province List</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -1346,7 +1346,7 @@
 
 <h1 id="shop">Shop</h1>
 
-<h2 id="get-shop-type-list"><font color="green">Get Shop Type List</font></h2>
+<h2 id="get-shop-type-list"><font color="blue">Get Shop Type List</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -1570,7 +1570,7 @@
 </tr>
 </tbody></table>
 
-<h2 id="shop-type-search"><font color="green">Shop Type Search</font></h2>
+<h2 id="shop-type-search"><font color="blue">Shop Type Search</font></h2>
 
 <blockquote>
 <p>Request:</p>
@@ -1690,6 +1690,206 @@
 <td>string</td>
 <td>true</td>
 <td>一级类型名称</td>
+</tr>
+</tbody></table>
+
+<h1 id="topic">Topic</h1>
+
+<h2 id="get-all-topics"><font color="blue">Get All Topics</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"topicList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"user_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 17:33:00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"comment_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"like_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"imageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                            </span><span class="p">},</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                            </span><span class="p">}</span><span class="w">
+                                        </span><span class="p">]</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"user_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 17:33:00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"comment_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"like_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"imageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                            </span><span class="p">},</span><span class="w">
+                                            </span><span class="p">{</span><span class="w">
+                                                </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                                </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                            </span><span class="p">}</span><span class="w">
+                                        </span><span class="p">]</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 获得所有帖子</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_all_topics">Path:   <font color="green">/get_all_topics</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>topicList</td>
+<td>Array(Topic object)</td>
+<td>true</td>
+<td>帖子列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="topic-object">Topic Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>帖子id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>true</td>
+<td>帖子标题</td>
+</tr>
+<tr>
+<td>content</td>
+<td>string</td>
+<td>true</td>
+<td>帖子内容</td>
+</tr>
+<tr>
+<td>user_name</td>
+<td>string</td>
+<td>true</td>
+<td>发帖人名字</td>
+</tr>
+<tr>
+<td>user_url</td>
+<td>string</td>
+<td>true</td>
+<td>发帖人头像</td>
+</tr>
+<tr>
+<td>created_time</td>
+<td>string</td>
+<td>true</td>
+<td>发布时间</td>
+</tr>
+<tr>
+<td>comment_count</td>
+<td>int</td>
+<td>true</td>
+<td>评价次数</td>
+</tr>
+<tr>
+<td>like_count</td>
+<td>int</td>
+<td>true</td>
+<td>点赞次数</td>
+</tr>
+<tr>
+<td>imageList</td>
+<td>Array(Image object)</td>
+<td>true</td>
+<td>图片列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="image-object">Image Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>图片id</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>true</td>
+<td>图片URL</td>
 </tr>
 </tbody></table>
 
