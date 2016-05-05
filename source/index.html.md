@@ -20,7 +20,7 @@ search: true
 
 # Login-Registration
 
-## Get Verification Code
+## <font color="green">Get Verification Code</font>
 
 > Request:
 
@@ -57,7 +57,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.短信发送失败
 msg | String | true | 
 
-## Registration
+## <font color="green">Registration</font>
 
 > Request:
 
@@ -98,7 +98,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.验证码不正确 -4.验证码已过期 -5.手机号已注册
 msg | String | true | 
 
-## Login
+## <font color="green">Login</font>
 
 > Request:
 
@@ -137,7 +137,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
 msg | String | true | 
 
-## Forget Password
+## <font color="green">Forget Password</font>
 
 > Request:
 
@@ -180,7 +180,7 @@ msg | String | true |
 
 # Home
 
-## Home Search
+## <font color="green">Home Search</font>
 
 > Request:
 
@@ -305,7 +305,7 @@ car_model | string | true |
 description | string | true | 
 image_url | string | true | 图片URL
 
-## Get City By GPS
+## <font color="green">Get City By GPS</font>
 
 > Request:
 
@@ -349,7 +349,7 @@ cityId | String | true | 城市Id
 cityName | String | true | 城市名称
 provinceId | int | true | 省份Id
 
-## Get Recommended Secondary Shop Types
+## <font color="green">Get Recommended Secondary Shop Types</font>
 
 > Request:
 
@@ -407,7 +407,7 @@ secondary_shop_type_id | int | true | 店铺类型id
 secondary_shop_type_name | string | true | 店铺类型名称
 image_url | string | true | 图片url
 
-## Get Recommended Product Types
+## <font color="green">Get Recommended Product Types</font>
 
 > Request:
 
@@ -465,7 +465,7 @@ product_type_id | int | true | 商品类型id
 product_type_name | string | true | 商品类型名称
 image_url | string | true | 图片url
 
-## Get Province List
+## <font color="green">Get Province List</font>
 
 > Request:
 
@@ -547,7 +547,9 @@ Name | Type | Default | Description
 city_id | int | true | 城市id
 city_name | string | true | 城市名称
 
-## Get Ad List
+# General
+
+## <font color="blue">Get Ad List</font>
 
 > Request:
 
@@ -616,7 +618,9 @@ adable_id | int | true | 广告实体id(商店Id或产品Id)
 ad_url | string | false | 若广告类型为3,为url地址
 image_url | string | false | 若广告类型为1,2,3,为广告图片
 
-## Get Shop Type List
+# Shop
+
+## <font color="green">Get Shop Type List</font>
 
 > Request:
 
@@ -731,7 +735,7 @@ shopTypeList | Array(Shop object) | true | 店铺类别列表
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 primary_shop_type_id | int | true | 一级类别id
-primary_shop_type_name | string | false | 一级类别名称
+primary_shop_type_name | string | true | 一级类别名称
 firstLetterList | Array(FirstLetter object) | true | 首字母列表
 
 ### FirstLetter Object
@@ -748,3 +752,64 @@ Name | Type | Default | Description
 secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
+
+## <font color="green">Shop Type Search</font>
+
+> Request:
+
+```json
+{
+"search": "abc"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"secondaryShopTypeList": [
+						{
+							"secondary_shop_type_id": 1,
+							"secondary_shop_type_name": "宝马",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"primary_shop_type_name": "小车"
+						},
+						{
+							"secondary_shop_type_id": 2,
+							"secondary_shop_type_name": "奔驰",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"primary_shop_type_name": "大车"
+						}
+			]
+}
+```
+
+<b> 店铺类别搜索</b>
+
+### Method:   POST
+### Path:   <font color="green">/search_shop_type</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+search | string | true | 搜索内容
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+secondaryShopTypeList | Array(SecondaryShopType object) | true | 二级类别列表
+
+### SecondaryLetter Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+secondary_shop_type_id | int | true | 二级类别id
+secondary_shop_type_name | string | true | 二级类别名称
+image_url | string | true | 图片URL
+primary_shop_type_name | string | true | 一级类型名称
