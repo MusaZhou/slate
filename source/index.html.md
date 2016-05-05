@@ -615,3 +615,136 @@ ad_type | int | true | 广告类型(1:店铺 2:产品 3:url 4:店铺(仅显示�
 adable_id | int | true | 广告实体id(商店Id或产品Id)
 ad_url | string | false | 若广告类型为3,为url地址
 image_url | string | false | 若广告类型为1,2,3,为广告图片
+
+## Get Shop Type List
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"ShopTypeList": [
+						{
+							"primary_shop_type_id": 1,
+							"primary_shop_type_name": "小车",
+							"firstLetterList": [
+													{
+														"firstLetter": "A",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 1,
+																						"secondary_shop_type_name": "宝马",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 2,
+																						"secondary_shop_type_name": "奔驰",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													},
+													{
+														"firstLetter": "B",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 3,
+																						"secondary_shop_type_name": "法拉利",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 4,
+																						"secondary_shop_type_name": "劳斯莱斯",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													}
+												]
+						},
+						{
+							"primary_shop_type_id": 2,
+							"primary_shop_type_name": "单品专卖",
+							"firstLetterList": [
+													{
+														"firstLetter": "A",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 5,
+																						"secondary_shop_type_name": "影音",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 6,
+																						"secondary_shop_type_name": "座套",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													},
+													{
+														"firstLetter": "B",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 7,
+																						"secondary_shop_type_name": "内部装饰",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 8,
+																						"secondary_shop_type_name": "外部装饰",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													}
+												]
+						}
+			]
+}
+```
+
+<b> 获得店铺类别列表</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_shop_types</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+shopTypeList | Array(Shop object) | true | 店铺类别列表
+
+### Shop Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+primary_shop_type_id | int | true | 一级类别id
+primary_shop_type_name | string | false | 一级类别名称
+firstLetterList | Array(FirstLetter object) | true | 首字母列表
+
+### FirstLetter Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+firstLetter | string | true | 首字母
+secondaryShopTypeList | Array(SecondaryShopType object) | true | 二级类别列表
+
+### SecondaryLetter Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+secondary_shop_type_id | int | true | 二级类别id
+secondary_shop_type_name | string | true | 二级类别名称
+image_url | string | true | 图片URL
