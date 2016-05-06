@@ -598,6 +598,7 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 locationId | int | true | 广告位置Id(1:首页1 2:首页2 3:展区 4:互动 5:单品 6:店铺二级类型)
+secondaryShopTypeId | int | false | 当广告位置是6时必填
 
 ### Response:
 
@@ -626,6 +627,7 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 
 ```json
 {
+"provinceId": 1
 }
 ```
 
@@ -670,7 +672,19 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 																					}
 																				]
 													}
-												]
+												],
+							"recommandedSecondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 3,
+																						"secondary_shop_type_name": "法拉利",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 4,
+																						"secondary_shop_type_name": "劳斯莱斯",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																]
 						},
 						{
 							"primary_shop_type_id": 2,
@@ -706,7 +720,19 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 																					}
 																				]
 													}
-												]
+												],
+							"recommandedSecondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 3,
+																						"secondary_shop_type_name": "法拉利",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 4,
+																						"secondary_shop_type_name": "劳斯莱斯",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																]
 						}
 			]
 }
@@ -721,6 +747,7 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
 
 ### Response:
 
@@ -737,6 +764,7 @@ Name | Type | Default | Description
 primary_shop_type_id | int | true | 一级类别id
 primary_shop_type_name | string | true | 一级类别名称
 firstLetterList | Array(FirstLetter object) | true | 首字母列表
+recommandedSecondaryShopTypeList | Array(SecondaryShopType object) | true | 热门二级类别
 
 ### FirstLetter Object
 
@@ -745,7 +773,7 @@ Name | Type | Default | Description
 firstLetter | string | true | 首字母
 secondaryShopTypeList | Array(SecondaryShopType object) | true | 二级类别列表
 
-### SecondaryLetter Object
+### SecondaryShopType Object
 
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
