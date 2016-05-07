@@ -842,6 +842,69 @@ secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
 primary_shop_type_name | string | true | 一级类型名称
 
+## <font color="blue">Get Shops By Secondary Shop Type</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2,
+"secondaryShopTypeId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"shopList": [
+						{
+							"id": 1,
+							"name": "标题1",
+							"description": "内容1",
+							"address": "小明"
+						},
+						{
+							"id": 2,
+							"name": "标题1",
+							"description": "内容1",
+							"address": "小明"
+						}
+			]
+}
+```
+
+<b> 获得所有帖子</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_shops_by_secondary_shop_type</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+secondaryShopTypeId | int | true | 店铺二级类型Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+shopList | Array(Shop object) | true | 店铺列表
+
+### Shop Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 店铺id
+name | string | true | 店铺名称
+description | string | true | 描述
+address | string | true | 地址
+
 # Topic
 
 ## <font color="blue">Get All Topics</font>
