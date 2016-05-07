@@ -905,6 +905,87 @@ name | string | true | 店铺名称
 description | string | true | 描述
 address | string | true | 地址
 
+# Product
+
+## <font color="blue">Get Owner Recommended Products</font>
+
+> Request:
+
+```json
+{
+"shopId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"productList": [
+						{
+							"id": 1,
+							"name": "标题1",
+							"original_price": 15.8,
+							"price": "10.00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"description": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						},
+						{
+							"id": 2,
+							"name": "标题1",
+							"original_price": 15.8,
+							"price": "10.00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"description": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						}
+			]
+}
+```
+
+<b> 获店长推荐商品</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_owner_recommended_products</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+productList | Array(Product object) | true | 商品列表
+
+### Product Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+original_price | double | true | 原价
+price | double | true | 现价
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+description | string | false | 描述
+image_url | string | false | 图片URL
+
 # Topic
 
 ## <font color="blue">Get All Topics</font>
