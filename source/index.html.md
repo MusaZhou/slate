@@ -423,15 +423,15 @@ image_url | string | true | 图片url
 {
 "status": 1,
 "msg": "Ok",
-"productTypeList": [
+"hotSaleProductTypeList": [
 						{
-							"product_type_id": 1,
-							"product_type_name": "test",
+							"id": 1,
+							"name": "test",
 							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
 						},
 						{
-							"product_type_id": 2,
-							"product_type_name": "test",
+							"id": 2,
+							"name": "test",
 							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
 						}
 						]
@@ -441,7 +441,7 @@ image_url | string | true | 图片url
 <b> 首页热门商品类型</b>
 
 ### Method:   POST
-### Path:   <font color="green">/home_product_type</font>
+### Path:   <font color="green">/home_hot_sale_product_type</font>
 
 ### Request
 
@@ -455,14 +455,14 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
-productTypeList | Array(productType object) | true | 热门商品类型列表
+hotSaleProductTypeList | Array(hotSaleProductType object) | true | 热门商品类型列表
 
 ### ProductType Object
 
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
-product_type_id | int | true | 商品类型id
-product_type_name | string | true | 商品类型名称
+id | int | true | 热卖商品类型id
+name | string | true | 热卖商品类型名称
 image_url | string | true | 图片url
 
 ## <font color="blue">Get Province List</font>
@@ -876,7 +876,7 @@ primary_shop_type_name | string | true | 一级类型名称
 }
 ```
 
-<b> 获得所有帖子</b>
+<b> 根据二级类别获得店铺列表</b>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_shops_by_secondary_shop_type</font>
@@ -970,6 +970,130 @@ Name | Type | Default | Description
 status | int | true | 1.成功
 msg | String | true | 
 productList | Array(Product object) | true | 商品列表
+
+### Product Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+original_price | double | true | 原价
+price | double | true | 现价
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+description | string | false | 描述
+image_url | string | false | 图片URL
+
+## <font color="blue">Get Product Type List By Shop</font>
+
+> Request:
+
+```json
+{
+"shopId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"productTypeList": [
+						{
+							"id": 1,
+							"name": "name a",
+							"productList": [
+													{
+														"id": 1,
+														"name": "标题1",
+														"original_price": 15.8,
+														"price": "10.00",
+														"brand": "BMW",
+														"spec": "3*4",
+														"model": "a",
+														"car_model": "Benze",
+														"description": "abc",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+													},
+													{
+														"id": 2,
+														"name": "标题1",
+														"original_price": 15.8,
+														"price": "10.00",
+														"brand": "BMW",
+														"spec": "3*4",
+														"model": "a",
+														"car_model": "Benze",
+														"description": "abc",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+													}
+										]
+						},
+						{
+							"id": 2,
+							"name": "name b",
+							"productList": [
+													{
+														"id": 3,
+														"name": "标题1",
+														"original_price": 15.8,
+														"price": "10.00",
+														"brand": "BMW",
+														"spec": "3*4",
+														"model": "a",
+														"car_model": "Benze",
+														"description": "abc",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+													},
+													{
+														"id": 4,
+														"name": "标题1",
+														"original_price": 15.8,
+														"price": "10.00",
+														"brand": "BMW",
+														"spec": "3*4",
+														"model": "a",
+														"car_model": "Benze",
+														"description": "abc",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+													}
+										]
+						}
+					]
+
+}
+```
+
+<b> 获得产品类型列表</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_product_types_by_shop</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+productTypeList | Array(ProductType object) | true | 商品类型列表
+
+### ProductType Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 类型id
+name | string | true | 类型名称
+productList | Array(Product object) | true | 产品列表
 
 ### Product Object
 
