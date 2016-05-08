@@ -1047,7 +1047,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
-														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													},
 													{
 														"id": 4,
@@ -1059,7 +1059,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
-														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													}
 										]
 						}
@@ -1109,6 +1109,147 @@ model | string | false | 型号
 car_model | string | false | 汽车型号
 description | string | false | 描述
 image_url | string | false | 图片URL
+
+## <font color="blue">Get Product Detail</font>
+
+> Request:
+
+```json
+{
+"productId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"productDetail": [
+						{
+							"id": 1,
+							"name": "标题1",
+							"original_price": 15.8,
+							"price": "10.00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"item_number": "fasdfaf",
+							"customized_name_1": "abc",
+							"customized_name_2": "abc",
+							"customized_name_3": "abc",
+							"customized_value_1": "abc",
+							"customized_value_2": "abc",
+							"customized_value_3": "abc",
+							"description": "abc",
+							"shop_address": "afasdf",
+							"shop_phone": "1212412",
+							"bannerImageList": [
+													{
+														"id": 1,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													},
+													{
+														"id": 2,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													}
+												],
+							"referenceImageList": [
+													{
+														"id": 1,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													},
+													{
+														"id": 2,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													}
+												],
+							"sampleComment": {
+												"id": 1,
+												"user_phone": "32424342",
+												"content": "fasdfjsadkfj",
+												"created_time": "2016-05-15 15:00:00",
+												"imageList": [
+																{
+																	"id": 1,
+																	"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																},
+																{
+																	"id": 2,
+																	"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																}
+															]
+												}
+						}
+					]
+
+}
+```
+
+<b> 获得产品详情</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_product_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+product | int | true | 产品Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+productDetail | Array(Product object) | true | 商品类型列表
+
+### Product Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+original_price | double | true | 原价
+price | double | true | 现价
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+item_number | string | false | 零件号
+customized_name_1 | string | false | 自定义属性1名称
+customized_name_2 | string | false | 自定义属性2名称
+customized_name_3 | string | false | 自定义属性3名称
+customized_value_1 | string | false | 自定义属性1值
+customized_value_2 | string | false | 自定义属性2值
+customized_value_3 | string | false | 自定义属性3值
+description | string | false | 描述
+shop_address | string | true | 店铺地址
+shop_phone | string | true |  店铺电话
+inventory | int | true |  库存
+bannerImageList | Array(Image object) | false | 轮播图列表
+referenceImageList | Array(Image object) | false | 参考图列表
+sampleComment | Comment object | false | 评论实例
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
+### Comment Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 评论id
+user_phone | string | true | 评论人
+content | string | true | 内容
+created_time | datetime | true | 评论时间
+imageList | Array(Image object) | true | 图片列表
 
 # Topic
 
