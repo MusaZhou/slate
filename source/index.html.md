@@ -905,6 +905,91 @@ name | string | true | 店铺名称
 description | string | true | 描述
 address | string | true | 地址
 
+## <font color="blue">Get Shop Detail</font>
+
+> Request:
+
+```json
+{
+"shopId": 2,
+"userId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"shopDetail": {
+					"id": 1,
+					"name": "test",
+					"service_time": "08:00-19:00",
+					"collect_count": 12,
+					"phone_1": "32423452",
+					"phone_2": "23223252",
+					"phone_3": "23542423",
+					"address": "fsdafsadkfj",
+					"sale_description": "fsdfjsdkfkfjasf",
+					"description": "djfaksdjfkdsajfaks",
+					"bannerList": [
+										{
+											"id": 1,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 2,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+				}
+}
+```
+
+<b> 获得店铺详情</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_shop_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+shopDetail | Shop object | true | 店铺详情
+
+### Shop Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 店铺id
+name | string | true | 店铺名称
+service_time | time | 营业时间
+collect_count | int | 收藏人数
+phone_1 | int | 电话1
+phone_2 | int | 电话2
+phone_3 | int | 电话3
+sale_description | string | 主营描述
+description | string | true | 描述
+address | string | true | 地址
+bannerList | Array(Image object) | false | 轮播图列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
 # Product
 
 ## <font color="blue">Get Owner Recommended Products</font>
@@ -1116,7 +1201,8 @@ image_url | string | false | 图片URL
 
 ```json
 {
-"productId": 1
+"productId": 1,
+"userId": 2
 }
 ```
 
@@ -1197,7 +1283,8 @@ image_url | string | false | 图片URL
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-product | int | true | 产品Id
+productId | int | true | 产品Id
+userId | int | true | 用户Id
 
 ### Response:
 
