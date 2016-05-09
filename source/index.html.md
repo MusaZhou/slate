@@ -1606,3 +1606,136 @@ Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
+
+# Cart
+
+## <font color="blue">Get Cart Detail</font>
+
+> Request:
+
+```json
+{
+"cartId", 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"total_quantity": 20,
+"total_amount": 100.00,
+"cartItemGroups": [
+						{
+							"shop_id": 1,
+							"shop_name": "标题1",
+							"shop_address": "dfasdfasf",
+							"shop_quantity": 10,
+							"shop_amount": 100.00,
+							"cartItemList": [
+												{
+													"cart_item_id": 1,
+													"product_id": 1,
+													"product_name": "abce",
+													"product_brand": "abc",
+													"product_spec": "adb",
+													"quantity": 4,
+													"price": 4.00,
+													"cart_item_amount": 16.00,
+													"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+												},
+												{
+													"cart_item_id": 2,
+													"product_id": 2,
+													"product_name": "abce",
+													"product_brand": "abc",
+													"product_spec": "adb",
+													"quantity": 4,
+													"price": 4.00,
+													"cart_item_amount": 16.00,
+													"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+												}
+											]
+						},
+						{
+							"shop_id": 2,
+							"shop_name": "标题1",
+							"shop_address": "dfasdfasf",
+							"shop_quantity": 10,
+							"shop_amount": 100.00,
+							"cartItemList": [
+												{
+													"cart_item_id": 3,
+													"product_id": 3,
+													"product_name": "abce",
+													"product_brand": "abc",
+													"product_spec": "adb",
+													"quantity": 4,
+													"price": 4.00,
+													"cart_item_amount": 16.00,
+													"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+												},
+												{
+													"cart_item_id": 4,
+													"product_id": 4,
+													"product_name": "abce",
+													"product_brand": "abc",
+													"product_spec": "adb",
+													"quantity": 4,
+													"price": 4.00,
+													"cart_item_amount": 16.00,
+													"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+												}
+											]
+						},
+			]
+}
+```
+
+<b> 获得购物车详情</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_cart_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+cartId | int | true | 购物车id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+total_quantity | int | true | 产品总数
+total_amount | double | true | 产品总金额
+cartItemGroups | Array(CartItemGroup object) | true | 购物车店铺列表
+
+### CartItemGroup Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+shop_id | int | true | 店铺id
+shop_name | string | true | 店铺名称
+shop_address | string | true | 店铺地址
+shop_quantity | string | true | 购物车内店铺售卖数量
+shop_amount | string | true | 购物车内店铺售卖金额
+cartItemList | Array(CartItem object) | true | 购物车内店铺售卖产品列表
+
+### CartItem Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+cart_item_id | int | true | 购物车条目id
+product_id | int | true | 产品Id
+product_name | string | true | 产品名称
+product_brand | string | false | 产品品牌
+product_spec | string | false | 产品规格
+quantity | int | true | 数量
+price | double | true | 价格
+cart_item_amount | double | true | 金额
+image_url | string | true | 产品图片地址
