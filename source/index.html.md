@@ -1338,6 +1338,95 @@ content | string | true | 内容
 created_time | datetime | true | 评论时间
 imageList | Array(Image object) | true | 图片列表
 
+## <font color="blue">Get Product Comments</font>
+
+> Request:
+
+```json
+{
+"productId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"commentList": [
+						{
+							"id": 1,
+							"user_phone": "2312412411",
+							"content": "内容1",
+							"created_time": "2016-05-05 17:33:00",
+							"imageList": [
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+						{
+							"id": 2,
+							"user_phone": "2312412411",
+							"content": "内容1",
+							"created_time": "2016-05-05 17:33:00",
+							"imageList": [
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+			]
+}
+```
+
+<b> 获得产品评论</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_product_comments</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+productId | int | true | 产品id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+commentList | Array(Comment object) | true | 评论列表
+
+### Comment Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 评论id
+user_phone | string | true | 评论人电话
+content | string | true | 评论内容
+created_time | datetime | true | 评论时间
+imageList | Array(Image object) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
 # Topic
 
 ## <font color="blue">Get All Topics</font>
