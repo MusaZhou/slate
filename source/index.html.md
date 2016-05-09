@@ -1427,6 +1427,83 @@ Name | Type | Default | Description
 id | int | true | 图片id
 url | string | true | 图片URL
 
+## <font color="blue">Get Guess Products</font>
+
+> Request:
+
+```json
+{
+"productId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"productList": [
+						{
+							"id": 1,
+							"name": "标题1",
+							"price": "10.00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"sold_count": 100,
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						},
+						{
+							"id": 2,
+							"name": "标题1",
+							"price": "10.00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"sold_count": 100,
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+						}
+				]
+
+}
+```
+
+<b> 获得猜你喜欢产品</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_guess_products</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+productId | int | true | 商品Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+productList | Array(Product object) | true | 商品列表
+
+### ProductType Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+price | double | true | 现价
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+sold_count | int | true | 销售数量
+image_url | string | true | 图片URL
+
 # Topic
 
 ## <font color="blue">Get All Topics</font>
