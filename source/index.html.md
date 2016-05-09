@@ -114,7 +114,8 @@ msg | String | true |
 ```json
 {
 "status": "1",
-"msg": "Ok"
+"msg": "Ok",
+"cartId": 2
 }
 ```
 
@@ -136,6 +137,7 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
 msg | String | true | 
+cartId | string | true | 购物车id
 
 ## <font color="blue">Forget Password</font>
 
