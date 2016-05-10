@@ -2094,7 +2094,7 @@ userId | int | true | 用户id
 
 Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
-status | int | true | 1.成功
+status | int | true | 1:成功 3:无默认配送地址
 msg | String | true | 
 defaultDeliveryAddress | Array(DeliveryAddress object) | true | 配送地址
 
@@ -2106,3 +2106,81 @@ id | int | true | 配送地址id
 contact_person | String | true | 联系人
 phone | string | true | 电话
 address | string | true | 地址
+
+# Order
+
+## <font color="blue">Create New Orders</font>
+
+> Request:
+
+```json
+{
+"cartItemIdList": [1, 2, 3]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 创建新订单</b>
+
+### Method:   POST
+### Path:   <font color="green">/create_new_orders</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+cartItemIdList | Array(int) | true | 购物车条目id列表
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Attach Delivery Address To Orders</font>
+
+> Request:
+
+```json
+{
+"orderIdList": [1, 2, 3],
+"deliveryAddressId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 给订单绑定配送地址</b>
+
+### Method:   POST
+### Path:   <font color="green">/attach_delivery_address_to_orders</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+orderIdList | Array(int) | true | 订单id列表
+deliveryAddressId | int | true | 配送地址id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
