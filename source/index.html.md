@@ -2052,3 +2052,57 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
+
+## <font color="blue">Get Default Delivery Address</font>
+
+> Request:
+
+```json
+{
+"userId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"defaultDeliveryAddress": {
+								"id": 1,
+								"contact_person": "abc",
+								"phone": "23243242",
+								"address": "r5fsdkfjdskfj"
+						}
+}
+```
+
+<b> 获得默认配送地址</b>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_default_delivery_address</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+defaultDeliveryAddress | Array(DeliveryAddress object) | true | 配送地址
+
+### DeliveryAddress object:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 配送地址id
+contact_person | String | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
