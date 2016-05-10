@@ -2184,3 +2184,166 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
+
+## <font color="blue">Attach Note To Orders</font>
+
+> Request:
+
+```json
+{
+"orderIdList": [1, 2, 3],
+"note": "fdsa"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 给订单绑定配送地址</b>
+
+### Method:   POST
+### Path:   <font color="green">/attach_delivery_address_to_orders</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+orderIdList | Array(int) | true | 订单id列表
+note | string | true | 备注
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+
+## <font color="blue">Get Newly Created Orders</font>
+
+> Request:
+
+```json
+{
+"userId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"total_quantity": 30,
+"total_amount": 1000,
+"orderList": [
+				{
+					"id": 1,
+					"shop_name": "abc",
+					"shop_address": "fasdfajsdkfl",
+					"note": "fdsak",
+					"quantity": 10,
+					"amount": 10,
+					"orderItemList": [
+										{
+											"id": 1,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 2,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+				},
+				{
+					"id": 2,
+					"shop_name": "abc",
+					"shop_address": "fasdfajsdkfl",
+					"note": "fdsak",
+					"quantity": 10,
+					"amount": 10,
+					"orderItemList": [
+										{
+											"id": 3,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 4,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+				}
+			]
+}
+```
+
+<b> 给订单绑定配送地址</b>
+
+### Method:   POST
+### Path:   <font color="green">/attach_delivery_address_to_orders</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+total_quantity | int | true | 商品总数量
+total_amount | double | true | 商品总额
+orderList | Array(Order object) | true | 订单列表
+
+### Ordre object
+
+ Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 订单id
+shop_name | string | true | 店铺名称
+shop_address | string | true | 店铺地址
+note | string | false | 备注
+quantity | int | true | 店铺商品数量
+amount | double | true | 店铺商品金额
+orderItemList | Array(OrderItem object) | true | 订单条目列表
+
+### OrdreItem object
+
+ Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 订单条目id
+product_id | string | true | 商品Id
+product_name | string | true | 商品名称
+quantity | int | true | 商品数量
+amount | double | true | 商品金额
+price | double | true | 商品价格
+image_url | string | true | 商品图片Url
