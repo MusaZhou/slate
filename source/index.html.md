@@ -1888,3 +1888,167 @@ contact_person | String | true | 联系人
 phone | string | true | 电话
 address | string | true | 地址
 is_default | int | true | 是否为默认收货地址 1:是 0:否
+
+## <font color="blue">Add Delivery Address</font>
+
+> Request:
+
+```json
+{
+"userId": 1,
+"contact_person": "asdf",
+"phone": "21323",
+"address": "fadsfas"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 添加配送地址</b>
+
+### Method:   POST
+
+### Path:   <font color="green">/add_delivery_address</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户id
+contact_person | String | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Update Delivery Address</font>
+
+> Request:
+
+```json
+{
+"deliveryAddressId": 1,
+"contact_person": "asdf",
+"phone": "21323",
+"address": "fadsfas"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 更新配送地址</b>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_delivery_address</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+deliveryAddressId | int | true | 配送地址id
+contact_person | String | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+
+## <font color="blue">Set Default Delivery Address</font>
+
+> Request:
+
+```json
+{
+"deliveryAddressId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 设置默认配送地址</b>
+
+### Method:   POST
+
+### Path:   <font color="green">/set_default_delivery_address</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+deliveryAddressId | int | true | 配送地址id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+
+## <font color="blue">Delete Delivery Address</font>
+
+> Request:
+
+```json
+{
+"deliveryAddressId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 删除配送地址</b>
+
+### Method:   POST
+
+### Path:   <font color="green">/delete_delivery_address</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+deliveryAddressId | int | true | 配送地址id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
