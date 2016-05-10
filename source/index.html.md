@@ -1615,7 +1615,7 @@ url | string | true | 图片URL
 
 ```json
 {
-"cartId", 1
+"cartId": 1
 }
 ```
 
@@ -1739,3 +1739,46 @@ quantity | int | true | 数量
 price | double | true | 价格
 cart_item_amount | double | true | 金额
 image_url | string | true | 产品图片地址
+
+## <font color="blue">Update Cart Item</font>
+
+> Request:
+
+```json
+{
+"cartId": 1,
+"productId": 1,
+"quantity": 3,
+"productActivityId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+}
+```
+
+<b> 更新购物车条目</b>
+
+### Method:   POST
+### Path:   <font color="green">/update_cart_item</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+cartId | int | true | 购物车id
+productId | int | true | 产品id
+quantity | int | true | 数量
+productActivityId | int | false | 活动id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
