@@ -1758,13 +1758,14 @@ image_url | string | true | 产品图片地址
 ```json
 {
 "status": 1,
-"msg": "Ok",
+"msg": "Ok"
 }
 ```
 
 <b> 更新购物车条目</b>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/update_cart_item</font>
 
 ### Request
@@ -1782,3 +1783,108 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Remove Cart Item</font>
+
+> Request:
+
+```json
+{
+"cartItemId": 1,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 删除购物车条目</b>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_cart_item</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+cartItemId | int | true | 购物车条目id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+# Delivery Address
+
+## <font color="blue">Get Delivery Addresses By User</font>
+
+> Request:
+
+```json
+{
+"userId": 1,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"deliveryAddressList": [
+							{
+								"id": 1,
+								"contact_person": "abc",
+								"phone": "23243242",
+								"address": "r5fsdkfjdskfj",
+								"is_default": 0
+							},
+							{
+								"id": 2,
+								"contact_person": "abc",
+								"phone": "23243242",
+								"address": "r5fsdkfjdskfj",
+								"is_default": 0
+							}
+						]
+}
+```
+
+<b> 获得配送地址列表</b>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_delivery_addresses_by_user</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+deliveryAddressList | Array(DeliveryAddress object) | true | 配送地址列表
+
+### DeliveryAddress object:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 配送地址id
+contact_person | String | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
+is_default | int | true | 是否为默认收货地址 1:是 0:否
