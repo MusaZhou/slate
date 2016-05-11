@@ -1508,12 +1508,14 @@ image_url | string | true | 图片URL
 
 # Topic
 
-## <font color="blue">Get All Topics</font>
+## <font color="blue">Get Topics By Category</font>
 
 > Request:
 
 ```json
 {
+"provinceId": 1,
+"topicTypeId": 2
 }
 ```
 
@@ -1526,7 +1528,8 @@ image_url | string | true | 图片URL
 "topicList": [
 						{
 							"id": 1,
-							"title": "标题1",
+							"topic_type_id": 1,
+							"topic_type_name": "ttest",
 							"content": "内容1",
 							"user_name": "小明",
 							"user_url": "http://121.12.11.11/image_download/brand_logo_images/2",
@@ -1546,7 +1549,8 @@ image_url | string | true | 图片URL
 						},
 						{
 							"id": 1,
-							"title": "标题1",
+							"topic_type_id": 1,
+							"topic_type_name": "ttest",
 							"content": "内容1",
 							"user_name": "小明",
 							"user_url": "http://121.12.11.11/image_download/brand_logo_images/2",
@@ -1568,15 +1572,17 @@ image_url | string | true | 图片URL
 }
 ```
 
-<b> 获得所有帖子</b>
+<b> 根据类型获得帖子</b>
 
 ### Method:   POST
-### Path:   <font color="green">/get_all_topics</font>
+### Path:   <font color="green">/get_topics_by_category</font>
 
 ### Request
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+topicTypeId | int | true | 帖子类型Id, 1~5
 
 ### Response:
 
@@ -1591,7 +1597,8 @@ topicList | Array(Topic object) | true | 帖子列表
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 帖子id
-title | string | true | 帖子标题
+topic_type_id | int | true | 帖子类型Id
+topic_type_name | string | true | 帖子类型名称
 content | string | true | 帖子内容
 user_name | string | true | 发帖人名字
 user_url | string | true | 发帖人头像
