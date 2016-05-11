@@ -2523,3 +2523,132 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
+
+## <font color="blue">Receive Order</font>
+
+> Request:
+
+```json
+{
+"orderId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 确认收货</b>
+
+### Method:   POST
+### Path:   <font color="green">/receive_order</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+orderId | int | true | 订单id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+
+## <font color="blue">Return Order</font>
+
+> Request:
+
+```json
+{
+"orderId": 1,
+"cancelReason", "nothing"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 申请退货</b>
+
+### Method:   POST
+### Path:   <font color="green">/return_order</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+orderId | int | true | 订单id
+cancelReason | string | true | 退货理由
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+
+## <font color="blue">Get Logistics Info</font>
+
+> Request:
+
+```json
+{
+"orderId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"logisticsInfo": {
+					"deliveryInfo_id": 1,
+					"logistics_id": "fdsajsdafjsadkfj",
+					"logistics_company": "fsd",
+					"delivery_time": "2016-05-11 15:10:00"
+				}
+}
+```
+
+<b> 获得物流详情</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_logistics_info</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+orderId | int | true | 订单id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+logisticsInfo | Logistics object | true | 物流详情
+
+### Logistics:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+deliveryInfo_id | int | true | 物流条目id
+logistics_id | String | true | 物流编号
+logistics_company | string | true | 物流公司
+delivery_time | datetime | true | 发货时间
