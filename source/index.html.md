@@ -2581,7 +2581,7 @@ msg | String | true |
 }
 ```
 
-<b> 申请退货</b>
+<b> 申请未发货订单退货</b>
 
 ### Method:   POST
 ### Path:   <font color="green">/return_order</font>
@@ -2652,3 +2652,40 @@ deliveryInfo_id | int | true | 物流条目id
 logistics_id | String | true | 物流编号
 logistics_company | string | true | 物流公司
 delivery_time | datetime | true | 发货时间
+
+## <font color="blue">Cancel Order</font>
+
+> Request:
+
+```json
+{
+"orderId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<b> 取消未支付订单</b>
+
+### Method:   POST
+### Path:   <font color="green">/cancel_order</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+orderId | int | true | 订单id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
