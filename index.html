@@ -447,8 +447,9 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w"> 
 </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> 
 </span><span class="nt">"search"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -545,6 +546,12 @@
 <td>int</td>
 <td>true</td>
 <td>省份id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
@@ -1626,7 +1633,8 @@
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"search"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="w">
+</span><span class="nt">"search"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -1674,6 +1682,12 @@
 <td>string</td>
 <td>true</td>
 <td>搜索内容</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
@@ -2085,7 +2099,8 @@
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"shopId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="nt">"shopId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -2145,6 +2160,12 @@
 <td>int</td>
 <td>true</td>
 <td>店铺Id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
@@ -2843,8 +2864,9 @@
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="nt">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="err">,</span><span class="w"> </span><span class="err">1</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -2911,6 +2933,12 @@
 <td>int</td>
 <td>true</td>
 <td>产品id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
@@ -3180,7 +3208,8 @@
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -3216,7 +3245,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p><font size="7"><b> 获得消耗品</b></font></p>
+<p><font size="4"><b> 获得消耗品</b></font></p>
 
 <h3 id="method-post">Method:   POST</h3>
 
@@ -3237,6 +3266,12 @@
 <td>int</td>
 <td>true</td>
 <td>省份Id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
@@ -3339,7 +3374,8 @@
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"topicTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="nt">"topicTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -3423,6 +3459,12 @@
 <td>int</td>
 <td>true</td>
 <td>帖子类型Id, 1~5</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
@@ -5009,8 +5051,9 @@
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="nt">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="err">,</span><span class="w"> </span><span class="err">1</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -5109,6 +5152,12 @@
 <td>int</td>
 <td>true</td>
 <td>1:待付款 2:待发货 3:待收货 4:待评价</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
