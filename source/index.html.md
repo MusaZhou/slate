@@ -1506,6 +1506,80 @@ car_model | string | false | 汽车型号
 sold_count | int | true | 销售数量
 image_url | string | true | 图片URL
 
+## <font color="blue">Get Consumable Products</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"productList": [
+						{
+							"id": 1,
+							"name": "标题1",
+							"price": "10.00",
+							"original_price": "12.00",
+							"shop_name": "afsadf",
+							"shop_address": "dfasfasdf",
+							"is_vip": 1,
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						},
+						{
+							"id": 2,
+							"name": "标题1",
+							"price": "10.00",
+							"original_price": "12.00",
+							"shop_name": "afsadf",
+							"shop_address": "dfasfasdf",
+							"is_vip": 1,
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						}
+				]
+
+}
+```
+
+<b> 获得猜你喜欢产品</b>
+
+### Method:   POST
+### Path:   <font color="green">/get_consumbale_products</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+productList | Array(Product object) | true | 商品列表
+
+### ProductType Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+price | double | true | 现价
+original_price | string | true | 原价
+shop_name | string | true | 店铺名称
+shop_address | string | true | 店铺地址
+is_vip | int | true | 是否为vip 1:是 0:否
+image_url | string | true | 图片URL
+
 # Topic
 
 ## <font color="blue">Get Topics By Category</font>
