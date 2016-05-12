@@ -190,7 +190,8 @@ msg | String | true |
 { 
 "type": "1", 
 "search": "abc",
-"provinceId": "5"
+"provinceId": "5",
+"page": 1,
 }
 ```
 
@@ -267,6 +268,7 @@ Name | Type | Default | Description
 type | int | true | 搜索类型 1.店铺 2.商品
 search | string | true | 搜索值
 provinceId | int | true | 省份id
+page | int | true | 页数
 
 ### Response
 
@@ -789,7 +791,8 @@ image_url | string | true | 图片URL
 
 ```json
 {
-"search": "abc"
+"search": "abc",
+"page": 1
 }
 ```
 
@@ -826,6 +829,7 @@ image_url | string | true | 图片URL
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 search | string | true | 搜索内容
+page | int | true | 页数
 
 ### Response:
 
@@ -1000,7 +1004,8 @@ url | string | true | 图片URL
 
 ```json
 {
-"shopId": 2
+"shopId": 2,
+"page": 1
 }
 ```
 
@@ -1049,6 +1054,7 @@ url | string | true | 图片URL
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 shopId | int | true | 店铺Id
+page | int | true | 页数
 
 ### Response:
 
@@ -1346,7 +1352,8 @@ imageList | Array(Image object) | true | 图片列表
 
 ```json
 {
-"productId": 1
+"productId": 1,
+"page", 1
 }
 ```
 
@@ -1403,6 +1410,7 @@ imageList | Array(Image object) | true | 图片列表
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 productId | int | true | 产品id
+page | int | true | 页数
 
 ### Response:
 
@@ -1512,7 +1520,8 @@ image_url | string | true | 图片URL
 
 ```json
 {
-"provinceId": 2
+"provinceId": 2,
+"page": 1
 }
 ```
 
@@ -1548,9 +1557,10 @@ image_url | string | true | 图片URL
 }
 ```
 
-<font size="7"><b> 获得消耗品</b></font>
+<font size="4"><b> 获得消耗品</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_consumbale_products</font>
 
 ### Request
@@ -1558,6 +1568,7 @@ image_url | string | true | 图片URL
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
+page | int | true | 页数
 
 ### Response:
 
@@ -1589,7 +1600,8 @@ image_url | string | true | 图片URL
 ```json
 {
 "provinceId": 1,
-"topicTypeId": 2
+"topicTypeId": 2,
+"page": 1
 }
 ```
 
@@ -1649,6 +1661,7 @@ image_url | string | true | 图片URL
 <b> 根据类型获得帖子</b>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_topics_by_category</font>
 
 ### Request
@@ -1657,6 +1670,7 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 topicTypeId | int | true | 帖子类型Id, 1~5
+page | int | true | 页数
 
 ### Response:
 
@@ -2436,7 +2450,8 @@ image_url | string | true | 商品图片Url
 ```json
 {
 "userId": 1,
-"orderType": 1
+"orderType": 1,
+"page", 1
 }
 ```
 
@@ -2520,6 +2535,7 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
 orderType | int | true | 1:待付款 2:待发货 3:待收货 4:待评价
+page | int | true | 页数
 
 ### Response:
 
