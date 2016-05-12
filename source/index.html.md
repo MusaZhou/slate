@@ -1548,7 +1548,7 @@ image_url | string | true | 图片URL
 }
 ```
 
-<b> 获得猜你喜欢产品</b>
+<font size="10"><b> 获得消耗品</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_consumbale_products</font>
