@@ -39,7 +39,7 @@ search: true
 }
 ```
 
-<b> 获得手机验证码</b>
+<font size="4"><b> 获得手机验证码</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_verification_code</font>
@@ -78,7 +78,7 @@ msg | String | true |
 }
 ```
 
-<b> 注册</b>
+<font size="4"><b> 注册</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/registration</font>
@@ -119,7 +119,7 @@ msg | String | true |
 }
 ```
 
-<b> 登录</b>
+<font size="4"><b> 登录</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/login</font>
@@ -160,7 +160,7 @@ cartId | string | true | 购物车id
 }
 ```
 
-<b> 忘记密码</b>
+<font size="4"><b> 忘记密码</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/forget_password</font>
@@ -256,7 +256,7 @@ msg | String | true |
 }
 ```
 
-<b> 首页搜索</b>
+<font size="4"><b> 首页搜索</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/home_search</font>
@@ -331,7 +331,7 @@ image_url | string | true | 图片URL
 }
 ```
 
-<b> 通过经纬度定位城市</b>
+<font size="4"><b> 通过经纬度定位城市</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_city_by_gps</font>
@@ -384,7 +384,7 @@ provinceId | int | true | 省份Id
 }
 ```
 
-<b> 首页热门店铺类型</b>
+<font size="4"><b> 首页热门店铺类型</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/home_secondary_shop_type</font>
@@ -442,7 +442,7 @@ image_url | string | true | 图片url
 }
 ```
 
-<b> 首页热门商品类型</b>
+<font size="4"><b> 首页热门商品类型</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/home_hot_sale_product_type</font>
@@ -518,7 +518,7 @@ image_url | string | true | 图片url
 }
 ```
 
-<b> 获得地区列表</b>
+<font size="4"><b> 获得地区列表</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_province_list</font>
@@ -591,7 +591,7 @@ city_name | string | true | 城市名称
 }
 ```
 
-<b> 获得广告列表</b>
+<font size="4"><b> 获得广告列表</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_ads</font>
@@ -742,7 +742,7 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 }
 ```
 
-<b> 获得店铺类别列表</b>
+<font size="4"><b> 获得店铺类别列表</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_shop_types</font>
@@ -819,7 +819,7 @@ image_url | string | true | 图片URL
 }
 ```
 
-<b> 店铺类别搜索</b>
+<font size="4"><b> 店铺类别搜索</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/search_shop_type</font>
@@ -882,7 +882,7 @@ primary_shop_type_name | string | true | 一级类型名称
 }
 ```
 
-<b> 根据二级类别获得店铺列表</b>
+<font size="4"><b> 根据二级类别获得店铺列表</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_shops_by_secondary_shop_type</font>
@@ -953,7 +953,7 @@ address | string | true | 地址
 }
 ```
 
-<b> 获得店铺详情</b>
+<font size="4"><b> 获得店铺详情</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_shop_detail</font>
@@ -1044,7 +1044,7 @@ url | string | true | 图片URL
 }
 ```
 
-<b> 获店长推荐商品</b>
+<font size="4"><b> 获店长推荐商品</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_owner_recommended_products</font>
@@ -1161,7 +1161,7 @@ image_url | string | false | 图片URL
 }
 ```
 
-<b> 获得产品类型列表</b>
+<font size="4"><b> 获得产品类型列表</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_product_types_by_shop</font>
@@ -1282,7 +1282,7 @@ image_url | string | false | 图片URL
 }
 ```
 
-<b> 获得产品详情</b>
+<font size="4"><b> 获得产品详情</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_product_detail</font>
@@ -1400,7 +1400,7 @@ imageList | Array(Image object) | true | 图片列表
 }
 ```
 
-<b> 获得产品评论</b>
+<font size="4"><b> 获得产品评论</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_product_comments</font>
@@ -1481,7 +1481,7 @@ url | string | true | 图片URL
 }
 ```
 
-<b> 获得猜你喜欢产品</b>
+<font size="4"><b> 获得猜你喜欢产品</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_guess_products</font>
@@ -1658,7 +1658,7 @@ image_url | string | true | 图片URL
 }
 ```
 
-<b> 根据类型获得帖子</b>
+<font size="4"><b> 根据类型获得帖子</b></font>
 
 ### Method:   POST
 
@@ -1789,7 +1789,7 @@ url | string | true | 图片URL
 }
 ```
 
-<b> 获得购物车详情</b>
+<font size="4"><b> 获得购物车详情</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_cart_detail</font>
@@ -1857,7 +1857,7 @@ image_url | string | true | 产品图片地址
 }
 ```
 
-<b> 更新购物车条目</b>
+<font size="4"><b> 更新购物车条目</b></font>
 
 ### Method:   POST
 
@@ -1898,7 +1898,7 @@ msg | String | true |
 }
 ```
 
-<b> 删除购物车条目</b>
+<font size="4"><b> 删除购物车条目</b></font>
 
 ### Method:   POST
 
@@ -1954,7 +1954,7 @@ msg | String | true |
 }
 ```
 
-<b> 获得配送地址列表</b>
+<font size="4"><b> 获得配送地址列表</b></font>
 
 ### Method:   POST
 
@@ -2006,7 +2006,7 @@ is_default | int | true | 是否为默认收货地址 1:是 0:否
 }
 ```
 
-<b> 添加配送地址</b>
+<font size="4"><b> 添加配送地址</b></font>
 
 ### Method:   POST
 
@@ -2050,7 +2050,7 @@ msg | String | true |
 }
 ```
 
-<b> 更新配送地址</b>
+<font size="4"><b> 更新配送地址</b></font>
 
 ### Method:   POST
 
@@ -2091,7 +2091,7 @@ msg | String | true |
 }
 ```
 
-<b> 设置默认配送地址</b>
+<font size="4"><b> 设置默认配送地址</b></font>
 
 ### Method:   POST
 
@@ -2129,7 +2129,7 @@ msg | String | true |
 }
 ```
 
-<b> 删除配送地址</b>
+<font size="4"><b> 删除配送地址</b></font>
 
 ### Method:   POST
 
@@ -2173,7 +2173,7 @@ msg | String | true |
 }
 ```
 
-<b> 获得默认配送地址</b>
+<font size="4"><b> 获得默认配送地址</b></font>
 
 ### Method:   POST
 
@@ -2223,7 +2223,7 @@ address | string | true | 地址
 }
 ```
 
-<b> 创建新订单</b>
+<font size="4"><b> 创建新订单</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/create_new_orders</font>
@@ -2261,7 +2261,7 @@ msg | String | true |
 }
 ```
 
-<b> 给订单绑定配送地址</b>
+<font size="4"><b> 给订单绑定配送地址</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/attach_delivery_address_to_orders</font>
@@ -2300,7 +2300,7 @@ msg | String | true |
 }
 ```
 
-<b> 给订单绑定配送地址</b>
+<font size="4"><b> 给订单绑定配送地址</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/attach_delivery_address_to_orders</font>
@@ -2398,7 +2398,7 @@ msg | String | true |
 }
 ```
 
-<b> 获得新建订单</b>
+<font size="4"><b> 获得新建订单</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_newly_created_orders</font>
@@ -2524,7 +2524,7 @@ image_url | string | true | 商品图片Url
 }
 ```
 
-<b> 给订单绑定配送地址</b>
+<font size="4"><b> 给订单绑定配送地址</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_orders_by_type</font>
@@ -2594,7 +2594,7 @@ image_url | string | true | 商品图片Url
 }
 ```
 
-<b> 评价订单</b>
+<font size="4"><b> 评价订单</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/rate_order</font>
@@ -2633,7 +2633,7 @@ msg | String | true |
 }
 ```
 
-<b> 确认收货</b>
+<font size="4"><b> 确认收货</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/receive_order</font>
@@ -2671,7 +2671,7 @@ msg | String | true |
 }
 ```
 
-<b> 申请未发货订单退货</b>
+<font size="4"><b> 申请未发货订单退货</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/return_order</font>
@@ -2715,7 +2715,7 @@ msg | String | true |
 }
 ```
 
-<b> 获得物流详情</b>
+<font size="4"><b> 获得物流详情</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_logistics_info</font>
@@ -2762,7 +2762,7 @@ delivery_time | datetime | true | 发货时间
 }
 ```
 
-<b> 取消未支付订单</b>
+<font size="4"><b> 取消未支付订单</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/cancel_order</font>
