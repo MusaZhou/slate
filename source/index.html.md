@@ -1548,7 +1548,7 @@ image_url | string | true | 图片URL
 }
 ```
 
-<font size="10"><b> 获得消耗品</b></font>
+<font size="7"><b> 获得消耗品</b></font>
 
 ### Method:   POST
 ### Path:   <font color="green">/get_consumbale_products</font>
