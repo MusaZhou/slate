@@ -3174,14 +3174,172 @@
 </tr>
 </tbody></table>
 
-<h1 id="topic">Topic</h1>
-
-<h2 id="get-all-topics"><font color="blue">Get All Topics</font></h2>
+<h2 id="get-consumable-products"><font color="blue">Get Consumable Products</font></h2>
 
 <blockquote>
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"productList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afsadf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfasfasdf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"is_vip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
+                        </span><span class="err">}</span><span class="p">,</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12.00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afsadf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfasfasdf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"is_vip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
+                        </span><span class="err">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 获得猜你喜欢产品</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_consumbale_products">Path:   <font color="green">/get_consumbale_products</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>provinceId</td>
+<td>int</td>
+<td>true</td>
+<td>省份Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>productList</td>
+<td>Array(Product object)</td>
+<td>true</td>
+<td>商品列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="producttype-object">ProductType Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>商品id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td>price</td>
+<td>double</td>
+<td>true</td>
+<td>现价</td>
+</tr>
+<tr>
+<td>original_price</td>
+<td>string</td>
+<td>true</td>
+<td>原价</td>
+</tr>
+<tr>
+<td>shop_name</td>
+<td>string</td>
+<td>true</td>
+<td>店铺名称</td>
+</tr>
+<tr>
+<td>shop_address</td>
+<td>string</td>
+<td>true</td>
+<td>店铺地址</td>
+</tr>
+<tr>
+<td>is_vip</td>
+<td>int</td>
+<td>true</td>
+<td>是否为vip 1:是 0:否</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>true</td>
+<td>图片URL</td>
+</tr>
+</tbody></table>
+
+<h1 id="topic">Topic</h1>
+
+<h2 id="get-topics-by-category"><font color="blue">Get Topics By Category</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"topicTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -3194,7 +3352,8 @@
 </span><span class="nt">"topicList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"topic_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"topic_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ttest"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"user_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
@@ -3214,7 +3373,8 @@
                         </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"topic_type_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"topic_type_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ttest"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"user_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"user_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
@@ -3236,11 +3396,11 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p><b> 获得所有帖子</b></p>
+<p><b> 根据类型获得帖子</b></p>
 
 <h3 id="method-post">Method:   POST</h3>
 
-<h3 id="path-get_all_topics">Path:   <font color="green">/get_all_topics</font></h3>
+<h3 id="path-get_topics_by_category">Path:   <font color="green">/get_topics_by_category</font></h3>
 
 <h3 id="request">Request</h3>
 
@@ -3252,6 +3412,18 @@
 <th>Description</th>
 </tr>
 </thead><tbody>
+<tr>
+<td>provinceId</td>
+<td>int</td>
+<td>true</td>
+<td>省份Id</td>
+</tr>
+<tr>
+<td>topicTypeId</td>
+<td>int</td>
+<td>true</td>
+<td>帖子类型Id, 1~5</td>
+</tr>
 </tbody></table>
 
 <h3 id="response">Response:</h3>
@@ -3301,10 +3473,16 @@
 <td>帖子id</td>
 </tr>
 <tr>
-<td>title</td>
+<td>topic_type_id</td>
+<td>int</td>
+<td>true</td>
+<td>帖子类型Id</td>
+</tr>
+<tr>
+<td>topic_type_name</td>
 <td>string</td>
 <td>true</td>
-<td>帖子标题</td>
+<td>帖子类型名称</td>
 </tr>
 <tr>
 <td>content</td>
@@ -4212,6 +4390,1252 @@
 <td>int</td>
 <td>true</td>
 <td>配送地址id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="get-default-delivery-address"><font color="blue">Get Default Delivery Address</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"defaultDeliveryAddress"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                                </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nt">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+                                </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23243242"</span><span class="p">,</span><span class="w">
+                                </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"r5fsdkfjdskfj"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 获得默认配送地址</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_default_delivery_address">Path:   <font color="green">/get_default_delivery_address</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1:成功 3:无默认配送地址</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>defaultDeliveryAddress</td>
+<td>Array(DeliveryAddress object)</td>
+<td>true</td>
+<td>配送地址</td>
+</tr>
+</tbody></table>
+
+<h3 id="deliveryaddress-object">DeliveryAddress object:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>配送地址id</td>
+</tr>
+<tr>
+<td>contact_person</td>
+<td>String</td>
+<td>true</td>
+<td>联系人</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>true</td>
+<td>电话</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>地址</td>
+</tr>
+</tbody></table>
+
+<h1 id="order">Order</h1>
+
+<h2 id="create-new-orders"><font color="blue">Create New Orders</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"cartItemIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 创建新订单</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-create_new_orders">Path:   <font color="green">/create_new_orders</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cartItemIdList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>购物车条目id列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="attach-delivery-address-to-orders"><font color="blue">Attach Delivery Address To Orders</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w">
+</span><span class="nt">"deliveryAddressId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 给订单绑定配送地址</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-attach_delivery_address_to_orders">Path:   <font color="green">/attach_delivery_address_to_orders</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderIdList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>订单id列表</td>
+</tr>
+<tr>
+<td>deliveryAddressId</td>
+<td>int</td>
+<td>true</td>
+<td>配送地址id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="attach-note-to-orders"><font color="blue">Attach Note To Orders</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w">
+</span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsa"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 给订单绑定配送地址</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-attach_delivery_address_to_orders">Path:   <font color="green">/attach_delivery_address_to_orders</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderIdList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>订单id列表</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>true</td>
+<td>备注</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="get-newly-created-orders"><font color="blue">Get Newly Created Orders</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"total_quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+</span><span class="nt">"total_amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">,</span><span class="w">
+</span><span class="nt">"orderList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdfajsdkfl"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsak"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"orderItemList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">},</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">}</span><span class="w">
+                                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdfajsdkfl"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsak"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"orderItemList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">},</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">}</span><span class="w">
+                                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 获得新建订单</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_newly_created_orders">Path:   <font color="green">/get_newly_created_orders</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>total_quantity</td>
+<td>int</td>
+<td>true</td>
+<td>商品总数量</td>
+</tr>
+<tr>
+<td>total_amount</td>
+<td>double</td>
+<td>true</td>
+<td>商品总额</td>
+</tr>
+<tr>
+<td>orderList</td>
+<td>Array(Order object)</td>
+<td>true</td>
+<td>订单列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="ordre-object">Ordre object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
+</tr>
+<tr>
+<td>shop_name</td>
+<td>string</td>
+<td>true</td>
+<td>店铺名称</td>
+</tr>
+<tr>
+<td>shop_address</td>
+<td>string</td>
+<td>true</td>
+<td>店铺地址</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>false</td>
+<td>备注</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>int</td>
+<td>true</td>
+<td>店铺商品数量</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>true</td>
+<td>店铺商品金额</td>
+</tr>
+<tr>
+<td>orderItemList</td>
+<td>Array(OrderItem object)</td>
+<td>true</td>
+<td>订单条目列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="ordreitem-object">OrdreItem object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>订单条目id</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>string</td>
+<td>true</td>
+<td>商品Id</td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>string</td>
+<td>true</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>int</td>
+<td>true</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>true</td>
+<td>商品金额</td>
+</tr>
+<tr>
+<td>price</td>
+<td>double</td>
+<td>true</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>true</td>
+<td>商品图片Url</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-orders-by-type"><font color="blue">Get Orders By Type</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"orderList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"order_status_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdfajsdkfl"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsak"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"orderItemList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">},</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">}</span><span class="w">
+                                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">},</span><span class="w">
+                </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"order_status_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdfajsdkfl"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsak"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"orderItemList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">},</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"product_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">}</span><span class="w">
+                                    </span><span class="p">]</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 给订单绑定配送地址</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_orders_by_type">Path:   <font color="green">/get_orders_by_type</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户id</td>
+</tr>
+<tr>
+<td>orderType</td>
+<td>int</td>
+<td>true</td>
+<td>1:待付款 2:待发货 3:待收货 4:待评价</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>orderList</td>
+<td>Array(Order object)</td>
+<td>true</td>
+<td>订单列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="ordre-object">Ordre object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
+</tr>
+<tr>
+<td>order_status_id</td>
+<td>int</td>
+<td>true</td>
+<td>订单状态id 1:待付款 3,4:待发货 5:申请取消中 6:待收货 7:待评价 8:已完成 9:已取消</td>
+</tr>
+<tr>
+<td>shop_name</td>
+<td>string</td>
+<td>true</td>
+<td>店铺名称</td>
+</tr>
+<tr>
+<td>shop_address</td>
+<td>string</td>
+<td>true</td>
+<td>店铺地址</td>
+</tr>
+<tr>
+<td>note</td>
+<td>string</td>
+<td>false</td>
+<td>备注</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>int</td>
+<td>true</td>
+<td>店铺商品数量</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>true</td>
+<td>店铺商品金额</td>
+</tr>
+<tr>
+<td>orderItemList</td>
+<td>Array(OrderItem object)</td>
+<td>true</td>
+<td>订单条目列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="ordreitem-object">OrdreItem object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>订单条目id</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>string</td>
+<td>true</td>
+<td>商品Id</td>
+</tr>
+<tr>
+<td>product_name</td>
+<td>string</td>
+<td>true</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td>quantity</td>
+<td>int</td>
+<td>true</td>
+<td>商品数量</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>true</td>
+<td>商品金额</td>
+</tr>
+<tr>
+<td>price</td>
+<td>double</td>
+<td>true</td>
+<td>商品价格</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>true</td>
+<td>商品图片Url</td>
+</tr>
+</tbody></table>
+
+<h2 id="rate-order"><font color="blue">Rate Order</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"content"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abcd"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"imageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                </span><span class="s2">"afjdsajfkasdjfksadfjksaldfjijkdfjkasdjfkasdjfkasldfj"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fjkadsjfksdajfkdsajfksdajfksdajfksadjfksdajfksdajfksdaf"</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 评价订单</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-rate_order">Path:   <font color="green">/rate_order</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
+</tr>
+<tr>
+<td>content</td>
+<td>string</td>
+<td>true</td>
+<td>内容</td>
+</tr>
+<tr>
+<td>imageList</td>
+<td>Array(string)</td>
+<td>true</td>
+<td>base64编码图片数组</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="receive-order"><font color="blue">Receive Order</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 确认收货</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-receive_order">Path:   <font color="green">/receive_order</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="return-order"><font color="blue">Return Order</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"cancelReason"</span><span class="err">,</span><span class="w"> </span><span class="nt">"nothing"</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 申请未发货订单退货</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-return_order">Path:   <font color="green">/return_order</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
+</tr>
+<tr>
+<td>cancelReason</td>
+<td>string</td>
+<td>true</td>
+<td>退货理由</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="get-logistics-info"><font color="blue">Get Logistics Info</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"logisticsInfo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"deliveryInfo_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"logistics_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsajsdafjsadkfj"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"logistics_company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsd"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"delivery_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-11 15:10:00"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 获得物流详情</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_logistics_info">Path:   <font color="green">/get_logistics_info</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>logisticsInfo</td>
+<td>Logistics object</td>
+<td>true</td>
+<td>物流详情</td>
+</tr>
+</tbody></table>
+
+<h3 id="logistics">Logistics:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>deliveryInfo_id</td>
+<td>int</td>
+<td>true</td>
+<td>物流条目id</td>
+</tr>
+<tr>
+<td>logistics_id</td>
+<td>String</td>
+<td>true</td>
+<td>物流编号</td>
+</tr>
+<tr>
+<td>logistics_company</td>
+<td>string</td>
+<td>true</td>
+<td>物流公司</td>
+</tr>
+<tr>
+<td>delivery_time</td>
+<td>datetime</td>
+<td>true</td>
+<td>发货时间</td>
+</tr>
+</tbody></table>
+
+<h2 id="cancel-order"><font color="blue">Cancel Order</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><b> 取消未支付订单</b></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-cancel_order">Path:   <font color="green">/cancel_order</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
 </tr>
 </tbody></table>
 
