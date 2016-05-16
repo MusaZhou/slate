@@ -54,7 +54,7 @@ mobile | String | true | 手机号码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | int | true | 1.成功 -3.短信发送失败
+status | int | true | 1.成功 3.短信发送失败
 msg | String | true | 
 
 ## <font color="blue">Registration</font>
@@ -95,7 +95,7 @@ password | String | true | 密码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | int | true | 1.成功 -3.验证码不正确 -4.验证码已过期 -5.手机号已注册
+status | int | true | 1.成功 3.验证码不正确 4.验证码已过期 5.手机号已注册
 msg | String | true | 
 
 ## <font color="blue">Login</font>
@@ -135,7 +135,7 @@ password | String | true | 密码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
+status | int | true | 1.成功 3.手机号未注册 4.密码不正确
 msg | String | true | 
 cartId | string | true | 购物车id
 
@@ -177,7 +177,7 @@ password | String | true | 密码
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | int | true | 1.成功 -4.验证码不正确 -5.验证码已过期 -3.手机号没有注册
+status | int | true | 1.成功 4.验证码不正确 5.验证码已过期 3.手机号没有注册
 msg | String | true | 
 
 # Home
@@ -274,7 +274,7 @@ page | int | true | 页数
 
 Name | Type | Default | Description
 --------- | ----------------- | ------- | -----------
-status | int | true | 1.成功 -3.短信发送失败
+status | int | true | 1.成功 3.短信发送失败
 msg | String | true | 
 shops | array(shop object) | false | 店铺列表
 products | array(product object) | false | 商品列表
@@ -347,7 +347,7 @@ longitude | String | true | 经度
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-status | int | true | 1.成功 -3.手机号未注册 -4.密码不正确
+status | int | true | 1.成功 3.curl false 4.baidu map error
 msg | String | true | 
 cityId | String | true | 城市Id
 cityName | String | true | 城市名称
@@ -1734,7 +1734,23 @@ end_time | datetime | true | 结束时间
 														"id": 2,
 														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													}
-												]
+												],
+							"sampleComment": {
+												"id": 1,
+												"user_phone": "32424342",
+												"content": "fasdfjsadkfj",
+												"created_time": "2016-05-15 15:00:00",
+												"imageList": [
+																{
+																	"id": 1,
+																	"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																},
+																{
+																	"id": 2,
+																	"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																}
+															]
+												}
 						}
 					]
 
@@ -1788,6 +1804,7 @@ end_time | datetime | true | 结束时间
 inventory | int | true |  库存
 bannerImageList | Array(Image object) | false | 轮播图列表
 referenceImageList | Array(Image object) | false | 参考图列表
+sampleComment | Comment object | false | 评论例子
 
 ### Image Object
 
@@ -1795,6 +1812,95 @@ Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
+
+### Comment Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 评论id
+user_phone | string | true | 评论人
+content | string | true | 内容
+created_time | datetime | true | 评论时间
+imageList | Array(Image object) | true | 图片列表
+
+## <font color="blue">Get Promotion Activities</font>
+
+> Request:
+
+```json
+{
+"provinceId": 1,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"promotionActivityList": [
+						{
+							"id": 1,
+							"product_name": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"original_price": 15,
+							"promotion_price": 10,
+							"shop_name": "fajsdkf",
+							"shop_address": "dfasfdasf",
+							"status": 2,
+							"time_remaining": "21:00:00"
+						},
+						{
+							"id": 2,
+							"product_name": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"original_price": 15,
+							"promotion_price": 10,
+							"shop_name": "fajsdkf",
+							"shop_address": "dfasfdasf",
+							"status": 2,
+							"time_remaining": "21:00:00"
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得促销活动</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_promotion_activities</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+promotionActivityList | Array(PromotionActivity object) | true | 团购活动列表
+
+### PromotionActivity Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 活动id
+product_name | string | true | 商品名称
+image_url | string | true | 商品图片地址
+original_price | double | true | 原价
+promotion_price | double | true | 促销价
+shop_name | string | true | 商店名称
+shop_address | string | true | 商店地址
+status | int | true | 1.表示未开始 2.表示已开始
+time_remaining | time | true | 剩余时间
 
 # Topic
 
