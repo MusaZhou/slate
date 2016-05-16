@@ -1698,6 +1698,9 @@ end_time | datetime | true | 结束时间
 							"shop_id": 2,
 							"shop_name": "djfak",
 							"shop_address": "fadsfj",
+							"phone_1": "32423342",
+							"phone_2": "32423342",
+							"phone_3": "32423342",
 							"product_name": "标题1",
 							"original_price": 15.8,
 							"group_price": "10.00",
@@ -1788,6 +1791,9 @@ id | int | true | 活动id
 shop_id | int | true | 店铺Id
 shop_name | string | true | 店铺名称
 shop_address | string | true | 店铺地址
+phone_1 | string | true | 电话1
+phone_2 | string | true | 电话2
+phone_3 | string | true | 电话3
 product_name | string | true | 商品名称
 original_price | double | true | 原价
 group_price | double | true | 团购价
@@ -1930,6 +1936,9 @@ time_remaining | time | true | 剩余时间
 							"shop_id": 2,
 							"shop_name": "djfak",
 							"shop_address": "fadsfj",
+							"phone_1": "32423342",
+							"phone_2": "32423342",
+							"phone_3": "32423342",
 							"product_name": "标题1",
 							"original_price": 15.8,
 							"promotion_price": "10.00",
@@ -2018,6 +2027,9 @@ id | int | true | 活动id
 shop_id | int | true | 店铺Id
 shop_name | string | true | 店铺名称
 shop_address | string | true | 店铺地址
+phone_1 | string | true | 电话1
+phone_2 | string | true | 电话2
+phone_3 | string | true | 电话3
 product_name | string | true | 商品名称
 original_price | double | true | 原价
 promotion_price | double | true | 促销价
