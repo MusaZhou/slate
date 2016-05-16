@@ -1675,6 +1675,127 @@ per_limit | int | false | 每人限购
 start_time | datetime | true | 开始时间
 end_time | datetime | true | 结束时间
 
+## <font color="blue">Get Group Activity Detail</font>
+
+> Request:
+
+```json
+{
+"productId": 1,
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"groupActivityDetail": [
+						{
+							"id": 1,
+							"product_name": "标题1",
+							"original_price": 15.8,
+							"group_price": "10.00",
+							"condition_count": 100,
+							"current_count": 10,
+							"per_limit": 2,
+							"start_time": "2016-05-05 14:00:00",
+							"end_time": "2016-05-06 14:00:00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"item_number": "fasdfaf",
+							"customized_name_1": "abc",
+							"customized_name_2": "abc",
+							"customized_name_3": "abc",
+							"customized_value_1": "abc",
+							"customized_value_2": "abc",
+							"customized_value_3": "abc",
+							"quantity": 30,
+							"bannerImageList": [
+													{
+														"id": 1,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													},
+													{
+														"id": 2,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													}
+												],
+							"referenceImageList": [
+													{
+														"id": 1,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													},
+													{
+														"id": 2,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													}
+												]
+						}
+					]
+
+}
+```
+
+<font size="4"><b> 获得团购活动详情</b></font>
+
+### Method:   POST
+### Path:   <font color="green">/get_group_activity_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+productId | int | true | 产品Id
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+groupActivityDetail | Array(GroupActivity object) | true | 商品类型列表
+
+### GroupActivity Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 活动id
+product_name | string | true | 商品名称
+original_price | double | true | 原价
+group_price | double | true | 团购价
+condition_count | int | true | 团购总量
+current_count | int | true | 当前团购数量
+per_limit | int | true | 个人限购
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+item_number | string | false | 零件号
+customized_name_1 | string | false | 自定义属性1名称
+customized_name_2 | string | false | 自定义属性2名称
+customized_name_3 | string | false | 自定义属性3名称
+customized_value_1 | string | false | 自定义属性1值
+customized_value_2 | string | false | 自定义属性2值
+customized_value_3 | string | false | 自定义属性3值
+start_time | datetime | true | 开始时间
+end_time | datetime | true | 结束时间
+inventory | int | true |  库存
+bannerImageList | Array(Image object) | false | 轮播图列表
+referenceImageList | Array(Image object) | false | 参考图列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
 # Topic
 
 ## <font color="blue">Get Topics By Category</font>
