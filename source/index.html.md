@@ -15,7 +15,7 @@ search: true
 
 # Introduction
   所有请求和返回参数都是JSON格式
-## 易配-API <font color="green">http://192.168.1.115/caraccessories/app</font>
+## 易配-API <font color="green">http://192.168.1.115/app</font>
 
 
 # Login-Registration
@@ -1590,6 +1590,90 @@ shop_name | string | true | 店铺名称
 shop_address | string | true | 店铺地址
 is_vip | int | true | 是否为vip 1:是 0:否
 image_url | string | true | 图片URL
+
+# Product Activity
+
+## <font color="blue">Get Group Activities</font>
+
+> Request:
+
+```json
+{
+"provinceId": 1,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"groupActivityList": [
+						{
+							"id": 1,
+							"product_name": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"original_price": 15,
+							"group_price": 10,
+							"condition_count": 100,
+							"current_count": 10,
+							"per_limit": 2,
+							"start_time": "2016-05-05 21:00:00",
+							"end_time": "2016-05-06 21:00:00"
+						},
+						{
+							"id": 1,
+							"product_name": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"original_price": 15,
+							"group_price": 10,
+							"condition_count": 100,
+							"current_count": 10,
+							"per_limit": 2,
+							"start_time": "2016-05-05 21:00:00",
+							"end_time": "2016-05-06 21:00:00"
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得团购活动</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_group_activities</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+groupActivityList | Array(GroupActivity object) | true | 团购活动列表
+
+### GroupActivity Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 活动id
+product_name | string | true | 商品名称
+image_url | string | true | 商品图片地址
+original_price | double | true | 原价
+group_price | double | true | 团购价
+condition_count | int | true | 团购总数
+current_count | int | true | 当前团购数量
+per_limit | int | false | 每人限购
+start_time | datetime | true | 开始时间
+end_time | datetime | true | 结束时间
 
 # Topic
 
