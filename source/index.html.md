@@ -1695,6 +1695,9 @@ end_time | datetime | true | 结束时间
 "groupActivityDetail": [
 						{
 							"id": 1,
+							"shop_id": 2,
+							"shop_name": "djfak",
+							"shop_address": "fadsfj",
 							"product_name": "标题1",
 							"original_price": 15.8,
 							"group_price": "10.00",
@@ -1782,6 +1785,9 @@ groupActivityDetail | Array(GroupActivity object) | true | 商品类型列表
 Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
+shop_id | int | true | 店铺Id
+shop_name | string | true | 店铺名称
+shop_address | string | true | 店铺地址
 product_name | string | true | 商品名称
 original_price | double | true | 原价
 group_price | double | true | 团购价
@@ -1850,7 +1856,7 @@ imageList | Array(Image object) | true | 图片列表
 							"shop_name": "fajsdkf",
 							"shop_address": "dfasfdasf",
 							"status": 2,
-							"time_remaining": "21:00:00"
+							"time_remaining": "1天 12:00:12"
 						},
 						{
 							"id": 2,
@@ -1861,7 +1867,7 @@ imageList | Array(Image object) | true | 图片列表
 							"shop_name": "fajsdkf",
 							"shop_address": "dfasfdasf",
 							"status": 2,
-							"time_remaining": "21:00:00"
+							"time_remaining": "1天 12:00:12"
 						}
 			]
 }
@@ -1899,8 +1905,157 @@ original_price | double | true | 原价
 promotion_price | double | true | 促销价
 shop_name | string | true | 商店名称
 shop_address | string | true | 商店地址
-status | int | true | 1.表示未开始 2.表示已开始
 time_remaining | time | true | 剩余时间
+
+## <font color="blue">Get Promotion Activity Detail</font>
+
+> Request:
+
+```json
+{
+"productId": 1,
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"promotionActivityDetail": [
+						{
+							"id": 1,
+							"shop_id": 2,
+							"shop_name": "djfak",
+							"shop_address": "fadsfj",
+							"product_name": "标题1",
+							"original_price": 15.8,
+							"promotion_price": "10.00",
+							"time_remaining": "1天 12:00:12",
+							"start_time": "2016-05-05 14:00:00",
+							"end_time": "2016-05-06 14:00:00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"item_number": "fasdfaf",
+							"customized_name_1": "abc",
+							"customized_name_2": "abc",
+							"customized_name_3": "abc",
+							"customized_value_1": "abc",
+							"customized_value_2": "abc",
+							"customized_value_3": "abc",
+							"quantity": 30,
+							"bannerImageList": [
+													{
+														"id": 1,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													},
+													{
+														"id": 2,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													}
+												],
+							"referenceImageList": [
+													{
+														"id": 1,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													},
+													{
+														"id": 2,
+														"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+													}
+												],
+							"sampleComment": {
+												"id": 1,
+												"user_phone": "32424342",
+												"content": "fasdfjsadkfj",
+												"created_time": "2016-05-15 15:00:00",
+												"imageList": [
+																{
+																	"id": 1,
+																	"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																},
+																{
+																	"id": 2,
+																	"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																}
+															]
+												}
+						}
+					]
+
+}
+```
+
+<font size="4"><b> 获得促销活动详情</b></font>
+
+### Method:   POST
+### Path:   <font color="green">/get_promotion_activity_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+productId | int | true | 产品Id
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+promotionActivityDetail | Array(GroupActivity object) | true | 商品类型列表
+
+### GroupActivity Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 活动id
+shop_id | int | true | 店铺Id
+shop_name | string | true | 店铺名称
+shop_address | string | true | 店铺地址
+product_name | string | true | 商品名称
+original_price | double | true | 原价
+promotion_price | double | true | 促销价
+time_remaining | string | true | 剩余时间
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+item_number | string | false | 零件号
+customized_name_1 | string | false | 自定义属性1名称
+customized_name_2 | string | false | 自定义属性2名称
+customized_name_3 | string | false | 自定义属性3名称
+customized_value_1 | string | false | 自定义属性1值
+customized_value_2 | string | false | 自定义属性2值
+customized_value_3 | string | false | 自定义属性3值
+start_time | datetime | true | 开始时间
+end_time | datetime | true | 结束时间
+inventory | int | true |  库存
+bannerImageList | Array(Image object) | false | 轮播图列表
+referenceImageList | Array(Image object) | false | 参考图列表
+sampleComment | Comment object | false | 评论例子
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
+### Comment Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 评论id
+user_phone | string | true | 评论人
+content | string | true | 内容
+created_time | datetime | true | 评论时间
+imageList | Array(Image object) | true | 图片列表
 
 # Topic
 
