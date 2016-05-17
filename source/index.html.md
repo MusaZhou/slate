@@ -3501,6 +3501,7 @@ image_url | string | true | 店铺图片
 "msg": "Ok",
 "exhibitionSpot": {
 						"id": 1,
+						"shop_id", 1,
 						"name": "fsdf",
 						"address": "fdsafasf",
 						"sale_description": "fdsafdsaf",
@@ -3548,6 +3549,7 @@ exhibitionSpot | ExhibitionSpot | true | 展位列表
 Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展位Id
+shop_id | int | true | 商铺Id
 name | String | true | 厂家名称
 sale_description | String | true | 主营描述
 address | string | true | 地址
@@ -3564,3 +3566,121 @@ Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
+
+## <font color="blue">Get Exhibition Charges</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"chargeList": [
+					{
+						"id": 1,
+						"name": "1 month",
+						"price": 1000
+					},
+					{
+						"id": 2,
+						"name": "1 month",
+						"price": 1500
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得展费列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_exhibition_charges</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+chargeList | Array(ExhibitionCharge Object) | true | 展费列表
+
+### ExhibitionCharge Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 展费Id
+name | String | true | 名称
+price | int | true | 价格
+
+## <font color="blue">Apply Exhibition Spot</font>
+
+> Request:
+
+```json
+{
+"userId": 1,
+"name": "asdfsa",
+"contactPerson": "fdsaf",
+"phone_1": "fdsaf",
+"phone_2": "fdjsaf",
+"phone_3": "fjdskf",
+"address": "fdsafds",
+"sectionId": 3,
+"saleDescription": "fdsfasf",
+"exhibitionChargeId": 3,
+"license": "fdsafdsajkfjkkkkkkk",
+"idFront": "fdsaklfjdsakfjkdsafj",
+"idBack": "fdjskalfjdsaklfjdksafjk"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 申请展位</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/apply_exhibition_spot</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+name | string | true | 厂家名称
+contactPerson | string | true | 联系人
+phone_1 | string | true | 联系电话
+phone_2 | string | true | 订货电话
+phone_3 | string | true | 技术咨询
+address | string | true | 地址
+sectionId | int | true | 展区id
+saleDescription | string | true | 主营描述
+exhibitionChargeId | int | true | 展费Id
+license | string | true | 营业执照base64编码照片
+idFront | string | true | 身份证正面base64编码照片
+idBack | string | true | 身份证背面base64编码照片
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
