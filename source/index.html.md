@@ -274,7 +274,7 @@ page | int | true | 页数
 
 Name | Type | Default | Description
 --------- | ----------------- | ------- | -----------
-status | int | true | 1.成功 3.短信发送失败
+status | int | true | 1.成功
 msg | String | true | 
 shops | array(shop object) | false | 店铺列表
 products | array(product object) | false | 商品列表
@@ -996,6 +996,45 @@ Name | Type | Default | Description
 id | int | true | 图片id
 url | string | true | 图片URL
 
+## <font color="blue">Collect Shop</font>
+
+> Request:
+
+```json
+{
+"shopId": 2,
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 收藏店铺</b></font>
+
+### Method:   POST
+### Path:   <font color="green">/collect_shop</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Product
 
 ## <font color="blue">Get Owner Recommended Products</font>
@@ -1238,6 +1277,7 @@ image_url | string | false | 图片URL
 							"customized_value_2": "abc",
 							"customized_value_3": "abc",
 							"description": "abc",
+							"shop_id": 2,
 							"shop_address": "afasdf",
 							"shop_phone": "1212412",
 							"bannerImageList": [
@@ -1322,6 +1362,7 @@ customized_value_1 | string | false | 自定义属性1值
 customized_value_2 | string | false | 自定义属性2值
 customized_value_3 | string | false | 自定义属性3值
 description | string | false | 描述
+shop_id | int | true | 店铺Id
 shop_address | string | true | 店铺地址
 shop_phone | string | true |  店铺电话
 inventory | int | true |  库存
@@ -1590,6 +1631,45 @@ shop_name | string | true | 店铺名称
 shop_address | string | true | 店铺地址
 is_vip | int | true | 是否为vip 1:是 0:否
 image_url | string | true | 图片URL
+
+## <font color="blue">Collect Product</font>
+
+> Request:
+
+```json
+{
+"productId": 2,
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 收藏商品</b></font>
+
+### Method:   POST
+### Path:   <font color="green">/collect_product</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+productId | int | true | 商品Id
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
 
 # Product Activity
 
