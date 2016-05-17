@@ -448,8 +448,8 @@
 </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1"</span><span class="p">,</span><span class="w"> 
 </span><span class="nt">"search"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"5"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="err">}</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -509,8 +509,8 @@
                 </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfaasdf"</span><span class="w">
             </span><span class="p">}</span><span class="w">
-        </span><span class="p">],</span><span class="w">
-</span><span class="err">}</span><span class="w">
+        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <p><font size="4"><b> 首页搜索</b></font></p>
@@ -753,7 +753,9 @@
 </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
 </span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"cityId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"西安"</span><span class="w">
+</span><span class="nt">"cityName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"西安"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"provinceName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"陕西"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -826,6 +828,12 @@
 <td>int</td>
 <td>true</td>
 <td>省份Id</td>
+</tr>
+<tr>
+<td>provinceName</td>
+<td>string</td>
+<td>true</td>
+<td>省份名称</td>
 </tr>
 </tbody></table>
 
@@ -1361,6 +1369,80 @@
 <td>string</td>
 <td>false</td>
 <td>若广告类型为1,2,3,为广告图片</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-user-status"><font color="blue">Get User Status</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"user_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得用户类型</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_user_status">Path:   <font color="green">/get_user_status</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>user_status</td>
+<td>int</td>
+<td>true</td>
+<td>用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商</td>
 </tr>
 </tbody></table>
 
@@ -2195,8 +2277,8 @@
                             </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benze"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
-                        </span><span class="err">}</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
@@ -2207,8 +2289,8 @@
                             </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benze"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
-                        </span><span class="err">}</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -2376,8 +2458,8 @@
                                                         </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
                                                         </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benze"</span><span class="p">,</span><span class="w">
                                                         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-                                                        </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="err">}</span><span class="p">,</span><span class="w">
+                                                        </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                                    </span><span class="p">},</span><span class="w">
                                                     </span><span class="p">{</span><span class="w">
                                                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                                                         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
@@ -2388,8 +2470,8 @@
                                                         </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
                                                         </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benze"</span><span class="p">,</span><span class="w">
                                                         </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-                                                        </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
-                                                    </span><span class="err">}</span><span class="w">
+                                                        </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                                    </span><span class="p">}</span><span class="w">
                                         </span><span class="p">]</span><span class="w">
                         </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
@@ -2946,8 +3028,8 @@
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"productId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"page"</span><span class="err">,</span><span class="w"> </span><span class="err">1</span><span class="w">
-</span><span class="err">}</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -3145,8 +3227,8 @@
                             </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benze"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"sold_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
-                        </span><span class="err">}</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
@@ -3309,8 +3391,8 @@
                             </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afsadf"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfasfasdf"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"is_vip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
-                        </span><span class="err">}</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
@@ -3319,8 +3401,8 @@
                             </span><span class="nt">"shop_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afsadf"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfasfasdf"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"is_vip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
-                        </span><span class="err">}</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
                 </span><span class="p">]</span><span class="w">
 
 </span><span class="p">}</span><span class="w">
@@ -5321,8 +5403,8 @@
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="err">}</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -6349,8 +6431,8 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
 </span><span class="nt">"orderType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"page"</span><span class="err">,</span><span class="w"> </span><span class="err">1</span><span class="w">
-</span><span class="err">}</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -6760,8 +6842,8 @@
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"cancelReason"</span><span class="err">,</span><span class="w"> </span><span class="nt">"nothing"</span><span class="w">
-</span><span class="err">}</span><span class="w">
+</span><span class="nt">"cancelReason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"nothing"</span><span class="w">
+</span><span class="p">}</span><span class="w">
 </span></code></pre>
 
 <blockquote>
@@ -6982,6 +7064,602 @@
 <td>int</td>
 <td>true</td>
 <td>订单id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h1 id="exhibition">Exhibition</h1>
+
+<h2 id="get-exhibition-factories"><font color="blue">Get Exhibition Factories</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"sectionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"exhibitionSpotList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsadf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafsa"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsadf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafsa"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 根据展区获得厂家展位</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_exhibition_factory">Path:   <font color="green">/get_exhibition_factory</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>sectionId</td>
+<td>int</td>
+<td>true</td>
+<td>展区id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitionSpotList</td>
+<td>Array(Exhibition object)</td>
+<td>true</td>
+<td>展位列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="exhibition-object">Exhibition Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>展位Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>true</td>
+<td>厂家名称</td>
+</tr>
+<tr>
+<td>sale_description</td>
+<td>String</td>
+<td>true</td>
+<td>主营描述</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>true</td>
+<td>店铺图片</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-exhibition-factory-detail"><font color="blue">Get Exhibition Factory Detail</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"exhibitionSpotId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"exhibitionSpot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"shop_id"</span><span class="err">,</span><span class="w"> </span><span class="err">1,</span><span class="w">
+                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafasf"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafdsaf"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadsfsaf"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdajksfd"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"phone_3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fajdskfs"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"service_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12:00-18:00"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsakf"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"imageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">},</span><span class="w">
+                                        </span><span class="p">{</span><span class="w">
+                                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                                            </span><span class="nt">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                                        </span><span class="p">}</span><span class="w">
+                                    </span><span class="p">]</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得展位详情</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_exhibition_factory_detail">Path:   <font color="green">/get_exhibition_factory_detail</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>exhibitionSpotId</td>
+<td>int</td>
+<td>true</td>
+<td>展位id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>exhibitionSpot</td>
+<td>ExhibitionSpot</td>
+<td>true</td>
+<td>展位列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="exhibitionspot-object">ExhibitionSpot Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>展位Id</td>
+</tr>
+<tr>
+<td>shop_id</td>
+<td>int</td>
+<td>true</td>
+<td>商铺Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>true</td>
+<td>厂家名称</td>
+</tr>
+<tr>
+<td>sale_description</td>
+<td>String</td>
+<td>true</td>
+<td>主营描述</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>true</td>
+<td>店铺描述</td>
+</tr>
+<tr>
+<td>phone_1</td>
+<td>string</td>
+<td>true</td>
+<td>业务联系</td>
+</tr>
+<tr>
+<td>phone_2</td>
+<td>string</td>
+<td>true</td>
+<td>订货电话</td>
+</tr>
+<tr>
+<td>phone_3</td>
+<td>string</td>
+<td>true</td>
+<td>技术咨询</td>
+</tr>
+<tr>
+<td>service_time</td>
+<td>string</td>
+<td>true</td>
+<td>营业时间</td>
+</tr>
+<tr>
+<td>imageList</td>
+<td>string</td>
+<td>true</td>
+<td>店铺图片列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="image-object">Image Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>图片id</td>
+</tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>true</td>
+<td>图片URL</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-exhibition-charges"><font color="blue">Get Exhibition Charges</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"chargeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 month"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="w">
+                    </span><span class="p">},</span><span class="w">
+                    </span><span class="p">{</span><span class="w">
+                        </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 month"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">1500</span><span class="w">
+                    </span><span class="p">}</span><span class="w">
+                </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得展费列表</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_exhibition_charges">Path:   <font color="green">/get_exhibition_charges</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>chargeList</td>
+<td>Array(ExhibitionCharge Object)</td>
+<td>true</td>
+<td>展费列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="exhibitioncharge-object">ExhibitionCharge Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>展费Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>true</td>
+<td>名称</td>
+</tr>
+<tr>
+<td>price</td>
+<td>int</td>
+<td>true</td>
+<td>价格</td>
+</tr>
+</tbody></table>
+
+<h2 id="apply-exhibition-spot"><font color="blue">Apply Exhibition Spot</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfsa"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdjsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone_3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fjdskf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafds"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"sectionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+</span><span class="nt">"saleDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsfasf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"exhibitionChargeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+</span><span class="nt">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafdsajkfjkkkkkkk"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"idFront"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaklfjdsakfjkdsafj"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"idBack"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdjskalfjdsaklfjdksafjk"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 申请展位</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-apply_exhibition_spot">Path:   <font color="green">/apply_exhibition_spot</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>厂家名称</td>
+</tr>
+<tr>
+<td>contactPerson</td>
+<td>string</td>
+<td>true</td>
+<td>联系人</td>
+</tr>
+<tr>
+<td>phone_1</td>
+<td>string</td>
+<td>true</td>
+<td>联系电话</td>
+</tr>
+<tr>
+<td>phone_2</td>
+<td>string</td>
+<td>true</td>
+<td>订货电话</td>
+</tr>
+<tr>
+<td>phone_3</td>
+<td>string</td>
+<td>true</td>
+<td>技术咨询</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>sectionId</td>
+<td>int</td>
+<td>true</td>
+<td>展区id</td>
+</tr>
+<tr>
+<td>saleDescription</td>
+<td>string</td>
+<td>true</td>
+<td>主营描述</td>
+</tr>
+<tr>
+<td>exhibitionChargeId</td>
+<td>int</td>
+<td>true</td>
+<td>展费Id</td>
+</tr>
+<tr>
+<td>license</td>
+<td>string</td>
+<td>true</td>
+<td>营业执照base64编码照片</td>
+</tr>
+<tr>
+<td>idFront</td>
+<td>string</td>
+<td>true</td>
+<td>身份证正面base64编码照片</td>
+</tr>
+<tr>
+<td>idBack</td>
+<td>string</td>
+<td>true</td>
+<td>身份证背面base64编码照片</td>
 </tr>
 </tbody></table>
 
