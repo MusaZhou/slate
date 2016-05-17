@@ -42,6 +42,7 @@ search: true
 <font size="4"><b> 获得手机验证码</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_verification_code</font>
 
 ### Request
@@ -81,6 +82,7 @@ msg | String | true |
 <font size="4"><b> 注册</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/registration</font>
 
 ### Request
@@ -122,6 +124,7 @@ msg | String | true |
 <font size="4"><b> 登录</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/login</font>
 
 ### Request
@@ -163,6 +166,7 @@ cartId | string | true | 购物车id
 <font size="4"><b> 忘记密码</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/forget_password</font>
 
 ### Request
@@ -191,7 +195,7 @@ msg | String | true |
 "type": "1", 
 "search": "abc",
 "provinceId": "5",
-"page": 1,
+"page": 1
 }
 ```
 
@@ -252,13 +256,14 @@ msg | String | true |
 				"description": "abc",
 				"image_url": "dsfaasdf"
 			}
-		],
+		]
 }
 ```
 
 <font size="4"><b> 首页搜索</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/home_search</font>
 
 ### Request
@@ -327,13 +332,16 @@ image_url | string | true | 图片URL
 "status": 1,
 "msg": "Ok",
 "cityId": "10",
-"cityName": "西安"
+"cityName": "西安",
+"provinceId": 1,
+"provinceName": "陕西"
 }
 ```
 
 <font size="4"><b> 通过经纬度定位城市</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_city_by_gps</font>
 
 ### Request
@@ -352,6 +360,7 @@ msg | String | true |
 cityId | String | true | 城市Id
 cityName | String | true | 城市名称
 provinceId | int | true | 省份Id
+provinceName | string | true | 省份名称
 
 ## <font color="blue">Get Recommended Secondary Shop Types</font>
 
@@ -387,6 +396,7 @@ provinceId | int | true | 省份Id
 <font size="4"><b> 首页热门店铺类型</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/home_secondary_shop_type</font>
 
 ### Request
@@ -445,6 +455,7 @@ image_url | string | true | 图片url
 <font size="4"><b> 首页热门商品类型</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/home_hot_sale_product_type</font>
 
 ### Request
@@ -521,6 +532,7 @@ image_url | string | true | 图片url
 <font size="4"><b> 获得地区列表</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_province_list</font>
 
 ### Request
@@ -594,6 +606,7 @@ city_name | string | true | 城市名称
 <font size="4"><b> 获得广告列表</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_ads</font>
 
 ### Request
@@ -622,6 +635,46 @@ ad_type | int | true | 广告类型(1:店铺 2:产品 3:url 4:店铺(仅显示�
 adable_id | int | true | 广告实体id(商店Id或产品Id)
 ad_url | string | false | 若广告类型为3,为url地址
 image_url | string | false | 若广告类型为1,2,3,为广告图片
+
+## <font color="blue">Get User Status</font>
+
+> Request:
+
+```json
+{
+"userId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"user_status": 2
+}
+```
+
+<font size="4"><b> 获得用户类型</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_user_status</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商
 
 # Shop
 
@@ -745,6 +798,7 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 <font size="4"><b> 获得店铺类别列表</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_shop_types</font>
 
 ### Request
@@ -822,6 +876,7 @@ image_url | string | true | 图片URL
 <font size="4"><b> 店铺类别搜索</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/search_shop_type</font>
 
 ### Request
@@ -885,6 +940,7 @@ primary_shop_type_name | string | true | 一级类型名称
 <font size="4"><b> 根据二级类别获得店铺列表</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_shops_by_secondary_shop_type</font>
 
 ### Request
@@ -956,6 +1012,7 @@ address | string | true | 地址
 <font size="4"><b> 获得店铺详情</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_shop_detail</font>
 
 ### Request
@@ -1019,6 +1076,7 @@ url | string | true | 图片URL
 <font size="4"><b> 收藏店铺</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/collect_shop</font>
 
 ### Request
@@ -1065,7 +1123,7 @@ msg | String | true |
 							"model": "a",
 							"car_model": "Benze",
 							"description": "abc",
-							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						},
 						{
 							"id": 2,
@@ -1077,7 +1135,7 @@ msg | String | true |
 							"model": "a",
 							"car_model": "Benze",
 							"description": "abc",
-							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						}
 			]
 }
@@ -1086,6 +1144,7 @@ msg | String | true |
 <font size="4"><b> 获店长推荐商品</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_owner_recommended_products</font>
 
 ### Request
@@ -1149,7 +1208,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
-														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													},
 													{
 														"id": 2,
@@ -1161,7 +1220,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
-														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													}
 										]
 						},
@@ -1203,6 +1262,7 @@ image_url | string | false | 图片URL
 <font size="4"><b> 获得产品类型列表</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_product_types_by_shop</font>
 
 ### Request
@@ -1325,6 +1385,7 @@ image_url | string | false | 图片URL
 <font size="4"><b> 获得产品详情</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_product_detail</font>
 
 ### Request
@@ -1394,7 +1455,7 @@ imageList | Array(Image object) | true | 图片列表
 ```json
 {
 "productId": 1,
-"page", 1
+"page": 1
 }
 ```
 
@@ -1444,6 +1505,7 @@ imageList | Array(Image object) | true | 图片列表
 <font size="4"><b> 获得产品评论</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_product_comments</font>
 
 ### Request
@@ -1504,7 +1566,7 @@ url | string | true | 图片URL
 							"model": "a",
 							"car_model": "Benze",
 							"sold_count": 100,
-							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						},
 						{
 							"id": 2,
@@ -1525,6 +1587,7 @@ url | string | true | 图片URL
 <font size="4"><b> 获得猜你喜欢产品</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_guess_products</font>
 
 ### Request
@@ -1581,7 +1644,7 @@ image_url | string | true | 图片URL
 							"shop_name": "afsadf",
 							"shop_address": "dfasfasdf",
 							"is_vip": 1,
-							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						},
 						{
 							"id": 2,
@@ -1591,7 +1654,7 @@ image_url | string | true | 图片URL
 							"shop_name": "afsadf",
 							"shop_address": "dfasfasdf",
 							"is_vip": 1,
-							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						}
 				]
 
@@ -1655,6 +1718,7 @@ image_url | string | true | 图片URL
 <font size="4"><b> 收藏商品</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/collect_product</font>
 
 ### Request
@@ -1846,6 +1910,7 @@ end_time | datetime | true | 结束时间
 <font size="4"><b> 获得团购活动详情</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_group_activity_detail</font>
 
 ### Request
@@ -2082,6 +2147,7 @@ time_remaining | time | true | 剩余时间
 <font size="4"><b> 获得促销活动详情</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_promotion_activity_detail</font>
 
 ### Request
@@ -2350,6 +2416,7 @@ url | string | true | 图片URL
 <font size="4"><b> 获得购物车详情</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_cart_detail</font>
 
 ### Request
@@ -2483,7 +2550,7 @@ msg | String | true |
 
 ```json
 {
-"userId": 1,
+"userId": 1
 }
 ```
 
@@ -2784,6 +2851,7 @@ address | string | true | 地址
 <font size="4"><b> 创建新订单</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/create_new_orders</font>
 
 ### Request
@@ -2822,6 +2890,7 @@ msg | String | true |
 <font size="4"><b> 给订单绑定配送地址</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/attach_delivery_address_to_orders</font>
 
 ### Request
@@ -2861,6 +2930,7 @@ msg | String | true |
 <font size="4"><b> 给订单绑定配送地址</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/attach_delivery_address_to_orders</font>
 
 ### Request
@@ -2959,6 +3029,7 @@ msg | String | true |
 <font size="4"><b> 获得新建订单</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_newly_created_orders</font>
 
 ### Request
@@ -3009,7 +3080,7 @@ image_url | string | true | 商品图片Url
 {
 "userId": 1,
 "orderType": 1,
-"page", 1
+"page": 1
 }
 ```
 
@@ -3085,6 +3156,7 @@ image_url | string | true | 商品图片Url
 <font size="4"><b> 给订单绑定配送地址</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_orders_by_type</font>
 
 ### Request
@@ -3155,6 +3227,7 @@ image_url | string | true | 商品图片Url
 <font size="4"><b> 评价订单</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/rate_order</font>
 
 ### Request
@@ -3194,6 +3267,7 @@ msg | String | true |
 <font size="4"><b> 确认收货</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/receive_order</font>
 
 ### Request
@@ -3216,7 +3290,7 @@ msg | String | true |
 ```json
 {
 "orderId": 1,
-"cancelReason", "nothing"
+"cancelReason": "nothing"
 }
 ```
 
@@ -3276,6 +3350,7 @@ msg | String | true |
 <font size="4"><b> 获得物流详情</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/get_logistics_info</font>
 
 ### Request
@@ -3323,6 +3398,7 @@ delivery_time | datetime | true | 发货时间
 <font size="4"><b> 取消未支付订单</b></font>
 
 ### Method:   POST
+
 ### Path:   <font color="green">/cancel_order</font>
 
 ### Request
@@ -3337,3 +3413,72 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
+
+# Exhibition
+
+## <font color="blue">Get Exhibition Factories</font>
+
+> Request:
+
+```json
+{
+"sectionId": 1,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"exhibitionSpotList": [
+						{
+							"id": 1,
+							"name": "fsadf",
+							"sale_description": "fdsafsa",
+							"address": "fasdf",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+						},
+						{
+							"id": 2,
+							"name": "fsadf",
+							"sale_description": "fdsafsa",
+							"address": "fasdf",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+						}
+					]
+}
+```
+
+<font size="4"><b> 根据展区获得厂家展位</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_exhibition_factory</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+sectionId | int | true | 展区id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+exhibitionSpotList | Array(Exhibition object) | true | 展位列表
+
+### Exhibition Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 展位Id
+name | String | true | 厂家名称
+sale_description | String | true | 主营描述
+address | string | true | 地址
+image_url | string | true | 店铺图片
