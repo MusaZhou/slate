@@ -3482,3 +3482,85 @@ name | String | true | 厂家名称
 sale_description | String | true | 主营描述
 address | string | true | 地址
 image_url | string | true | 店铺图片
+
+## <font color="blue">Get Exhibition Factory Detail</font>
+
+> Request:
+
+```json
+{
+"exhibitionSpotId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"exhibitionSpot": {
+						"id": 1,
+						"name": "fsdf",
+						"address": "fdsafasf",
+						"sale_description": "fdsafdsaf",
+						"phone_1": "fadsfsaf",
+						"phone_2": "fdajksfd",
+						"phone_3": "fajdskfs",
+						"service_time": "12:00-18:00",
+						"description": "fdsakf",
+						"imageList": [
+										{
+											"id": 1,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 2,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+					}
+}
+```
+
+<font size="4"><b> 获得展位详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_exhibition_factory_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+exhibitionSpotId | int | true | 展位id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+exhibitionSpot | ExhibitionSpot | true | 展位列表
+
+### ExhibitionSpot Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 展位Id
+name | String | true | 厂家名称
+sale_description | String | true | 主营描述
+address | string | true | 地址
+description | string | true | 店铺描述
+phone_1 | string | true | 业务联系
+phone_2 | string | true | 订货电话
+phone_3 | string | true | 技术咨询
+service_time | string | true | 营业时间
+imageList | string | true | 店铺图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
