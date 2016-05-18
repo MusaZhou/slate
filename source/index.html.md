@@ -3684,3 +3684,85 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Search Exhibition Factories</font>
+
+> Request:
+
+```json
+{
+"searchContent": "fd",
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"factoryList": [
+						{
+							"id": 1,
+							"shop_id": 2,
+							"name": "fsadf",
+							"view_count": 23,
+							"sale_description": "fdsafsa",
+							"address": "fasdf",
+							"service_time": "12:00-15:00",
+							"description": "dfksdafj",
+							"phone_1": "3223211",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+						},
+						{
+							"id": 2,
+							"shop_id": 3,
+							"name": "fsadf",
+							"view_count": 23,
+							"sale_description": "fdsafsa",
+							"address": "fasdf",
+							"service_time": "12:00-15:00",
+							"description": "dfksdafj",
+							"phone_1": "3223211",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+						}
+					]
+}
+```
+
+<font size="4"><b> 搜索厂家展位</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/search_exhibition_spot</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+searchContent | int | true | 搜索内容
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+factoryList | Array(Exhibition object) | true | 展位列表
+
+### Exhibition Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 展位Id
+shop_id | int | true | 店铺id
+name | String | true | 厂家名称
+view_count | int | true | 浏览人数
+sale_description | String | true | 主营描述
+service_time | time | true | 营业时间
+description | string | true | 店铺描述
+address | string | true | 地址
+phone_1 | string | true | 电话1
+image_url | string | true | 店铺图片
