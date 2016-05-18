@@ -3462,7 +3462,7 @@ msg | String | true |
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-sectionId | int | true | 展区id
+sectionId | int | true | 展区id 1:小车配件 2:农用 3:大车 4:加装 5:汽车用品 6:电子产品 7:空调 8:灯具 9:其它 
 page | int | true | 页数
 
 ### Response:
