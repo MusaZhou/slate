@@ -15,7 +15,7 @@ search: true
 
 # Introduction
   所有请求和返回参数都是JSON格式
-## 易配-API <font color="green">http://192.168.1.115/app</font>
+## 易配-API <font color="green">http://www.xianyipei.com/app</font>
 
 
 # Login-Registration
@@ -572,7 +572,9 @@ city_name | string | true | 城市名称
 ```json
 {
 "provinceId": 1,
-"locationId": 1
+"locationId": 1,
+"secondaryShopTypeId": 1,
+"sectionId": 1
 }
 ```
 
@@ -615,7 +617,8 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 locationId | int | true | 广告位置Id(1:首页1 2:首页2 3:展区 4:互动 5:单品 6:店铺二级类型)
-secondaryShopTypeId | int | false | 当广告位置是6时必填
+secondaryShopTypeId | int | false | (二级店铺类型id)当广告位置是6时必填
+sectionId | int | true | (展区id)当广告位置为3时必填
 
 ### Response:
 
@@ -3099,6 +3102,7 @@ image_url | string | true | 商品图片Url
 					"note": "fdsak",
 					"quantity": 10,
 					"amount": 10,
+					"created_time": "2016-05-05 12:00:00",
 					"orderItemList": [
 										{
 											"id": 1,
@@ -3128,6 +3132,7 @@ image_url | string | true | 商品图片Url
 					"note": "fdsak",
 					"quantity": 10,
 					"amount": 10,
+					"created_time": "2016-05-05 12:00:00",
 					"orderItemList": [
 										{
 											"id": 3,
@@ -3153,7 +3158,7 @@ image_url | string | true | 商品图片Url
 }
 ```
 
-<font size="4"><b> 给订单绑定配送地址</b></font>
+<font size="4"><b> 根据类型获得订单</b></font>
 
 ### Method:   POST
 
@@ -3186,6 +3191,7 @@ shop_address | string | true | 店铺地址
 note | string | false | 备注
 quantity | int | true | 店铺商品数量
 amount | double | true | 店铺商品金额
+created_time | datetime | true | 下单时间
 orderItemList | Array(OrderItem object) | true | 订单条目列表
 
 ### OrdreItem object
@@ -3489,7 +3495,8 @@ image_url | string | true | 店铺图片
 
 ```json
 {
-"exhibitionSpotId": 2
+"exhibitionSpotId": 2,
+"userId": 1
 }
 ```
 
@@ -3535,6 +3542,7 @@ image_url | string | true | 店铺图片
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 exhibitionSpotId | int | true | 展位id
+userId | int | true | 用户Id
 
 ### Response:
 
