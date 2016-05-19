@@ -123,7 +123,7 @@
 
 <p>所有请求和返回参数都是JSON格式</p>
 
-<h2 id="api-http-192-168-1-115-app">易配-API <font color="green">http://192.168.1.115/app</font></h2>
+<h2 id="api-http-www-xianyipei-com-app">易配-API <font color="green">http://www.xianyipei.com/app</font></h2>
 
 <h1 id="login-registration">Login-Registration</h1>
 
@@ -1227,7 +1227,9 @@
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"locationId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="nt">"locationId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"secondaryShopTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"sectionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -1290,7 +1292,13 @@
 <td>secondaryShopTypeId</td>
 <td>int</td>
 <td>false</td>
-<td>当广告位置是6时必填</td>
+<td>(二级店铺类型id)当广告位置是6时必填</td>
+</tr>
+<tr>
+<td>sectionId</td>
+<td>int</td>
+<td>true</td>
+<td>(展区id)当广告位置为3时必填</td>
 </tr>
 </tbody></table>
 
@@ -6450,6 +6458,7 @@
                     </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsak"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"orderItemList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                         </span><span class="p">{</span><span class="w">
                                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -6479,6 +6488,7 @@
                     </span><span class="nt">"note"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsak"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"quantity"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"created_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"orderItemList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                         </span><span class="p">{</span><span class="w">
                                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -6504,7 +6514,7 @@
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
-<p><font size="4"><b> 给订单绑定配送地址</b></font></p>
+<p><font size="4"><b> 根据类型获得订单</b></font></p>
 
 <h3 id="method-post">Method:   POST</h3>
 
@@ -6621,6 +6631,12 @@
 <td>double</td>
 <td>true</td>
 <td>店铺商品金额</td>
+</tr>
+<tr>
+<td>created_time</td>
+<td>datetime</td>
+<td>true</td>
+<td>下单时间</td>
 </tr>
 <tr>
 <td>orderItemList</td>
@@ -7237,7 +7253,8 @@
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"exhibitionSpotId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="nt">"exhibitionSpotId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -7293,6 +7310,12 @@
 <td>int</td>
 <td>true</td>
 <td>展位id</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户Id</td>
 </tr>
 </tbody></table>
 
