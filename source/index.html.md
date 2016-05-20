@@ -117,7 +117,8 @@ msg | String | true |
 {
 "status": "1",
 "msg": "Ok",
-"cartId": 2
+"cartId": 2,
+"userId": 1
 }
 ```
 
@@ -141,6 +142,7 @@ Name | Type | Default | Description
 status | int | true | 1.成功 3.手机号未注册 4.密码不正确
 msg | String | true | 
 cartId | string | true | 购物车id
+userId | int | true | 用户id
 
 ## <font color="blue">Forget Password</font>
 
@@ -1096,6 +1098,257 @@ Name | Type | Default | Description
 status | int | true | 1.成功
 msg | String | true | 
 
+## <font color="blue">Register Shop</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2,
+"userId": 2,
+"name": "fdsaf",
+"address": "fdsafsda",
+"type": 1,
+"vipChargeId": 2,
+"saleTypeList": [ 1, 2, 3],
+"saleDescription": "fdsaf",
+"phone_1": "fdsaf",
+"phone_2": "fdsf",
+"phone_3": "fdsf",
+"wechat": "fdsaf",
+"description": "fdsf",
+"bankName": "fdsafdsa",
+"bankAccount": "fdsafdas",
+"license": "fdsjfksdjfkj",
+"idFront": "fsdfdsafkj",
+"idBack": "fdsafjk"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 注册店铺</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/register_shop</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+userId | int | true | 用户Id
+name | string | true | 名称
+address | string | true | 地址
+type | int | true | 1.普通店铺 2.VIP店铺
+vipChargeId | int | false | VIP资费Id
+saleTypeList | Array(int) | true | 主营类型id列表
+saleDescription | string | true | 主营品牌
+phone_1 | string | true | 联系电话
+phone_2 | string | true | 订货电话
+phone_3 | string | true | 技术咨询
+wechat | string | true | 微信账号
+description | string | true | 店铺描述
+bankName | string | true | 收款账户银行
+bankAccount | string | true | 收款账户账号
+license | string | true | 营业执照图片(base64编码)
+idFront | string | true | 身份证正面照片(base64编码)
+idBack | string | true | 身份证反面照片(base64编码)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Get VIP Charges</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"chargeList": [
+					{
+						"id": 1,
+						"name": "1 month",
+						"price": 1000
+					},
+					{
+						"id": 2,
+						"name": "1 month",
+						"price": 1500
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得VIP资费列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_vip_charge_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+chargeList | Array(ExhibitionCharge Object) | true | VIP资费列表
+
+### VIPCharge Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | VIP资费Id
+name | String | true | 名称
+price | int | true | 价格
+
+## <font color="blue">Get Sale Types</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"saleTypeList": [
+					{
+						"id": 1,
+						"name": "1 month",
+						"secondaryShopTypeList": [
+													{ 
+														"id": 1,
+														"name": "fdsf"
+													},
+													{ 
+														"id": 2,
+														"name": "fdsf"
+													}
+												]
+					},
+					{
+						"id": 2,
+						"name": "3 month",
+						"secondaryShopTypeList": [
+													{ 
+														"id": 3,
+														"name": "fdsf"
+													},
+													{ 
+														"id": 4,
+														"name": "fdsf"
+													}
+												]
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得主营类型列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_sale_type_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+saleTypeList | Array(PrimaryShopType Object) | true | 一级类型列表
+
+### PrimaryShopType Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 一级类型Id
+name | String | true | 名称
+secondaryShopTypeList | Array(SecondaryShopType Object) | true | 二级类型列表
+
+### SecondaryShopType Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 二级类型Id
+name | String | true | 名称
+
+## <font color="blue">Update Recommended Products</font>
+
+> Request:
+
+```json
+{
+"shopId": 1,
+"recommendedProductIdList": [1, 2, 3]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新店主推荐商品</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_recommended_products</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 店铺Id
+recommendedProductIdList | Array(int) | true | 推荐产品Id列表
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Product
 
 ## <font color="blue">Get Owner Recommended Products</font>
@@ -1211,6 +1464,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
+														"is_recommended": 1,
 														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													},
 													{
@@ -1223,6 +1477,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
+														"is_recommended": 0,
 														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													}
 										]
@@ -1241,6 +1496,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
+														"is_recommended": 1,
 														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													},
 													{
@@ -1253,6 +1509,7 @@ image_url | string | false | 图片URL
 														"model": "a",
 														"car_model": "Benze",
 														"description": "abc",
+														"is_recommended": 1,
 														"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 													}
 										]
@@ -1303,6 +1560,7 @@ spec | string | false | 规格
 model | string | false | 型号
 car_model | string | false | 汽车型号
 description | string | false | 描述
+is_recommended | int | true | 1.推荐产品 0.未推荐
 image_url | string | false | 图片URL
 
 ## <font color="blue">Get Product Detail</font>
@@ -3429,7 +3687,8 @@ msg | String | true |
 ```json
 {
 "sectionId": 1,
-"page": 1
+"page": 1,
+"provinceId": 1
 }
 ```
 
@@ -3470,6 +3729,7 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 sectionId | int | true | 展区id 1:小车配件 2:农用 3:大车 4:加装 5:汽车用品 6:电子产品 7:空调 8:灯具 9:其它 
 page | int | true | 页数
+provinceId | int | true | 省份Id
 
 ### Response:
 
@@ -3517,6 +3777,8 @@ image_url | string | true | 店铺图片
 						"phone_3": "fajdskfs",
 						"service_time": "12:00-18:00",
 						"description": "fdsakf",
+						"wechat": "weafa",
+						"visit_count": 20,
 						"imageList": [
 										{
 											"id": 1,
@@ -3566,6 +3828,8 @@ phone_1 | string | true | 业务联系
 phone_2 | string | true | 订货电话
 phone_3 | string | true | 技术咨询
 service_time | string | true | 营业时间
+wechat | string | true | 微信号
+visit_count | int | true | 浏览人数
 imageList | string | true | 店铺图片列表
 
 ### Image Object
