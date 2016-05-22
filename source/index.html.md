@@ -299,7 +299,7 @@ service_time_start | time | true | 营业开始时间
 service_time_end | time | true | 营业结束时间
 description | string | true | 
 phone_1 | string | true |
-image_url | string | true | 图片URL
+image_url | string | false | 图片URL
 
 #### Product object
 
@@ -930,13 +930,15 @@ primary_shop_type_name | string | true | 一级类型名称
 							"id": 1,
 							"name": "标题1",
 							"description": "内容1",
-							"address": "小明"
+							"address": "小明",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						},
 						{
 							"id": 2,
 							"name": "标题1",
 							"description": "内容1",
-							"address": "小明"
+							"address": "小明",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						}
 			]
 }
@@ -971,6 +973,7 @@ id | int | true | 店铺id
 name | string | true | 店铺名称
 description | string | true | 描述
 address | string | true | 地址
+image_url | string | false | 图片URL
 
 ## <font color="blue">Get Shop Detail</font>
 
