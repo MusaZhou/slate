@@ -1046,6 +1046,7 @@ id | int | true | 店铺id
 name | string | true | 店铺名称
 service_time | time | 营业时间
 collect_count | int | 收藏人数
+visit_count | int | 浏览人数
 phone_1 | int | 电话1
 phone_2 | int | 电话2
 phone_3 | int | 电话3
@@ -3581,7 +3582,7 @@ image_url | string | true | 商品图片Url
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
-orderType | int | true | 1:待付款 2:待发货 3:待收货 4:待评价
+orderType | int | true | 1:待付款 2:待发货 3:待收货 4:待评价 99:全部
 page | int | true | 页数
 
 ### Response:
@@ -3760,7 +3761,8 @@ msg | String | true |
 					"deliveryInfo_id": 1,
 					"logistics_id": "fdsajsdafjsadkfj",
 					"logistics_company": "fsd",
-					"delivery_time": "2016-05-11 15:10:00"
+					"delivery_time": "2016-05-11 15:10:00",
+					"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 				}
 }
 ```
@@ -3793,6 +3795,7 @@ deliveryInfo_id | int | true | 物流条目id
 logistics_id | String | true | 物流编号
 logistics_company | string | true | 物流公司
 delivery_time | datetime | true | 发货时间
+image_url | string | true | 发货单据图片地址
 
 ## <font color="blue">Cancel Order</font>
 
@@ -3824,6 +3827,50 @@ delivery_time | datetime | true | 发货时间
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 orderId | int | true | 订单id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+
+## <font color="blue">Confirm Order Delivered</font>
+
+> Request:
+
+```json
+{
+"orderId": 1,
+"logisticsId": "fdsaf",
+"logisticsCompany": "fjdsalfj",
+"image": "fdsajfk"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 确认发货</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/confirm_order_delivered</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+orderId | int | true | 订单id
+logisticsId | string | true | 物流订单Id
+logisticsCompany | string | true | 物流公司
+image | string | true | 发货单据照片(base64编码)
 
 ### Response:
 
