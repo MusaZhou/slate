@@ -665,7 +665,7 @@
 <tr>
 <td>image_url</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>图片URL</td>
 </tr>
 </tbody></table>
@@ -1876,13 +1876,15 @@
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="w">
+                            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                         </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="w">
+                            </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                         </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1981,6 +1983,12 @@
 <td>string</td>
 <td>true</td>
 <td>地址</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>false</td>
+<td>图片URL</td>
 </tr>
 </tbody></table>
 
@@ -4118,6 +4126,329 @@
 <td>int</td>
 <td>true</td>
 <td>用户Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="add-product-type"><font color="blue">Add Product Type</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"shopId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"productTypeName"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 添加货架</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-add_product_type">Path:   <font color="green">/add_product_type</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>shopId</td>
+<td>int</td>
+<td>true</td>
+<td>店铺Id</td>
+</tr>
+<tr>
+<td>productTypeName</td>
+<td>int</td>
+<td>true</td>
+<td>货架名称</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="delete-product-type"><font color="blue">Delete Product Type</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"productTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 删除货架</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-delete_product_type">Path:   <font color="green">/delete_product_type</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productTypeId</td>
+<td>int</td>
+<td>true</td>
+<td>货架Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="add-product"><font color="blue">Add Product</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"productTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"secondaryShopTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"originalPrice"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+</span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mf">14.5</span><span class="p">,</span><span class="w">
+</span><span class="nt">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdfb"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"spec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfasf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"carModel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"itemNo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"customizedName1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"customizedName2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"customizedName3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"customizedValue1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"customizedValue2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"customizedValue3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"firstImage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafksdajf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"bannerImageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"fdsajkfjsdak"</span><span class="p">,</span><span class="w"> </span><span class="s2">"jfdsklafjdsk"</span><span class="p">],</span><span class="w">
+</span><span class="nt">"referenceImageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"fdsakfjsda"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fjdksafj"</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 添加产品</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-add_product">Path:   <font color="green">/add_product</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>productTypeId</td>
+<td>int</td>
+<td>true</td>
+<td>货架Id</td>
+</tr>
+<tr>
+<td>secondaryShopTypeId</td>
+<td>int</td>
+<td>true</td>
+<td>店铺二级类型id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>产品名称</td>
+</tr>
+<tr>
+<td>originalPrice</td>
+<td>double</td>
+<td>true</td>
+<td>原价</td>
+</tr>
+<tr>
+<td>price</td>
+<td>double</td>
+<td>true</td>
+<td>价格</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>string</td>
+<td>true</td>
+<td>品牌</td>
+</tr>
+<tr>
+<td>spec</td>
+<td>string</td>
+<td>true</td>
+<td>规格</td>
+</tr>
+<tr>
+<td>model</td>
+<td>string</td>
+<td>true</td>
+<td>型号</td>
+</tr>
+<tr>
+<td>carModel</td>
+<td>string</td>
+<td>true</td>
+<td>车型</td>
+</tr>
+<tr>
+<td>itemNo</td>
+<td>string</td>
+<td>true</td>
+<td>零件号</td>
+</tr>
+<tr>
+<td>customizedName1</td>
+<td>string</td>
+<td>true</td>
+<td>自定义类型名称1</td>
+</tr>
+<tr>
+<td>customizedName2</td>
+<td>string</td>
+<td>true</td>
+<td>自定义类型名称2</td>
+</tr>
+<tr>
+<td>customizedName3</td>
+<td>string</td>
+<td>true</td>
+<td>自定义类型名称3</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>true</td>
+<td>商品描述</td>
+</tr>
+<tr>
+<td>firstImage</td>
+<td>string</td>
+<td>true</td>
+<td>首页图片(base64编码)</td>
+</tr>
+<tr>
+<td>bannerImageList</td>
+<td>Array(string)</td>
+<td>true</td>
+<td>轮播图列表(base64编码)</td>
+</tr>
+<tr>
+<td>referenceImageList</td>
+<td>Array(string)</td>
+<td>true</td>
+<td>参考图列表(base64编码)</td>
 </tr>
 </tbody></table>
 
@@ -7808,7 +8139,7 @@
 </span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"exhibitionSpot"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                        </span><span class="nt">"shop_id"</span><span class="err">,</span><span class="w"> </span><span class="err">1,</span><span class="w">
+                        </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdf"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafasf"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafdsaf"</span><span class="p">,</span><span class="w">
@@ -8286,26 +8617,16 @@
 </span><span class="nt">"factoryList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsadf"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"view_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafsa"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdf"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"service_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12:00-15:00"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfksdafj"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3223211"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                         </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsadf"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"view_count"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafsa"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fasdf"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"service_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12:00-15:00"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfksdafj"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3223211"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                         </span><span class="p">}</span><span class="w">
                     </span><span class="p">]</span><span class="w">
@@ -8330,7 +8651,7 @@
 </thead><tbody>
 <tr>
 <td>searchContent</td>
-<td>int</td>
+<td>string</td>
 <td>true</td>
 <td>搜索内容</td>
 </tr>
@@ -8389,22 +8710,10 @@
 <td>展位Id</td>
 </tr>
 <tr>
-<td>shop_id</td>
-<td>int</td>
-<td>true</td>
-<td>店铺id</td>
-</tr>
-<tr>
 <td>name</td>
 <td>String</td>
 <td>true</td>
 <td>厂家名称</td>
-</tr>
-<tr>
-<td>view_count</td>
-<td>int</td>
-<td>true</td>
-<td>浏览人数</td>
 </tr>
 <tr>
 <td>sale_description</td>
@@ -8413,28 +8722,10 @@
 <td>主营描述</td>
 </tr>
 <tr>
-<td>service_time</td>
-<td>time</td>
-<td>true</td>
-<td>营业时间</td>
-</tr>
-<tr>
-<td>description</td>
-<td>string</td>
-<td>true</td>
-<td>店铺描述</td>
-</tr>
-<tr>
 <td>address</td>
 <td>string</td>
 <td>true</td>
 <td>地址</td>
-</tr>
-<tr>
-<td>phone_1</td>
-<td>string</td>
-<td>true</td>
-<td>电话1</td>
 </tr>
 <tr>
 <td>image_url</td>
