@@ -1999,6 +1999,157 @@ Name | Type | Default | Description
 status | int | true | 1.成功
 msg | String | true | 
 
+## <font color="blue">Add Product Type</font>
+
+> Request:
+
+```json
+{
+"shopId": 2,
+"productTypeName": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 添加货架</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/add_product_type</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+productTypeName | int | true | 货架名称
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Delete Product Type</font>
+
+> Request:
+
+```json
+{
+"productTypeId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除货架</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/delete_product_type</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+productTypeId | int | true | 货架Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Add Product</font>
+
+> Request:
+
+```json
+{
+"productTypeId": 2,
+"secondaryShopTypeId": 2,
+"name": "test",
+"originalPrice": 20,
+"price": 14.5,
+"brand": "asdfb",
+"spec": "dfasf",
+"model": "fdsaf",
+"carModel": "fdsaf",
+"itemNo": "fdsaf",
+"customizedName1": "fsdaf",
+"customizedName2": "fdsaf",
+"customizedName3": "fdsaf",
+"customizedValue1": "fdsaf",
+"customizedValue2": "fdsaf",
+"customizedValue3": "fdsaf",
+"description": "fdsf",
+"firstImage": "fdsafksdajf",
+"bannerImageList": [ "fdsajkfjsdak", "jfdsklafjdsk"],
+"referenceImageList": [ "fdsakfjsda", "fjdksafj"]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 添加产品</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/add_product</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+productTypeId | int | true | 货架Id
+secondaryShopTypeId | int | true | 店铺二级类型id
+name | string | true | 产品名称
+originalPrice | double | true | 原价
+price | double | true | 价格
+brand | string | true | 品牌
+spec | string | true | 规格
+model | string | true | 型号
+carModel | string | true | 车型
+itemNo | string | true | 零件号
+customizedName1 | string | true | 自定义类型名称1
+customizedName2 | string | true | 自定义类型名称2
+customizedName3 | string | true | 自定义类型名称3
+description | string | true | 商品描述
+firstImage | string | true | 首页图片(base64编码)
+bannerImageList | Array(string) | true | 轮播图列表(base64编码)
+referenceImageList | Array(string) | true | 参考图列表(base64编码)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Product Activity
 
 ## <font color="blue">Get Group Activities</font>
@@ -3771,7 +3922,7 @@ image_url | string | true | 店铺图片
 "msg": "Ok",
 "exhibitionSpot": {
 						"id": 1,
-						"shop_id", 1,
+						"shop_id": 1,
 						"name": "fsdf",
 						"address": "fdsafasf",
 						"sale_description": "fdsafdsaf",
@@ -3980,26 +4131,16 @@ msg | String | true |
 "factoryList": [
 						{
 							"id": 1,
-							"shop_id": 2,
 							"name": "fsadf",
-							"view_count": 23,
 							"sale_description": "fdsafsa",
 							"address": "fasdf",
-							"service_time": "12:00-15:00",
-							"description": "dfksdafj",
-							"phone_1": "3223211",
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						},
 						{
 							"id": 2,
-							"shop_id": 3,
 							"name": "fsadf",
-							"view_count": 23,
 							"sale_description": "fdsafsa",
 							"address": "fasdf",
-							"service_time": "12:00-15:00",
-							"description": "dfksdafj",
-							"phone_1": "3223211",
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						}
 					]
@@ -4016,7 +4157,7 @@ msg | String | true |
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-searchContent | int | true | 搜索内容
+searchContent | string | true | 搜索内容
 page | int | true | 页数
 
 ### Response:
@@ -4032,12 +4173,7 @@ factoryList | Array(Exhibition object) | true | 展位列表
 Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展位Id
-shop_id | int | true | 店铺id
 name | String | true | 厂家名称
-view_count | int | true | 浏览人数
 sale_description | String | true | 主营描述
-service_time | time | true | 营业时间
-description | string | true | 店铺描述
 address | string | true | 地址
-phone_1 | string | true | 电话1
 image_url | string | true | 店铺图片
