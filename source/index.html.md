@@ -1604,7 +1604,9 @@ image_url | string | false | 图片URL
 							"description": "abc",
 							"shop_id": 2,
 							"shop_address": "afasdf",
-							"shop_phone": "1212412",
+							"phone_1": "1212412",
+							"phone_2": "1212412",
+							"phone_3": "1212412",
 							"bannerImageList": [
 													{
 														"id": 1,
@@ -1690,7 +1692,9 @@ customized_value_3 | string | false | 自定义属性3值
 description | string | false | 描述
 shop_id | int | true | 店铺Id
 shop_address | string | true | 店铺地址
-shop_phone | string | true |  店铺电话
+phone_1 | string | true |  联系电话
+phone_1 | string | true |  订货电话
+phone_1 | string | true |  技术咨询
 inventory | int | true |  库存
 bannerImageList | Array(Image object) | false | 轮播图列表
 referenceImageList | Array(Image object) | false | 参考图列表
@@ -2999,7 +3003,7 @@ msg | String | true |
 
 ### Method:   POST
 
-### Path:   <font color="green">/update_delivery_addresses_by_user</font>
+### Path:   <font color="green">/get_delivery_addresses_by_user</font>
 
 ### Request
 
@@ -3032,7 +3036,7 @@ is_default | int | true | 是否为默认收货地址 1:是 0:否
 ```json
 {
 "userId": 1,
-"contact_person": "asdf",
+"contactPerson": "asdf",
 "phone": "21323",
 "address": "fadsfas"
 }
@@ -3058,7 +3062,7 @@ is_default | int | true | 是否为默认收货地址 1:是 0:否
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
-contact_person | String | true | 联系人
+contactPerson | String | true | 联系人
 phone | string | true | 电话
 address | string | true | 地址
 
@@ -4224,3 +4228,101 @@ name | String | true | 厂家名称
 sale_description | String | true | 主营描述
 address | string | true | 地址
 image_url | string | true | 店铺图片
+
+# Buyer Info
+
+## <font color="blue">Get Attendance Info</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"shopId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"totalCount": 30,
+"attendanceList": [ "2016-05-20", "2016-05-21", "2016-05-23"],
+"consecutiveCount": 10,
+"gift_1": "fdsf",
+"gift_2": "fdfs"
+}
+```
+
+<font size="4"><b> 获得签到信息</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_buyer_attendance</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+shopId | int | true | 店铺Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+totalCount | int | true | 签到总数
+attendanceList | Array(String) | true | 本月签到日期列表(Y-m-d)
+consecutiveCount | int | true | 连续签到次数
+gift_1 | string | false | 15天礼物名称
+gift_2 | string | false | 30天礼物名称
+
+## <font color="blue">Set Attendance</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"shopId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"reward": 1,
+"gift": "dfsaf",
+"consecutiveCount": 10,
+}
+```
+
+<font size="4"><b> 买家签到</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/set_buyer_attendance</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+shopId | int | true | 店铺Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+reward | int | true | 获奖状态(0:未获奖 1:获得15天奖 2:获得30天奖)
+consecutiveCount | int | true | 连续签到次数
+gift | string | true | 奖品名称
