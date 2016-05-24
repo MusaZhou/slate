@@ -4326,3 +4326,184 @@ msg | String | true |
 reward | int | true | 获奖状态(0:未获奖 1:获得15天奖 2:获得30天奖)
 consecutiveCount | int | true | 连续签到次数
 gift | string | true | 奖品名称
+
+# Product Topic
+
+## <font color="blue">Get Need Product List</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"needProductList": [
+						{
+							"id": 1,
+							"name": "fadsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"brand": "fdsf",
+							"model": "fdsaf",
+							"engineModel": "fdsafas",
+							"status": 1,
+							"visitCount": 12
+						},
+						{
+							"id": 2,
+							"name": "fadsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"brand": "fdsf",
+							"model": "fdsaf",
+							"engineModel": "fdsafas",
+							"status": 1,
+							"visitCount": 12
+						}
+					]
+}
+```
+
+<font size="4"><b> 获得急件求购列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_need_product_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+needProductList | Array(NeedProduct Object) | true | 急件求购列表
+
+### NeedProduct Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 帖子Id;
+name | string | true | 商品名称
+publishTime | datetime | true | 发布时间
+brand | string | true | 汽车品牌
+model | string | true | 具体车型
+engineModel | string | true | 发动机型号
+status | int | true | 1:求购中 2.已下架
+visitCount | int | true | 浏览次数
+
+## <font color="blue">Get Transfer Product List</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"transferProductList": [
+						{
+							"id": 1,
+							"userId": 2,
+							"userName": "fjdskf",
+							"userImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publishTime": "2016-05-05 12:00:00",
+							"title": "fdsf",
+							"description": "fdsaf",
+							"status": 1,
+							"visitCount": 12,
+							"imageList": [
+											{
+												"id": 2,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 3,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+						{
+							"id": 2,
+							"userId": 2,
+							"userName": "fjdskf",
+							"userImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publishTime": "2016-05-05 12:00:00",
+							"title": "fdsf",
+							"description": "fdsaf",
+							"status": 1,
+							"visitCount": 12,
+							"imageList": [
+											{
+												"id": 4,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 5,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+					]
+}
+```
+
+<font size="4"><b> 获得急件转让列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_transfer_product_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+transferProductList | Array(TransferProduct Object) | true | 急件转让列表
+
+### NeedProduct Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 帖子Id;
+userId | int | true | 用户Id
+userName | string | true | 用户姓名
+userImageUrl | string | true | 用户头像url
+publishTime | datetime | true | 发布时间
+title | string | true | 标题
+description | string | true | 描述
+status | int | true | 1:转让中 2.已下架
+visitCount | int | true | 浏览次数
+imageList | Array(Image object) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
