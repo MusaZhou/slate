@@ -2129,6 +2129,12 @@
 <td></td>
 </tr>
 <tr>
+<td>visit_count</td>
+<td>int</td>
+<td>浏览人数</td>
+<td></td>
+</tr>
+<tr>
 <td>phone_1</td>
 <td>int</td>
 <td>电话1</td>
@@ -3253,7 +3259,9 @@
                             </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"shop_address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"afasdf"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"shop_phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1212412"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1212412"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1212412"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"phone_3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1212412"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"bannerImageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                                     </span><span class="p">{</span><span class="w">
                                                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3475,10 +3483,22 @@
 <td>店铺地址</td>
 </tr>
 <tr>
-<td>shop_phone</td>
+<td>phone_1</td>
 <td>string</td>
 <td>true</td>
-<td>店铺电话</td>
+<td>联系电话</td>
+</tr>
+<tr>
+<td>phone_1</td>
+<td>string</td>
+<td>true</td>
+<td>订货电话</td>
+</tr>
+<tr>
+<td>phone_1</td>
+<td>string</td>
+<td>true</td>
+<td>技术咨询</td>
 </tr>
 <tr>
 <td>inventory</td>
@@ -6310,7 +6330,7 @@
 
 <h3 id="method-post">Method:   POST</h3>
 
-<h3 id="path-update_delivery_addresses_by_user">Path:   <font color="green">/update_delivery_addresses_by_user</font></h3>
+<h3 id="path-get_delivery_addresses_by_user">Path:   <font color="green">/get_delivery_addresses_by_user</font></h3>
 
 <h3 id="request">Request</h3>
 
@@ -6409,7 +6429,7 @@
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"contact_person"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"asdf"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"21323"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadsfas"</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -6447,7 +6467,7 @@
 <td>用户id</td>
 </tr>
 <tr>
-<td>contact_person</td>
+<td>contactPerson</td>
 <td>String</td>
 <td>true</td>
 <td>联系人</td>
@@ -7406,7 +7426,7 @@
 <td>orderType</td>
 <td>int</td>
 <td>true</td>
-<td>1:待付款 2:待发货 3:待收货 4:待评价</td>
+<td>1:待付款 2:待发货 3:待收货 4:待评价 99:全部</td>
 </tr>
 <tr>
 <td>page</td>
@@ -7811,7 +7831,8 @@
                     </span><span class="nt">"deliveryInfo_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"logistics_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsajsdafjsadkfj"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"logistics_company"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsd"</span><span class="p">,</span><span class="w">
-                    </span><span class="nt">"delivery_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-11 15:10:00"</span><span class="w">
+                    </span><span class="nt">"delivery_time"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-11 15:10:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -7904,6 +7925,12 @@
 <td>true</td>
 <td>发货时间</td>
 </tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>true</td>
+<td>发货单据图片地址</td>
+</tr>
 </tbody></table>
 
 <h2 id="cancel-order"><font color="blue">Cancel Order</font></h2>
@@ -7946,6 +7973,94 @@
 <td>int</td>
 <td>true</td>
 <td>订单id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="confirm-order-delivered"><font color="blue">Confirm Order Delivered</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"orderId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"logisticsId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"logisticsCompany"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fjdsalfj"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsajfk"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 确认发货</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-confirm_order_delivered">Path:   <font color="green">/confirm_order_delivered</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>orderId</td>
+<td>int</td>
+<td>true</td>
+<td>订单id</td>
+</tr>
+<tr>
+<td>logisticsId</td>
+<td>string</td>
+<td>true</td>
+<td>物流订单Id</td>
+</tr>
+<tr>
+<td>logisticsCompany</td>
+<td>string</td>
+<td>true</td>
+<td>物流公司</td>
+</tr>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>true</td>
+<td>发货单据照片(base64编码)</td>
 </tr>
 </tbody></table>
 
@@ -8732,6 +8847,212 @@
 <td>string</td>
 <td>true</td>
 <td>店铺图片</td>
+</tr>
+</tbody></table>
+
+<h1 id="buyer-info">Buyer Info</h1>
+
+<h2 id="get-attendance-info"><font color="blue">Get Attendance Info</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"shopId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"totalCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">30</span><span class="p">,</span><span class="w">
+</span><span class="nt">"attendanceList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="s2">"2016-05-20"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2016-05-21"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2016-05-23"</span><span class="p">],</span><span class="w">
+</span><span class="nt">"consecutiveCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+</span><span class="nt">"gift_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"gift_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdfs"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得签到信息</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_buyer_attendance">Path:   <font color="green">/get_buyer_attendance</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>买家Id</td>
+</tr>
+<tr>
+<td>shopId</td>
+<td>int</td>
+<td>true</td>
+<td>店铺Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>totalCount</td>
+<td>int</td>
+<td>true</td>
+<td>签到总数</td>
+</tr>
+<tr>
+<td>attendanceList</td>
+<td>Array(String)</td>
+<td>true</td>
+<td>本月签到日期列表(Y-m-d)</td>
+</tr>
+<tr>
+<td>consecutiveCount</td>
+<td>int</td>
+<td>true</td>
+<td>连续签到次数</td>
+</tr>
+<tr>
+<td>gift_1</td>
+<td>string</td>
+<td>false</td>
+<td>15天礼物名称</td>
+</tr>
+<tr>
+<td>gift_2</td>
+<td>string</td>
+<td>false</td>
+<td>30天礼物名称</td>
+</tr>
+</tbody></table>
+
+<h2 id="set-attendance"><font color="blue">Set Attendance</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"shopId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"reward"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"gift"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"consecutiveCount"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 买家签到</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-set_buyer_attendance">Path:   <font color="green">/set_buyer_attendance</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>买家Id</td>
+</tr>
+<tr>
+<td>shopId</td>
+<td>int</td>
+<td>true</td>
+<td>店铺Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>reward</td>
+<td>int</td>
+<td>true</td>
+<td>获奖状态(0:未获奖 1:获得15天奖 2:获得30天奖)</td>
+</tr>
+<tr>
+<td>consecutiveCount</td>
+<td>int</td>
+<td>true</td>
+<td>连续签到次数</td>
+</tr>
+<tr>
+<td>gift</td>
+<td>string</td>
+<td>true</td>
+<td>奖品名称</td>
 </tr>
 </tbody></table>
 
