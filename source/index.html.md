@@ -4348,20 +4348,20 @@ gift | string | true | 奖品名称
 "needProductList": [
 						{
 							"id": 1,
-							"name": "fadsf",
+							"productName": "fadsf",
 							"publishTime": "2016-05-05 12:00:00",
-							"brand": "fdsf",
-							"model": "fdsaf",
+							"carBrand": "fdsf",
+							"carModel": "fdsaf",
 							"engineModel": "fdsafas",
 							"status": 1,
 							"visitCount": 12
 						},
 						{
 							"id": 2,
-							"name": "fadsf",
+							"productName": "fadsf",
 							"publishTime": "2016-05-05 12:00:00",
-							"brand": "fdsf",
-							"model": "fdsaf",
+							"carBrand": "fdsf",
+							"carModel": "fdsaf",
 							"engineModel": "fdsafas",
 							"status": 1,
 							"visitCount": 12
@@ -4394,11 +4394,11 @@ needProductList | Array(NeedProduct Object) | true | 急件求购列表
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-id | int | true | 帖子Id;
-name | string | true | 商品名称
+id | int | true | 急件求购Id;
+productName | string | true | 商品名称
 publishTime | datetime | true | 发布时间
-brand | string | true | 汽车品牌
-model | string | true | 具体车型
+carBrand | string | true | 汽车品牌
+carModel | string | true | 具体车型
 engineModel | string | true | 发动机型号
 status | int | true | 1:求购中 2.已下架
 visitCount | int | true | 浏览次数
@@ -4422,9 +4422,9 @@ visitCount | int | true | 浏览次数
 "transferProductList": [
 						{
 							"id": 1,
-							"userId": 2,
-							"userName": "fjdskf",
-							"userImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publisherId": 2,
+							"publisherName": "fjdskf",
+							"publisherImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"publishTime": "2016-05-05 12:00:00",
 							"title": "fdsf",
 							"description": "fdsaf",
@@ -4443,9 +4443,9 @@ visitCount | int | true | 浏览次数
 						},
 						{
 							"id": 2,
-							"userId": 2,
-							"userName": "fjdskf",
-							"userImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publisherId": 2,
+							"publisherName": "fjdskf",
+							"publisherImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"publishTime": "2016-05-05 12:00:00",
 							"title": "fdsf",
 							"description": "fdsaf",
@@ -4490,10 +4490,10 @@ transferProductList | Array(TransferProduct Object) | true | 急件转让列表
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-id | int | true | 帖子Id;
-userId | int | true | 用户Id
-userName | string | true | 用户姓名
-userImageUrl | string | true | 用户头像url
+id | int | true | 急件转让Id;
+publisherId | int | true | 发布者Id
+publisherName | string | true | 发布者姓名
+publisherImageUrl | string | true | 发布者头像url
 publishTime | datetime | true | 发布时间
 title | string | true | 标题
 description | string | true | 描述
@@ -4507,3 +4507,356 @@ Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
+
+## <font color="blue">Get Need Product Detail</font>
+
+> Request:
+
+```json
+{
+"needProductId": 2,
+"userId": 3
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"needProduct": {
+					"id": 1,
+					"publisherId": 8,
+					"publisherName": "fedfa",
+					"publisherImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+					"productName": "fadsf",
+					"publishTime": "2016-05-05 12:00:00",
+					"carBrand": "fdsf",
+					"carModel": "fdsaf",
+					"engineModel": "fdsafas",
+					"description": "fdsaklfj",
+					"status": 1,
+					"visitCount": 12,
+					"contactPerson": "fdsafa",
+					"phone": "23242234",
+					"address": "fdsajklfdj",
+					"wechat": "fdskfj",
+					"imageList": [
+										{
+											"id": 4,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 5,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+								]
+				},
+}
+```
+
+<font size="4"><b> 获得急件求购详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_need_product_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+needProductId | int | true | 急件求购id
+useId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+needProduct | NeedProduct Object | true | 急件求购详情
+
+### NeedProduct Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 帖子Id;
+publisherId | int | true | 发帖人id
+publisherName | string | true | 发帖人名字
+publisherImage | string | false | 发帖人头像url地址
+productName | string | true | 商品名称
+publishTime | datetime | true | 发布时间
+carBrand | string | true | 汽车品牌
+carModel | string | true | 具体车型
+engineModel | string | true | 发动机型号
+description | string | true | 详情描述
+status | int | true | 1:求购中 2.已下架
+visitCount | int | true | 浏览次数
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
+wechat | string | true | 微信
+imageList | Array(Image) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
+## <font color="blue">Get Transfer Product Detail</font>
+
+> Request:
+
+```json
+{
+"transferProductId": 2,
+"userId": 3
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"transferProduct": {
+					"id": 1,
+					"publisherId": 8,
+					"publisherName": "fedfa",
+					"publisherImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+					"title": "fadsf",
+					"publishTime": "2016-05-05 12:00:00",
+					"price": 15,
+					"contactCount": 12,
+					"description": "fdsaklfj",
+					"status": 1,
+					"visitCount": 12,
+					"contactPerson": "fdsafa",
+					"phone": "23242234",
+					"imageList": [
+										{
+											"id": 4,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 5,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+								]
+				},
+}
+```
+
+<font size="4"><b> 获得急件转让详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_transfer_product_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+transferProductId | int | true | 急件转让id
+useId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+transferProduct | TransferProduct Object | true | 急件求购详情
+
+### TransferProduct Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 帖子Id;
+publisherId | int | true | 发帖人id
+publisherName | string | true | 发帖人名字
+publisherImage | string | false | 发帖人头像url地址
+title | string | true | 标题
+publishTime | datetime | true | 发布时间
+price | double | true | 转让价格
+contactCount | int | true | 联系次数
+description | string | true | 详情描述
+status | int | true | 1:求购中 2.已下架
+visitCount | int | true | 浏览次数
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+imageList | Array(Image) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
+## <font color="blue">Contact Transfer Product</font>
+
+> Request:
+
+```json
+{
+"transferProductId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"contactCount": 4 
+}
+```
+
+<font size="4"><b> 急件转让更新联系次数</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/contact_transfer_product</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+transferProductId | int | true | 急件转让id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+contactCount | int | true | 联系次数
+
+## <font color="blue">Publish Need Product</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2,
+"userId": 3,
+"productName": "fadsf",
+"carBrand": "fdsf",
+"carModel": "fdsaf",
+"engineModel": "fdsafas",
+"description": "fdsaklfj",
+"contactPerson": "fdsafa",
+"phone": "23242234",
+"address": "fdsajklfdj",
+"wechat": "fdskfj",
+"imageList": [ 
+				"fsdafdsjfkasjfkasljf",
+				"fdsakfjasdkfjkasdfjkas"
+			]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"needProductId": 3
+}
+```
+
+<font size="4"><b> 发布急件求购</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/publish_need_product</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份id
+useId | int | true | 用户Id
+productName | string | true | 商品名称
+carBrand | string | true | 汽车品牌
+carModel | string | true | 具体车型
+engineModel | string | true | 发动机型号
+description | string | true | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
+wechat | string | true | 微信
+imageList | Array(Image) | true | 图片列表(base64编码)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+needProductId | int | true | 急件求购Id
+
+## <font color="blue">Publish Transfer Product</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2,
+"userId": 3,
+"title": "fadsf",
+"price": 15,
+"description": "fdsaklfj",
+"contactPerson": "fdsafa",
+"phone": "23242234",
+"imageList": [ 
+				"fsdafdsjfkasjfkasljf",
+				"fdsakfjasdkfjkasdfjkas"
+			]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"transferProductId": 4 
+}
+```
+
+<font size="4"><b> 发布急件转让</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/publish_transfer_product</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+useId | int | true | 用户Id
+title | string | true | 标题
+price | double | true | 转让价格
+contactCount | int | true | 联系次数
+description | string | true | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+imageList | Array(Image) | true | 图片列表
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+transferProductId | int | true | 急件求购Id
