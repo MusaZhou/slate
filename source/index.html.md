@@ -118,7 +118,8 @@ msg | String | true |
 "status": "1",
 "msg": "Ok",
 "cartId": 2,
-"userId": 1
+"userId": 1,
+"user_status": 2
 }
 ```
 
@@ -143,6 +144,7 @@ status | int | true | 1.成功 3.手机号未注册 4.密码不正确
 msg | String | true | 
 cartId | string | true | 购物车id
 userId | int | true | 用户id
+user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商
 
 ## <font color="blue">Forget Password</font>
 
@@ -680,6 +682,265 @@ Name | Type | Default | Description
 status | int | true | 1.成功
 msg | String | true | 
 user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商
+
+## <font color="blue">Get Comments By Type</font>
+
+> Request:
+
+```json
+{
+"topicType": 1,
+"topicId": 1,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"commentList": [
+						{
+							"id": 1,
+							"content": "内容1",
+							"createdTime": "2016-05-05 17:33:00",
+							"commentFromId": 1,
+							"commentFromName": "fdsa",
+							"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"nestedCommentList": [
+													{
+														"id": 1,
+														"content": "内容1",
+														"createdTime": "2016-05-05 17:33:00",
+														"commentFromId": 1,
+														"commentFromName": "fdsa",
+														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToId": 1,
+														"commentToName": "fdsa",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+													},
+													{
+														"id": 2,
+														"content": "内容1",
+														"createdTime": "2016-05-05 17:33:00",
+														"commentFromId": 1,
+														"commentFromName": "fdsa",
+														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToId": 1,
+														"commentToName": "fdsa",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+													}
+												]
+							"imageList": [
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 2,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+						{
+							"id": 2,
+							"content": "内容1",
+							"createdTime": "2016-05-05 17:33:00",
+							"commentFromId": 1,
+							"commentFromName": "fdsa",
+							"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"nestedCommentList": [
+													{
+														"id": 1,
+														"content": "内容1",
+														"createdTime": "2016-05-05 17:33:00",
+														"commentFromId": 1,
+														"commentFromName": "fdsa",
+														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToId": 1,
+														"commentToName": "fdsa",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+													},
+													{
+														"id": 2,
+														"content": "内容1",
+														"createdTime": "2016-05-05 17:33:00",
+														"commentFromId": 1,
+														"commentFromName": "fdsa",
+														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToId": 1,
+														"commentToName": "fdsa",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+													}
+												]
+							"imageList": [
+											{
+												"id": 3,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 4,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+			]
+}
+```
+
+<font size="4"><b> 根据类型获得评论</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_comments</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+topicType | int | true | 评论类型 1.产品评论 2.急件求购评论 3.急件转让评论 4.互动评论
+topicId | int | true | 话题id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+commentList | Array(Comment object) | true | 评论列表
+
+### Comment Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 评论id
+content | string | true | 评论内容
+created_time | datetime | true | 评论时间
+commentFromId | int | true | 评论人Id
+commentFromName | string | true | 评论人名称
+commentFromImage | string | true | 评论人图片url
+nestedCommentList | Array(NestedComment Object) | true | 子评论列表
+imageList | Array(Image object) | true | 图片列表
+
+### Nested Comment Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 评论id
+content | string | true | 评论内容
+created_time | datetime | true | 评论时间
+commentFromId | int | true | 评论人Id
+commentFromName | string | true | 评论人名称
+commentFromImage | string | true | 评论人图片url
+commentToId | int | true | 评论对象Id
+commentToName | string | true | 评论对象名称
+commentToImage | string | true | 评论对象图片url
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
+## <font color="blue">Add Comment</font>
+
+> Request:
+
+```json
+{
+"topicType": 1,
+"topicId": 1,
+"userId": 1,
+"content": "fdsf",
+"commentToId": 2,
+"innerCommentId": 3,
+"imageList": [ "dfjdkasfjksadfj", "fkdsjfksdjf"]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"commentId": 2 
+}
+```
+
+<font size="4"><b> 添加评论</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/add_comment</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+topicType | int | true | 评论类型 1.订单评论 2.急件求购评论 3.急件转让评论 4.互动评论
+topicId | int | true | 话题id
+userId | int | true | 评论人Id
+content | string | true | 内容1
+commentToId | int | false | 评论对象Id
+innerCommentId | int | false | 父评论Id
+imageList | Array(String) | false | 图片列表(base64编码)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+commentId | int | true | 评论Id
+
+## <font color="blue">Add Like</font>
+
+> Request:
+
+```json
+{
+"topicType": 1,
+"topicId": 1,
+"userId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"likeCount": 4 
+}
+```
+
+<font size="4"><b> 点赞</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/add_like</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+topicType | int | true | 评论类型 1.订单评论 2.急件求购评论 3.急件转让评论 4.互动评论
+topicId | int | true | 话题id
+userId | int | true | 评论人Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功 3.用户已对该话题点赞
+msg | String | true | 
+likeCount | int | true | 点赞次数
 
 # Shop
 
@@ -4335,7 +4596,8 @@ gift | string | true | 奖品名称
 
 ```json
 {
-"provinceId": 2
+"provinceId": 2,
+"page": 1
 }
 ```
 
@@ -4381,6 +4643,7 @@ gift | string | true | 奖品名称
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
+page | int | true | 页数
 
 ### Response:
 
@@ -4409,7 +4672,8 @@ visitCount | int | true | 浏览次数
 
 ```json
 {
-"provinceId": 2
+"provinceId": 2,
+"page": 1
 }
 ```
 
@@ -4477,6 +4741,7 @@ visitCount | int | true | 浏览次数
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
+page | int | true | 页数
 
 ### Response:
 
