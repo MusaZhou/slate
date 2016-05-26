@@ -1566,7 +1566,7 @@ price | int | true | 价格
 "saleTypeList": [
 					{
 						"id": 1,
-						"name": "1 month",
+						"name": "fsdafasdf",
 						"secondaryShopTypeList": [
 													{ 
 														"id": 1,
@@ -1580,7 +1580,7 @@ price | int | true | 价格
 					},
 					{
 						"id": 2,
-						"name": "3 month",
+						"name": "dfsdsaf",
 						"secondaryShopTypeList": [
 													{ 
 														"id": 3,
@@ -1620,7 +1620,7 @@ saleTypeList | Array(PrimaryShopType Object) | true | 一级类型列表
 Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 一级类型Id
-name | String | true | 名称
+name | String | true | 一级类型名称
 secondaryShopTypeList | Array(SecondaryShopType Object) | true | 二级类型列表
 
 ### SecondaryShopType Object
@@ -1628,7 +1628,7 @@ secondaryShopTypeList | Array(SecondaryShopType Object) | true | 二级类型列
 Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 二级类型Id
-name | String | true | 名称
+name | String | true | 二级类型名称
 
 ## <font color="blue">Update Recommended Products</font>
 
@@ -1669,6 +1669,62 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Get Secondary Shop Type List</font>
+
+> Request:
+
+```json
+{
+"shopId": 3
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"secondaryShopTypeList": [
+							{
+								"id": 1,
+								"name": "fsdafasdf"
+							},
+							{
+								"id": 2,
+								"name": "dfsdsaf"
+							}
+						]
+}
+```
+
+<font size="4"><b> 获得店铺二级类型列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_secondary_shop_type_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+secondaryShopTypeList | Array(SecondaryShopType Object) | true | 二级类型列表
+
+### SecondaryShopType Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 二级类型Id
+name | String | true | 二级类型名称
 
 # Product
 
