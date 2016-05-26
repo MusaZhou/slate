@@ -818,11 +818,11 @@ Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 content | string | true | 评论内容
-created_time | datetime | true | 评论时间
+createdTime | datetime | true | 评论时间
 commentFromId | int | true | 评论人Id
 commentFromName | string | true | 评论人名称
 commentFromImage | string | true | 评论人图片url
-nestedCommentList | Array(NestedComment Object) | true | 子评论列表
+nestedCommentList | Array(NestedComment Object) | false | 子评论列表(针对该评论的子评论)
 imageList | Array(Image object) | true | 图片列表
 
 ### Nested Comment Object
@@ -831,7 +831,7 @@ Name | Type | Default | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 content | string | true | 评论内容
-created_time | datetime | true | 评论时间
+createdTime | datetime | true | 评论时间
 commentFromId | int | true | 评论人Id
 commentFromName | string | true | 评论人名称
 commentFromImage | string | true | 评论人图片url
@@ -886,8 +886,8 @@ topicType | int | true | 评论类型 1.订单评论 2.急件求购评论 3.急�
 topicId | int | true | 话题id
 userId | int | true | 评论人Id
 content | string | true | 内容1
-commentToId | int | false | 评论对象Id
-innerCommentId | int | false | 父评论Id
+commentToId | int | false | 评论对象Id, 若是给主题回复无需此参数, 若是给评论回复需此参数
+innerCommentId | int | false | 父评论Id, 若是给主题回复无需此参数, 若是给评论回复需此参数
 imageList | Array(String) | false | 图片列表(base64编码)
 
 ### Response:
@@ -941,6 +941,62 @@ Name | Type | Default | Description
 status | int | true | 1.成功 3.用户已对该话题点赞
 msg | String | true | 
 likeCount | int | true | 点赞次数
+
+## <font color="blue">Get City List By Province</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"cityList": [
+						{
+							"id": 1,
+							"name": "fadsf"
+						},
+						{
+							"id": 2,
+							"name": "fadsf"
+						}
+					]
+}
+```
+
+<font size="4"><b> 根据省份获得城市列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_city_list_by_province</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+cityList | Array(City Object) | true | 职位类型
+
+### City Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 城市Id;
+name | string | true | 城市名称
 
 # Shop
 
@@ -2506,7 +2562,7 @@ end_time | datetime | true | 结束时间
 
 ```json
 {
-"productId": 1,
+"activityId": 1,
 "userId": 2
 }
 ```
@@ -2598,7 +2654,7 @@ end_time | datetime | true | 结束时间
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-productId | int | true | 产品Id
+activityId | int | true | 活动Id
 userId | int | true | 用户Id
 
 ### Response:
@@ -2688,7 +2744,9 @@ imageList | Array(Image object) | true | 图片列表
 							"shop_name": "fajsdkf",
 							"shop_address": "dfasfdasf",
 							"status": 2,
-							"time_remaining": "1天 12:00:12"
+							"time_remaining": "1天 12:00:12",
+							"start_time": "2016-05-05 12:00:00",
+							"end_time": "2016-05-05 12:00:00"
 						},
 						{
 							"id": 2,
@@ -2699,7 +2757,9 @@ imageList | Array(Image object) | true | 图片列表
 							"shop_name": "fajsdkf",
 							"shop_address": "dfasfdasf",
 							"status": 2,
-							"time_remaining": "1天 12:00:12"
+							"time_remaining": "1天 12:00:12",
+							"start_time": "2016-05-05 12:00:00",
+							"end_time": "2016-05-05 12:00:00"
 						}
 			]
 }
@@ -2738,6 +2798,8 @@ promotion_price | double | true | 促销价
 shop_name | string | true | 商店名称
 shop_address | string | true | 商店地址
 time_remaining | time | true | 剩余时间
+start_time | datetime | true | 活动开始时间
+end_time | datetime | true | 活动结束时间
 
 ## <font color="blue">Get Promotion Activity Detail</font>
 
@@ -2745,7 +2807,7 @@ time_remaining | time | true | 剩余时间
 
 ```json
 {
-"productId": 1,
+"activityId": 1,
 "userId": 2
 }
 ```
@@ -2835,7 +2897,7 @@ time_remaining | time | true | 剩余时间
 
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
-productId | int | true | 产品Id
+activityId | int | true | 活动Id
 userId | int | true | 用户Id
 
 ### Response:
@@ -4561,7 +4623,7 @@ gift_2 | string | false | 30天礼物名称
 "msg": "Ok",
 "reward": 1,
 "gift": "dfsaf",
-"consecutiveCount": 10,
+"consecutiveCount": 10
 }
 ```
 
@@ -5125,3 +5187,369 @@ Name | Type | Default | Description
 status | int | true | 1.成功
 msg | String | true | 
 transferProductId | int | true | 急件求购Id
+
+# Job
+
+## <font color="blue">Ge Job Type List</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobTypeList": [
+						{
+							"id": 1,
+							"name": "fadsf"
+						},
+						{
+							"id": 2,
+							"name": "fadsf"
+						}
+					]
+}
+```
+
+<font size="4"><b> 获得职位类型</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_job_type_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobTypeList | Array(JobType Object) | true | 职位类型
+
+### JobType Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 职位类型Id;
+name | string | true | 职位类型名称
+
+## <font color="blue">Get Job Recruit List</font>
+
+> Request:
+
+```json
+{
+"filterType": 1,
+"filterValue": "fdsa",
+"provinceId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobRecruitList": [
+						{
+							"id": 1,
+							"jobTypeName": "fadsf",
+							"companyName": "dsfsaf",
+							"companyAddress": "fdsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+						},
+						{
+							"id": 2,
+							"jobTypeName": "fadsf",
+							"companyName": "dsfsaf",
+							"companyAddress": "fdsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+						},
+					]
+}
+```
+
+<font size="4"><b> 根据条件获得招聘列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_job_recruit_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+filterType | int | false | 过滤条件类型 1.区域 2.职位 3.薪资 4.工龄 不填为不过滤
+filterValue | string | false | 根据条件类型添置 条件为区域，传cityId, 条件为职位，传jobTypeId, 其他的传所选的值
+provinceId | int | true | 省份Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobRecruitList | Array(JobRecruit Object) | true | 招聘列表
+
+### JobRecruit Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 招聘Id;
+jobName | string | true | 职位名称
+companyName | datetime | true | 公司名称
+companyAddress | string | true | 公司地址
+publishTime | string | true | 发布时间
+salary | string | true | 薪资
+image | int | true | 公司logo
+
+## <font color="blue">Get Job Recruit Detail</font>
+
+> Request:
+
+```json
+{
+"jobRecruitId": 1,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobRecruit": {
+					"id": 4,
+					"jobTypeName": "fadsf",
+					"companyName": "dsfsaf",
+					"companyAddress": "fdsf",
+					"publishTime": "2016-05-05 12:00:00",
+					"salary": "fdsafas",
+					"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+					"cityName": "fds",
+					"education": "education",
+					"gender": "fd",
+					"number": "fd",
+					"experience": "dafd",
+					"age": "fds",
+					"companyProperty": "fds",
+					"companyScale": "fd",
+					"companyWelfare": "fd",
+					"phone": "fdsf",
+					"description": "fsd",
+					"contactPerson": "fed"
+				}
+}
+```
+
+<font size="4"><b> 获得招聘详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_job_recruit_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+jobRecruitId | int | true | 招聘Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobRecruit | JobRecruit Object | true | 招聘详情
+
+### JobRecruit Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 招聘Id;
+jobTypeName | string | false | 职位名称
+companyName | datetime | false | 公司名称
+companyAddress | string | false | 公司地址
+publishTime | string | false | 发布时间
+salary | string | false | 薪资
+image | int | false | 公司logo
+cityName | string | false | 城市名称
+education | string | false | 学历
+gender | string | true | 性别
+number | string | false | 招聘人数
+publishTime | datetime | false | 发布时间
+experience | string | false | 工作经验
+age | string | false | 年龄
+companyProperty | string | false | 公司性质
+companyScale | string | false | 公司规模
+companyWelfare | string | false | 公司福利
+phone | string | false | 联系电话
+description | string | false | 岗位描述
+contactPerson | string | false | 联系人
+
+## <font color="blue">Publish Job Recruit</font>
+
+> Request:
+
+```json
+{
+"userId": 3,
+"jobTypeId": 5,
+"companyName": "dsfsaf",
+"companyAddress": "fdsf",
+"salary": "fdsafas",
+"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+"cityId": 4,
+"education": "education",
+"gender": "fd",
+"number": "fd",
+"experience": "dafd",
+"age": "fds",
+"companyProperty": "fds",
+"companyScale": "fd",
+"companyWelfare": "fd",
+"phone": "fdsf",
+"description": "fsd",
+"contactPerson": "fed"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 发布招聘</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/publish_job_recruit</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+useId | int | true | 发布人Id
+jobTypeId | int | false | 工作种类Id
+companyName | datetime | false | 公司名称
+companyAddress | string | false | 公司地址
+publishTime | string | false | 发布时间
+salary | string | false | 薪资
+image | int | false | 公司logo
+cityId | string | false | 城市Id
+education | string | false | 学历
+gender | string | true | 性别
+number | string | false | 招聘人数
+experience | string | false | 工作经验
+age | string | false | 年龄
+companyProperty | string | false | 公司性质
+companyScale | string | false | 公司规模
+companyWelfare | string | false | 公司福利
+phone | string | false | 联系电话
+description | string | false | 岗位描述
+contactPerson | string | false | 联系人
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Search Job Recruit</font>
+
+> Request:
+
+```json
+{
+"search": "fdasf",
+"provinceId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobRecruitList": [
+						{
+							"id": 1,
+							"jobTypeName": "fadsf",
+							"companyName": "dsfsaf",
+							"companyAddress": "fdsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+						},
+						{
+							"id": 2,
+							"jobTypeName": "fadsf",
+							"companyName": "dsfsaf",
+							"companyAddress": "fdsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+						},
+					]
+}
+```
+
+<font size="4"><b> 搜索招聘列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/search_job_recruit</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+search | int | false | 搜索内容
+provinceId | int | true | 省份Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobRecruitList | Array(JobRecruit Object) | true | 招聘列表
+
+### JobRecruit Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 招聘Id;
+jobName | string | true | 职位名称
+companyName | datetime | true | 公司名称
+companyAddress | string | true | 公司地址
+publishTime | string | true | 发布时间
+salary | string | true | 薪资
+image | int | true | 公司logo
