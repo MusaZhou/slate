@@ -3229,7 +3229,7 @@
 </span><span class="nt">"saleTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1 month"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdafasdf"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"secondaryShopTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                                     </span><span class="p">{</span><span class="w"> 
                                                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -3243,7 +3243,7 @@
                     </span><span class="p">},</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3 month"</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfsdsaf"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"secondaryShopTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                                     </span><span class="p">{</span><span class="w"> 
                                                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
@@ -3327,7 +3327,7 @@
 <td>name</td>
 <td>String</td>
 <td>true</td>
-<td>名称</td>
+<td>一级类型名称</td>
 </tr>
 <tr>
 <td>secondaryShopTypeList</td>
@@ -3357,7 +3357,7 @@
 <td>name</td>
 <td>String</td>
 <td>true</td>
-<td>名称</td>
+<td>二级类型名称</td>
 </tr>
 </tbody></table>
 
@@ -3432,6 +3432,113 @@
 <td>String</td>
 <td>true</td>
 <td></td>
+</tr>
+</tbody></table>
+
+<h2 id="get-secondary-shop-type-list"><font color="blue">Get Secondary Shop Type List</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"shopId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"secondaryShopTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdafasdf"</span><span class="w">
+                            </span><span class="p">},</span><span class="w">
+                            </span><span class="p">{</span><span class="w">
+                                </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                                </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dfsdsaf"</span><span class="w">
+                            </span><span class="p">}</span><span class="w">
+                        </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得店铺二级类型列表</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_secondary_shop_type_list">Path:   <font color="green">/get_secondary_shop_type_list</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>shopId</td>
+<td>int</td>
+<td>true</td>
+<td>店铺Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>secondaryShopTypeList</td>
+<td>Array(SecondaryShopType Object)</td>
+<td>true</td>
+<td>二级类型列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="secondaryshoptype-object">SecondaryShopType Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>二级类型Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>String</td>
+<td>true</td>
+<td>二级类型名称</td>
 </tr>
 </tbody></table>
 
@@ -11057,7 +11164,8 @@
                             </span><span class="nt">"companyAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"publishTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                            </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
                         </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -11066,7 +11174,8 @@
                             </span><span class="nt">"companyAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"publishTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                            </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
                         </span><span class="p">},</span><span class="w">
                     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -11161,7 +11270,7 @@
 <td>招聘Id;</td>
 </tr>
 <tr>
-<td>jobName</td>
+<td>jobTypeName</td>
 <td>string</td>
 <td>true</td>
 <td>职位名称</td>
@@ -11195,6 +11304,12 @@
 <td>int</td>
 <td>true</td>
 <td>公司logo</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>状态 1.发布中 2.停止发布</td>
 </tr>
 </tbody></table>
 
@@ -11233,7 +11348,8 @@
                     </span><span class="nt">"companyWelfare"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fd"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsd"</span><span class="p">,</span><span class="w">
-                    </span><span class="nt">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fed"</span><span class="w">
+                    </span><span class="nt">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fed"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
                 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -11422,6 +11538,12 @@
 <td>false</td>
 <td>联系人</td>
 </tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>状态 1.发布中 2.停止发布</td>
+</tr>
 </tbody></table>
 
 <h2 id="publish-job-recruit"><font color="blue">Publish Job Recruit</font></h2>
@@ -11534,7 +11656,7 @@
 <td>gender</td>
 <td>string</td>
 <td>true</td>
-<td>性别</td>
+<td>性别 1.男性 2.女性</td>
 </tr>
 <tr>
 <td>number</td>
@@ -11642,7 +11764,8 @@
                             </span><span class="nt">"companyAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"publishTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
-                            </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                            </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
                         </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
@@ -11652,7 +11775,8 @@
                             </span><span class="nt">"publishTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
-                        </span><span class="p">},</span><span class="w">
+                            </span><span class="s2">"status"</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
                     </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -11774,6 +11898,519 @@
 <td>int</td>
 <td>true</td>
 <td>公司logo</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>状态 1.发布中 2.停止发布</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-job-application-list"><font color="blue">Get Job Application List</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"filterType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"filterValue"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsa"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"jobApplicationList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"jobTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadsf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfsaf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"education"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"publishTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"experience"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"jobTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadsf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfsaf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"education"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"publishTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"experience"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+                    </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 根据条件获得求职列表</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_job_application_list">Path:   <font color="green">/get_job_application_list</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>filterType</td>
+<td>int</td>
+<td>false</td>
+<td>过滤条件类型 1.区域 2.职位 3.薪资 4.工龄 不填为不过滤</td>
+</tr>
+<tr>
+<td>filterValue</td>
+<td>string</td>
+<td>false</td>
+<td>根据条件类型添置 条件为区域，传cityId, 条件为职位，传jobTypeId, 其他的传所选的值</td>
+</tr>
+<tr>
+<td>provinceId</td>
+<td>int</td>
+<td>true</td>
+<td>省份Id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>jobApplicationList</td>
+<td>Array(JobApplication Object)</td>
+<td>true</td>
+<td>求职列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="jobapplication-object">JobApplication Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>求职Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>求职人姓名</td>
+</tr>
+<tr>
+<td>jobTypeName</td>
+<td>string</td>
+<td>true</td>
+<td>职位名称</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>true</td>
+<td>城市名称</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>true</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>publishTime</td>
+<td>string</td>
+<td>true</td>
+<td>发布时间</td>
+</tr>
+<tr>
+<td>salary</td>
+<td>string</td>
+<td>true</td>
+<td>薪资</td>
+</tr>
+<tr>
+<td>education</td>
+<td>string</td>
+<td>false</td>
+<td>学历</td>
+</tr>
+<tr>
+<td>experience</td>
+<td>string</td>
+<td>false</td>
+<td>经验</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>状态 1.发布中 2.停止发布</td>
+</tr>
+</tbody></table>
+
+<h2 id="get-job-application-detail"><font color="blue">Get Job Application Detail</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"jobApplicationId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"jobApplication"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"jobTypeName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadsf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfsaf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"city"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"education"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"publishTime"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05 12:00:00"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"experience"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafj"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得求职详情</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_job_application_detail">Path:   <font color="green">/get_job_application_detail</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>jobApplicationId</td>
+<td>int</td>
+<td>true</td>
+<td>招聘Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>jobApplication</td>
+<td>JobApplication Object</td>
+<td>true</td>
+<td>求职详情</td>
+</tr>
+</tbody></table>
+
+<h3 id="jobapplication-object">JobApplication Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>求职Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>求职人姓名</td>
+</tr>
+<tr>
+<td>jobTypeName</td>
+<td>string</td>
+<td>true</td>
+<td>职位名称</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>true</td>
+<td>城市名称</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>true</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>publishTime</td>
+<td>string</td>
+<td>true</td>
+<td>发布时间</td>
+</tr>
+<tr>
+<td>salary</td>
+<td>string</td>
+<td>true</td>
+<td>薪资</td>
+</tr>
+<tr>
+<td>education</td>
+<td>string</td>
+<td>true</td>
+<td>学历</td>
+</tr>
+<tr>
+<td>experience</td>
+<td>string</td>
+<td>false</td>
+<td>经验</td>
+</tr>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>状态 1.发布中 2.停止发布</td>
+</tr>
+<tr>
+<td>age</td>
+<td>string</td>
+<td>false</td>
+<td>年龄</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>false</td>
+<td>个人简介</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>false</td>
+<td>联系电话</td>
+</tr>
+</tbody></table>
+
+<h2 id="publish-job-application"><font color="blue">Publish Job Application</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+</span><span class="nt">"jobTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"cityId"</span><span class="p">:</span><span class="w"> </span><span class="mi">46</span><span class="p">,</span><span class="w">
+</span><span class="nt">"gender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"education"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"salary"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"experience"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"age"</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafj"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 发布求职</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-publish_job_application">Path:   <font color="green">/publish_job_application</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>useId</td>
+<td>int</td>
+<td>true</td>
+<td>发布人Id</td>
+</tr>
+<tr>
+<td>jobTypeId</td>
+<td>int</td>
+<td>false</td>
+<td>工作种类Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>求职人姓名</td>
+</tr>
+<tr>
+<td>city</td>
+<td>string</td>
+<td>true</td>
+<td>城市名称</td>
+</tr>
+<tr>
+<td>gender</td>
+<td>string</td>
+<td>true</td>
+<td>性别</td>
+</tr>
+<tr>
+<td>salary</td>
+<td>string</td>
+<td>true</td>
+<td>薪资</td>
+</tr>
+<tr>
+<td>education</td>
+<td>string</td>
+<td>true</td>
+<td>学历</td>
+</tr>
+<tr>
+<td>experience</td>
+<td>string</td>
+<td>false</td>
+<td>经验</td>
+</tr>
+<tr>
+<td>age</td>
+<td>string</td>
+<td>false</td>
+<td>年龄</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>false</td>
+<td>个人简介</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>false</td>
+<td>联系电话</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
 </tr>
 </tbody></table>
 
