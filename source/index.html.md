@@ -5327,7 +5327,8 @@ name | string | true | 职位类型名称
 							"companyAddress": "fdsf",
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
-							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"status": 1
 						},
 						{
 							"id": 2,
@@ -5336,7 +5337,8 @@ name | string | true | 职位类型名称
 							"companyAddress": "fdsf",
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
-							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"status": 1
 						},
 					]
 }
@@ -5370,12 +5372,13 @@ jobRecruitList | Array(JobRecruit Object) | true | 招聘列表
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 id | int | true | 招聘Id;
-jobName | string | true | 职位名称
+jobTypeName | string | true | 职位名称
 companyName | datetime | true | 公司名称
 companyAddress | string | true | 公司地址
 publishTime | string | true | 发布时间
 salary | string | true | 薪资
 image | int | true | 公司logo
+status | int | true | 状态 1.发布中 2.停止发布
 
 ## <font color="blue">Get Job Recruit Detail</font>
 
@@ -5412,7 +5415,8 @@ image | int | true | 公司logo
 					"companyWelfare": "fd",
 					"phone": "fdsf",
 					"description": "fsd",
-					"contactPerson": "fed"
+					"contactPerson": "fed",
+					"status": 1
 				}
 }
 ```
@@ -5461,6 +5465,7 @@ companyWelfare | string | false | 公司福利
 phone | string | false | 联系电话
 description | string | false | 岗位描述
 contactPerson | string | false | 联系人
+status | int | true | 状态 1.发布中 2.停止发布
 
 ## <font color="blue">Publish Job Recruit</font>
 
@@ -5517,7 +5522,7 @@ salary | string | false | 薪资
 image | int | false | 公司logo
 cityId | string | false | 城市Id
 education | string | false | 学历
-gender | string | true | 性别
+gender | string | true | 性别 1.男性 2.女性
 number | string | false | 招聘人数
 experience | string | false | 工作经验
 age | string | false | 年龄
@@ -5561,7 +5566,8 @@ msg | String | true |
 							"companyAddress": "fdsf",
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
-							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"status": 1
 						},
 						{
 							"id": 2,
@@ -5571,7 +5577,8 @@ msg | String | true |
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
 							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
-						},
+							"status": 1
+						}
 					]
 }
 ```
@@ -5609,3 +5616,220 @@ companyAddress | string | true | 公司地址
 publishTime | string | true | 发布时间
 salary | string | true | 薪资
 image | int | true | 公司logo
+status | int | true | 状态 1.发布中 2.停止发布
+
+## <font color="blue">Get Job Application List</font>
+
+> Request:
+
+```json
+{
+"filterType": 1,
+"filterValue": "fdsa",
+"provinceId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobApplicationList": [
+						{
+							"id": 1,
+							"jobTypeName": "fadsf",
+							"name": "dsfsaf",
+							"city": "fdsf",
+							"gender": "fdsf",
+							"education": "fdsaf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"experience": "fdsaf",
+							"status": 1
+						},
+						{
+							"id": 2,
+							"jobTypeName": "fadsf",
+							"name": "dsfsaf",
+							"city": "fdsf",
+							"gender": "fdsf",
+							"education": "fdsaf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"experience": "fdsaf",
+							"status": 1
+						}
+					]
+}
+```
+
+<font size="4"><b> 根据条件获得求职列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_job_application_list</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+filterType | int | false | 过滤条件类型 1.区域 2.职位 3.薪资 4.工龄 不填为不过滤
+filterValue | string | false | 根据条件类型添置 条件为区域，传cityId, 条件为职位，传jobTypeId, 其他的传所选的值
+provinceId | int | true | 省份Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobApplicationList | Array(JobApplication Object) | true | 求职列表
+
+### JobApplication Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 求职Id
+name | string | true | 求职人姓名
+jobTypeName | string | true | 职位名称
+city | string | true | 城市名称
+gender | string | true | 性别
+publishTime | string | true | 发布时间
+salary | string | true | 薪资
+education | string | false | 学历
+experience | string | false | 经验
+status | int | true | 状态 1.发布中 2.停止发布
+
+## <font color="blue">Get Job Application Detail</font>
+
+> Request:
+
+```json
+{
+"jobApplicationId": 1,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobApplication": {
+					"id": 2,
+					"jobTypeName": "fadsf",
+					"name": "dsfsaf",
+					"city": "fdsf",
+					"gender": "fdsf",
+					"education": "fdsaf",
+					"publishTime": "2016-05-05 12:00:00",
+					"salary": "fdsafas",
+					"experience": "fdsaf",
+					"status": 1,
+					"age": 20,
+					"phone": "fdsaf",
+					"description": "fdsafj"
+				}
+}
+```
+
+<font size="4"><b> 获得求职详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_job_application_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+jobApplicationId | int | true | 招聘Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobApplication | JobApplication Object | true | 求职详情
+
+### JobApplication Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 求职Id
+name | string | true | 求职人姓名
+jobTypeName | string | true | 职位名称
+city | string | true | 城市名称
+gender | string | true | 性别
+publishTime | string | true | 发布时间
+salary | string | true | 薪资
+education | string | true | 学历
+experience | string | false | 经验
+status | int | true | 状态 1.发布中 2.停止发布
+age | string | false | 年龄
+description | string | false | 个人简介
+phone | string | false | 联系电话
+
+## <font color="blue">Publish Job Application</font>
+
+> Request:
+
+```json
+{
+"userId": 3,
+"jobTypeId": 5,
+"name": "dsfsaf",
+"cityId": 46,
+"gender": "fdsf",
+"education": "fdsaf",
+"salary": "fdsafas",
+"experience": "fdsaf",
+"age": 20,
+"phone": "fdsaf",
+"description": "fdsafj"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 发布求职</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/publish_job_application</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+useId | int | true | 发布人Id
+jobTypeId | int | false | 工作种类Id
+name | string | true | 求职人姓名
+city | string | true | 城市名称
+gender | string | true | 性别
+salary | string | true | 薪资
+education | string | true | 学历
+experience | string | false | 经验
+age | string | false | 年龄
+description | string | false | 个人简介
+phone | string | false | 联系电话
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
