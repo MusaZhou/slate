@@ -3125,6 +3125,128 @@ Name | Type | Default | Description
 id | int | true | 图片id
 url | string | true | 图片URL
 
+## <font color="blue">Get Topic Detail</font>
+
+> Request:
+
+```json
+{
+"topicId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"topicDetail": {
+					"topicTypeName": "ttest",
+					"content": "内容1",
+					"likeCount": 13,
+					"commentCount": 13,
+					"createdTime": "2016-05-05 17:33:00",
+					"imageList": [
+									{
+										"id": 1,
+										"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+									},
+									{
+										"id": 1,
+										"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+									}
+								]
+				}
+}
+```
+
+<font size="4"><b> 获得帖子详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_topic_detail</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+topicId | int | true | 帖子Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+topicDetail | Topic object | true | 帖子详情
+
+### Topic Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+topicTypeName | string | true | 帖子类型名称
+content | string | true | 帖子内容
+createdTime | string | true | 发布时间
+commentCount | int | true | 评价次数
+likeCount | int | true | 点赞次数
+imageList | Array(Image object) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
+## <font color="blue">Publish Topic</font>
+
+> Request:
+
+```json
+{
+"topicTypeId": 3,
+"content": "内容1",
+"userId": 5,
+"provinceId": 2,
+"imageList": [ "dsafsdafasdfsadfa", "fsdafdsafsadfasf"]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"topicId": 3
+}
+```
+
+<font size="4"><b> 发布帖子</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/publish_topic</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+topicTypeId | int | true | 帖子类型Id
+content | string | true | 帖子内容
+userId | int | true | 发布人Id
+provinceId | int | true | 省份Id
+imageList | Array(String) | true | 图片列表(base64编码)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+topicId | int | true | 帖子Id
+
 # Cart
 
 ## <font color="blue">Get Cart Detail</font>
