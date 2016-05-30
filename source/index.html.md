@@ -3249,6 +3249,113 @@ status | int | true | 1.成功
 msg | String | true | 
 topicId | int | true | 帖子Id
 
+## <font color="blue">Get My Topics</font>
+
+> Request:
+
+```json
+{
+"userId": 1,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"topicList": [
+						{
+							"id": 1,
+							"topic_type_id": 1,
+							"topic_type_name": "ttest",
+							"content": "内容1",
+							"user_name": "小明",
+							"user_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"created_time": "2016-05-05 17:33:00",
+							"comment_count": 10,
+							"like_count": 3,
+							"imageList": [
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+						{
+							"id": 1,
+							"topic_type_id": 1,
+							"topic_type_name": "ttest",
+							"content": "内容1",
+							"user_name": "小明",
+							"user_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"created_time": "2016-05-05 17:33:00",
+							"comment_count": 10,
+							"like_count": 3,
+							"imageList": [
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 1,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得我的帖子</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_topics</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+topicList | Array(Topic object) | true | 帖子列表
+
+### Topic Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 帖子id
+topic_type_id | int | true | 帖子类型Id
+topic_type_name | string | true | 帖子类型名称
+content | string | true | 帖子内容
+user_name | string | true | 发帖人名字
+user_url | string | true | 发帖人头像
+created_time | string | true | 发布时间
+comment_count | int | true | 评价次数
+like_count | int | true | 点赞次数
+imageList | Array(Image object) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
 # Cart
 
 ## <font color="blue">Get Cart Detail</font>
@@ -3850,11 +3957,11 @@ msg | String | true |
 }
 ```
 
-<font size="4"><b> 给订单绑定配送地址</b></font>
+<font size="4"><b> 给订单绑定备注</b></font>
 
 ### Method:   POST
 
-### Path:   <font color="green">/attach_delivery_address_to_orders</font>
+### Path:   <font color="green">/attach_note_to_orders</font>
 
 ### Request
 
@@ -5651,6 +5758,269 @@ status | int | true | 1.成功
 msg | String | true | 
 transferProductId | int | true | 急件求购Id
 
+## <font color="blue">Get My Need Product List</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"needProductList": [
+						{
+							"id": 1,
+							"productName": "fadsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"carBrand": "fdsf",
+							"carModel": "fdsaf",
+							"engineModel": "fdsafas",
+							"status": 1,
+							"visitCount": 12
+						},
+						{
+							"id": 2,
+							"productName": "fadsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"carBrand": "fdsf",
+							"carModel": "fdsaf",
+							"engineModel": "fdsafas",
+							"status": 1,
+							"visitCount": 12
+						}
+					]
+}
+```
+
+<font size="4"><b> 我的急件求购列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_need_products</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+needProductList | Array(NeedProduct Object) | true | 急件求购列表
+
+### NeedProduct Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 急件求购Id;
+productName | string | true | 商品名称
+publishTime | datetime | true | 发布时间
+carBrand | string | true | 汽车品牌
+carModel | string | true | 具体车型
+engineModel | string | true | 发动机型号
+status | int | true | 1:求购中 2.已下架
+visitCount | int | true | 浏览次数
+
+## <font color="blue">Get My Transfer Product List</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"transferProductList": [
+						{
+							"id": 1,
+							"publisherId": 2,
+							"publisherName": "fjdskf",
+							"publisherImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publishTime": "2016-05-05 12:00:00",
+							"title": "fdsf",
+							"description": "fdsaf",
+							"status": 1,
+							"visitCount": 12,
+							"imageList": [
+											{
+												"id": 2,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 3,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+						{
+							"id": 2,
+							"publisherId": 2,
+							"publisherName": "fjdskf",
+							"publisherImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publishTime": "2016-05-05 12:00:00",
+							"title": "fdsf",
+							"description": "fdsaf",
+							"status": 1,
+							"visitCount": 12,
+							"imageList": [
+											{
+												"id": 4,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 5,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
+						},
+					]
+}
+```
+
+<font size="4"><b> 我的急件转让列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_transfer_products</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+transferProductList | Array(TransferProduct Object) | true | 急件转让列表
+
+### NeedProduct Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 急件转让Id;
+publisherId | int | true | 发布者Id
+publisherName | string | true | 发布者姓名
+publisherImageUrl | string | true | 发布者头像url
+publishTime | datetime | true | 发布时间
+title | string | true | 标题
+description | string | true | 描述
+status | int | true | 1:转让中 2.已下架
+visitCount | int | true | 浏览次数
+imageList | Array(Image object) | true | 图片列表
+
+### Image Object
+
+Name | Type | Default | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
+## <font color="blue">Toggle Prouct Topic State</font>
+
+> Request:
+
+```json
+{
+"topicId": 3,
+"topicType": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新急件求购/急件转让状态</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/toggle_product_topic_state</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+topicId | int | true | 求购/转让Id
+topicType | int | true | 类型 1.急件求购 2.急件转让
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Remove Product Topic</font>
+
+> Request:
+
+```json
+{
+"topicId": 3,
+"topicType": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除急件求购/急件转让</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/delete_product_topic</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+topicId | int | true | 求购/转让Id
+topicType | int | true | 类型 1.急件求购 2.急件转让
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+
 # Job
 
 ## <font color="blue">Ge Job Type List</font>
@@ -5677,7 +6047,7 @@ transferProductId | int | true | 急件求购Id
 							"id": 2,
 							"name": "fadsf"
 						}
-					]
+				]
 }
 ```
 
