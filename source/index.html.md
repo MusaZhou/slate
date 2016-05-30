@@ -145,6 +145,8 @@ msg | String | true |
 cartId | string | true | 购物车id
 userId | int | true | 用户id
 user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商
+image_url | string | false | 用户头像url
+real_name | string | false | 真实姓名
 
 ## <font color="blue">Forget Password</font>
 
@@ -4828,6 +4830,289 @@ reward | int | true | 获奖状态(0:未获奖 1:获得15天奖 2:获得30天奖
 consecutiveCount | int | true | 连续签到次数
 gift | string | true | 奖品名称
 
+## <font color="blue">Get Product Collect</font>
+
+> Request:
+
+```json
+{
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"collectList": [
+					{
+						"id": 3,
+						"name": "fdsa",
+						"original_price": 23,
+						"price": 31,
+						"brand": "fdsf",
+						"spec": "fdsaf",
+						"model": "fdsaf",
+						"car_model": "fdasf",
+						"description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+					},
+					{
+						"id": 4,
+						"name": "fdsa",
+						"original_price": 23,
+						"price": 31,
+						"brand": "fdsf",
+						"spec": "fdsaf",
+						"model": "fdsaf",
+						"car_model": "fdasf",
+						"description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得用户产品收藏</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_buyer_product_collects</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+collectList | Array(Product Object) | true | 收藏列表
+
+### Product Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+original_price | double | true | 原价
+price | double | true | 现价
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+description | string | false | 描述
+image_url | string | true | 图片URL
+
+## <font color="blue">Get Shop Collect</font>
+
+> Request:
+
+```json
+{
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"collectList": [
+					{
+						"id": 3,
+						"name": "fdsa",
+						"address": "fdasf",
+						"sale_description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+					},
+					{
+						"id": 4,
+						"name": "fdsa",
+						"address": "fdasf",
+						"sale_description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得用户店铺收藏</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_buyer_shop_collects</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+collectList | Array(Shop Object) | true | 收藏列表
+
+### Shop Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 店铺id
+name | string | true | 店铺名称
+sale_description | string | 主营描述
+address | string | true | 地址
+image_url | string | true | 图片URL
+
+## <font color="blue">Remove Collect </font>
+
+> Request:
+
+```json
+{
+"collectIdList": [1, 2, 3]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除收藏</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/remove_collect</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+collectIdList | Array(int) | true | 收藏Id列表
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Get User Profile </font>
+
+> Request:
+
+```json
+{
+"userId": 3
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"profileInfo": {
+					"realName": "fdsf",
+					"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+					"companyName": "fdsf",
+					"contact": "fdsf",
+					"companyAddress": "fdsafkjk",
+					"saleDescription": "fdsjfj"
+				}
+}
+```
+
+<font size="4"><b> 获得个人信息</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_user_profile</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+profileInfo | Profile Object | true | 个人信息
+
+### Profile Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+realName | string | true | 真实姓名
+image_url | String | true | 头像url
+companyName | string | true | 公司名称
+contact | string | true | 联系方式
+companyAddress | string | true | 公司地址
+saleDescription | string | true | 主营业务
+
+## <font color="blue">Update User Profile </font>
+
+> Request:
+
+```json
+{
+"userId": 3,
+"realName": "fdsf",
+"image": "fjksdajfsdkaj"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新个人信息</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_user_profile</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+realName | string | false | 真实姓名
+image | string | false | 图片(base64编码)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Product Topic
 
 ## <font color="blue">Get Need Product List</font>
@@ -5461,7 +5746,7 @@ name | string | true | 职位类型名称
 							"salary": "fdsafas",
 							"image": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"status": 1
-						},
+						}
 					]
 }
 ```
@@ -5698,7 +5983,7 @@ msg | String | true |
 							"companyAddress": "fdsf",
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
-							"image": "http://121.12.11.11/image_download/brand_logo_images/2"
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"status": 1
 						}
 					]
@@ -5955,3 +6240,369 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Get My Job Application List</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobApplicationList": [
+						{
+							"id": 1,
+							"jobTypeName": "fadsf",
+							"name": "dsfsaf",
+							"city": "fdsf",
+							"gender": "fdsf",
+							"education": "fdsaf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"experience": "fdsaf",
+							"status": 1
+						},
+						{
+							"id": 2,
+							"jobTypeName": "fadsf",
+							"name": "dsfsaf",
+							"city": "fdsf",
+							"gender": "fdsf",
+							"education": "fdsaf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"experience": "fdsaf",
+							"status": 1
+						}
+					]
+}
+```
+
+<font size="4"><b> 获得我的求职列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_job_applications</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobApplicationList | Array(JobApplication Object) | true | 求职列表
+
+### JobApplication Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 求职Id
+name | string | true | 求职人姓名
+jobTypeName | string | true | 职位名称
+city | string | true | 城市名称
+gender | string | true | 性别
+publishTime | string | true | 发布时间
+salary | string | true | 薪资
+education | string | false | 学历
+experience | string | false | 经验
+status | int | true | 状态 1.发布中 2.停止发布
+
+## <font color="blue">Get My Job Recruit List</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"jobRecruitList": [
+						{
+							"id": 1,
+							"jobTypeName": "fadsf",
+							"companyName": "dsfsaf",
+							"companyAddress": "fdsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"status": 1
+						},
+						{
+							"id": 2,
+							"jobTypeName": "fadsf",
+							"companyName": "dsfsaf",
+							"companyAddress": "fdsf",
+							"publishTime": "2016-05-05 12:00:00",
+							"salary": "fdsafas",
+							"status": 1
+						}
+					]
+}
+```
+
+<font size="4"><b> 获得我的招聘列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_job_recruits</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+jobRecruitList | Array(JobRecruit Object) | true | 招聘列表
+
+### JobRecruit Object
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+id | int | true | 招聘Id;
+jobTypeName | string | true | 职位名称
+companyName | datetime | true | 公司名称
+companyAddress | string | true | 公司地址
+publishTime | string | true | 发布时间
+salary | string | true | 薪资
+status | int | true | 状态 1.发布中 2.停止发布
+
+## <font color="blue">Update Job Application</font>
+
+> Request:
+
+```json
+{
+"jobApplicationId": 3,
+"jobTypeId": 5,
+"name": "dsfsaf",
+"cityId": 46,
+"gender": "fdsf",
+"education": "fdsaf",
+"salary": "fdsafas",
+"experience": "fdsaf",
+"age": 20,
+"phone": "fdsaf",
+"description": "fdsafj"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 发布求职</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_job_application</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+jobApplicationId | int | true | 求职Id
+jobTypeId | int | false | 工作种类Id
+name | string | true | 求职人姓名
+city | string | true | 城市名称
+gender | string | true | 性别
+salary | string | true | 薪资
+education | string | true | 学历
+experience | string | false | 经验
+age | string | false | 年龄
+description | string | false | 个人简介
+phone | string | false | 联系电话
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Update Job Recruit</font>
+
+> Request:
+
+```json
+{
+"jobRecruitId": 3,
+"jobTypeId": 5,
+"companyName": "dsfsaf",
+"companyAddress": "fdsf",
+"salary": "fdsafas",
+"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+"cityId": 4,
+"education": "education",
+"gender": "fd",
+"number": "fd",
+"experience": "dafd",
+"age": "fds",
+"companyProperty": "fds",
+"companyScale": "fd",
+"companyWelfare": "fd",
+"phone": "fdsf",
+"description": "fsd",
+"contactPerson": "fed"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新招聘</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_job_recruit</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+jobRecruitId | int | true | 招聘Id
+jobTypeId | int | false | 工作种类Id
+companyName | datetime | false | 公司名称
+companyAddress | string | false | 公司地址
+publishTime | string | false | 发布时间
+salary | string | false | 薪资
+image | int | false | 公司logo
+cityId | string | false | 城市Id
+education | string | false | 学历
+gender | string | true | 性别 1.男性 2.女性
+number | string | false | 招聘人数
+experience | string | false | 工作经验
+age | string | false | 年龄
+companyProperty | string | false | 公司性质
+companyScale | string | false | 公司规模
+companyWelfare | string | false | 公司福利
+phone | string | false | 联系电话
+description | string | false | 岗位描述
+contactPerson | string | false | 联系人
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Toggle Job State</font>
+
+> Request:
+
+```json
+{
+"jobId": 3,
+"jobType": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新招聘/求职状态</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/toggle_job_state</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+jobId | int | true | 工作Id
+jobType | int | true | 类型 1.求职 2.招聘
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Remove Job</font>
+
+> Request:
+
+```json
+{
+"jobId": 3,
+"jobType": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除招聘/求职</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/remove_job</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+jobId | int | true | 工作Id
+jobType | int | true | 类型 1.求职 2.招聘
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
