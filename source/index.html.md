@@ -721,7 +721,7 @@ user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商�
 														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
 														"commentToId": 1,
 														"commentToName": "fdsa",
-														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2"
 													},
 													{
 														"id": 2,
@@ -732,9 +732,9 @@ user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商�
 														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
 														"commentToId": 1,
 														"commentToName": "fdsa",
-														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2"
 													}
-												]
+												],
 							"imageList": [
 											{
 												"id": 1,
@@ -763,7 +763,7 @@ user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商�
 														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
 														"commentToId": 1,
 														"commentToName": "fdsa",
-														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2"
 													},
 													{
 														"id": 2,
@@ -774,9 +774,9 @@ user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商�
 														"commentFromImage": "http://121.12.11.11/image_download/brand_logo_images/2",
 														"commentToId": 1,
 														"commentToName": "fdsa",
-														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+														"commentToImage": "http://121.12.11.11/image_download/brand_logo_images/2"
 													}
-												]
+												],
 							"imageList": [
 											{
 												"id": 3,
@@ -4943,7 +4943,8 @@ gift | string | true | 奖品名称
 
 ```json
 {
-"userId": 2
+"userId": 2,
+"page": 1
 }
 ```
 
@@ -4993,6 +4994,7 @@ gift | string | true | 奖品名称
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
+page | int | true | 页数
 
 ### Response:
 
@@ -5023,7 +5025,8 @@ image_url | string | true | 图片URL
 
 ```json
 {
-"userId": 2
+"userId": 2,
+"page": 1
 }
 ```
 
@@ -5063,6 +5066,7 @@ image_url | string | true | 图片URL
 Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
+page | int | true | 页数
 
 ### Response:
 
@@ -5219,6 +5223,167 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Get Visit Products</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"collectList": [
+					{
+						"id": 3,
+						"name": "fdsa",
+						"original_price": 23,
+						"price": 31,
+						"brand": "fdsf",
+						"spec": "fdsaf",
+						"model": "fdsaf",
+						"car_model": "fdasf",
+						"description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						"shop_name": "fdsaf",
+						"shop_address": "fdsafas",
+						"is_vip": 1
+					},
+					{
+						"id": 4,
+						"name": "fdsa",
+						"original_price": 23,
+						"price": 31,
+						"brand": "fdsf",
+						"spec": "fdsaf",
+						"model": "fdsaf",
+						"car_model": "fdasf",
+						"description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						"shop_name": "fdsaf",
+						"shop_address": "fdsafas",
+						"is_vip": 1
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得用户历史足迹-产品</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_buyer_product_visits</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+collectList | Array(Product Object) | true | 收藏列表
+
+### Product Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+original_price | double | true | 原价
+price | double | true | 现价
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+description | string | false | 描述
+image_url | string | true | 图片URL
+shop_name | string | true | 店铺名称
+shop_address | string | true | 店铺地址
+is_vip | string | true | 知否为vip 1为是， 2为否
+
+## <font color="blue">Get Visit Shop</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"collectList": [
+					{
+						"id": 3,
+						"name": "fdsa",
+						"address": "fdasf",
+						"sale_description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						"is_vip": 1
+					},
+					{
+						"id": 4,
+						"name": "fdsa",
+						"address": "fdasf",
+						"sale_description": "fdsaf",
+						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+						"is_vip": 2
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得用户历史足迹-店铺</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_buyer_shop_visits</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+collectList | Array(Shop Object) | true | 收藏列表
+
+### Shop Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 店铺id
+name | string | true | 店铺名称
+sale_description | string | 主营描述
+address | string | true | 地址
+image_url | string | true | 图片URL
+is_vip | string | true | 知否为vip 1为是， 2为否
 
 # Product Topic
 
