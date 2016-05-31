@@ -4544,7 +4544,7 @@ Name | Type | Default | Description
 --------- | ------- | ------- | -----------
 sectionId | int | true | 展区id 1:小车配件 2:农用 3:大车 4:加装 5:汽车用品 6:电子产品 7:空调 8:灯具 9:其它 
 page | int | true | 页数
-provinceId | int | true | 省份Id
+provinceId | int | true | 省份Id, 99为全国
 
 ### Response:
 
@@ -6976,3 +6976,122 @@ Name | Type | Default | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
+
+## <font color="blue">Update Need Product</font>
+
+> Request:
+
+```json
+{
+"needProductId": 2,
+"productName": "fadsf",
+"carBrand": "fdsf",
+"carModel": "fdsaf",
+"engineModel": "fdsafas",
+"description": "fdsaklfj",
+"contactPerson": "fdsafa",
+"phone": "23242234",
+"address": "fdsajklfdj",
+"wechat": "fdskfj",
+"existingImageIdList": [1, 2],
+"imageList": [ 
+				"fsdafdsjfkasjfkasljf",
+				"fdsakfjasdkfjkasdfjkas"
+			]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新急件求购</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_need_product</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+needProductId | int | true | 急件求购id
+productName | string | true | 商品名称
+carBrand | string | true | 汽车品牌
+carModel | string | true | 具体车型
+engineModel | string | true | 发动机型号
+description | string | true | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
+wechat | string | true | 微信
+existingImageIdList | Array(int) | false | 原有保留图片Id列表
+imageList | Array(Image) | false | 新增图片列表(base64编码)
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Update Transfer Product</font>
+
+> Request:
+
+```json
+{
+"transferProductId": 2,
+"title": "fadsf",
+"price": 15,
+"description": "fdsaklfj",
+"contactPerson": "fdsafa",
+"phone": "23242234",
+"existingImageIdList": [1, 2],
+"imageList": [ 
+				"fsdafdsjfkasjfkasljf",
+				"fdsakfjasdkfjkasdfjkas"
+			]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新急件转让</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_transfer_product</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+transferProductId | int | true | 急件转让Id
+title | string | true | 标题
+price | double | true | 转让价格
+contactCount | int | true | 联系次数
+description | string | true | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+existingImageIdList | Array(int) | false | 原有保留图片Id列表
+imageList | Array(Image) | true | 新增图片列表
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
