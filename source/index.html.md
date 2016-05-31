@@ -5385,6 +5385,59 @@ address | string | true | 地址
 image_url | string | true | 图片URL
 is_vip | string | true | 知否为vip 1为是， 2为否
 
+## <font color="blue">Update Shop Images</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"imageList": ["fdskafjsadkfj", "fjdsaklfjksdajfk"],
+"existingImageIdList": [1, 2]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 获得用户历史足迹-店铺</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_buyer_shop_visits</font>
+
+### Request
+
+Name | Type | Default | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+imageList | int | false | 新增图片列表(base64编码)
+existingImageIdList | Array(int) | false | 保留的原有图片id列表
+
+### Response:
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+### Shop Object
+
+Name | Type | Default | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 店铺id
+name | string | true | 店铺名称
+sale_description | string | 主营描述
+address | string | true | 地址
+image_url | string | true | 图片URL
+is_vip | string | true | 知否为vip 1为是， 2为否
+
 # Product Topic
 
 ## <font color="blue">Get Need Product List</font>
