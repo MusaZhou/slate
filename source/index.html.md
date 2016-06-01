@@ -6032,7 +6032,6 @@ provinceId | int | true | 省份Id
 useId | int | true | 用户Id
 title | string | true | 标题
 price | double | true | 转让价格
-contactCount | int | true | 联系次数
 description | string | true | 详情描述
 contactPerson | string | true | 联系人
 phone | string | true | 电话
