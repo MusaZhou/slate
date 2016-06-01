@@ -47,13 +47,13 @@ search: true
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 mobile | String | true | 手机号码
 
 ### Response
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 status | int | true | 1.成功 3.短信发送失败
 msg | String | true | 
@@ -87,7 +87,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 mobile | String | true | 手机号码
 code | String | true | 验证码
@@ -95,7 +95,7 @@ password | String | true | 密码
 
 ### Response
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 status | int | true | 1.成功 3.验证码不正确 4.验证码已过期 5.手机号已注册
 msg | String | true | 
@@ -131,14 +131,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 mobile | String | true | 手机号码
 password | String | true | 密码
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 status | int | true | 1.成功 3.手机号未注册 4.密码不正确
 msg | String | true | 
@@ -177,7 +177,7 @@ real_name | string | false | 真实姓名
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 mobile | String | true | 手机号码
 code | String | true | 验证码
@@ -185,7 +185,7 @@ password | String | true | 密码
 
 ### Response
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 status | int | true | 1.成功 4.验证码不正确 5.验证码已过期 3.手机号没有注册
 msg | String | true | 
@@ -274,7 +274,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 type | int | true | 搜索类型 1.店铺 2.商品
 search | string | true | 搜索值
@@ -283,7 +283,7 @@ page | int | true | 页数
 
 ### Response
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ----------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -292,7 +292,7 @@ products | array(product object) | false | 商品列表
 
 #### Shop object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ----------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
@@ -307,7 +307,7 @@ image_url | string | false | 图片URL
 
 #### Product object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ----------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -352,14 +352,14 @@ image_url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 latitude | String | true | 纬度
 longitude | String | true | 经度
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 status | int | true | 1.成功 3.curl false 4.baidu map error
 msg | String | true | 
@@ -407,13 +407,13 @@ provinceName | string | true | 省份名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -421,7 +421,7 @@ secondaryShopTypeList | Array(secondaryShopType object) | true | 热门店铺列
 
 ### SecondaryShopType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 secondary_shop_type_id | int | true | 店铺类型id
 secondary_shop_type_name | string | true | 店铺类型名称
@@ -466,13 +466,13 @@ image_url | string | true | 图片url
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -480,7 +480,7 @@ hotSaleProductTypeList | Array(hotSaleProductType object) | true | 热门商品�
 
 ### ProductType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 热卖商品类型id
 name | string | true | 热卖商品类型名称
@@ -543,12 +543,12 @@ image_url | string | true | 图片url
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -556,7 +556,7 @@ provinceList | Array(province object) | true | 省份列表
 
 ### Province Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 province_id | int | true | 省份id
 province_name | string | true | 省份名称
@@ -564,7 +564,7 @@ cityList | Array(city object) | true | 城市列表
 
 ### City Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 city_id | int | true | 城市id
 city_name | string | true | 城市名称
@@ -619,7 +619,7 @@ city_name | string | true | 城市名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 locationId | int | true | 广告位置Id(1:首页1 2:首页2 3:展区 4:互动 5:单品 6:店铺二级类型)
@@ -628,7 +628,7 @@ sectionId | int | true | (展区id)当广告位置为3时必填
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -636,7 +636,7 @@ adList | Array(ad object) | true | 广告列表
 
 ### Ad Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 ad_id | int | true | 广告id
 ad_name | string | false | 名称
@@ -673,13 +673,13 @@ image_url | string | false | 若广告类型为1,2,3,为广告图片
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -800,7 +800,7 @@ user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商�
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicType | int | true | 评论类型 1.产品评论 2.急件求购评论 3.急件转让评论 4.互动评论
 topicId | int | true | 话题id
@@ -808,7 +808,7 @@ page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -816,7 +816,7 @@ commentList | Array(Comment object) | true | 评论列表
 
 ### Comment Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 content | string | true | 评论内容
@@ -829,7 +829,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Nested Comment Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 content | string | true | 评论内容
@@ -843,7 +843,7 @@ commentToImage | string | true | 评论对象图片url
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -882,7 +882,7 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicType | int | true | 评论类型 1.订单评论 2.急件求购评论 3.急件转让评论 4.互动评论
 topicId | int | true | 话题id
@@ -894,7 +894,7 @@ imageList | Array(String) | false | 图片列表(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -930,7 +930,7 @@ commentId | int | true | 评论Id
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicType | int | true | 评论类型 1.订单评论 2.急件求购评论 3.急件转让评论 4.互动评论
 topicId | int | true | 话题id
@@ -938,7 +938,7 @@ userId | int | true | 评论人Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功 3.用户已对该话题点赞
 msg | String | true | 
@@ -981,13 +981,13 @@ likeCount | int | true | 点赞次数
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -995,7 +995,7 @@ cityList | Array(City Object) | true | 职位类型
 
 ### City Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 城市Id;
 name | string | true | 城市名称
@@ -1127,13 +1127,13 @@ name | string | true | 城市名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1141,7 +1141,7 @@ shopTypeList | Array(Shop object) | true | 店铺类别列表
 
 ### Shop Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 primary_shop_type_id | int | true | 一级类别id
 primary_shop_type_name | string | true | 一级类别名称
@@ -1150,14 +1150,14 @@ recommandedSecondaryShopTypeList | Array(SecondaryShopType object) | true | 热�
 
 ### FirstLetter Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 firstLetter | string | true | 首字母
 secondaryShopTypeList | Array(SecondaryShopType object) | true | 二级类别列表
 
 ### SecondaryShopType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
@@ -1205,14 +1205,14 @@ image_url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 search | string | true | 搜索内容
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1220,7 +1220,7 @@ secondaryShopTypeList | Array(SecondaryShopType object) | true | 二级类别列
 
 ### SecondaryLetter Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
@@ -1271,14 +1271,14 @@ primary_shop_type_name | string | true | 一级类型名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 secondaryShopTypeId | int | true | 店铺二级类型Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1286,7 +1286,7 @@ shopList | Array(Shop object) | true | 店铺列表
 
 ### Shop Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
@@ -1344,14 +1344,14 @@ image_url | string | false | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 shopId | int | true | 店铺Id
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1359,7 +1359,7 @@ shopDetail | Shop object | true | 店铺详情
 
 ### Shop Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
@@ -1376,7 +1376,7 @@ bannerList | Array(Image object) | false | 轮播图列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -1409,14 +1409,14 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 shopId | int | true | 店铺Id
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1465,7 +1465,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 userId | int | true | 用户Id
@@ -1488,7 +1488,7 @@ idBack | string | true | 身份证反面照片(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1531,12 +1531,12 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1544,7 +1544,7 @@ chargeList | Array(ExhibitionCharge Object) | true | VIP资费列表
 
 ### VIPCharge Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | VIP资费Id
 name | String | true | 名称
@@ -1606,12 +1606,12 @@ price | int | true | 价格
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1619,7 +1619,7 @@ saleTypeList | Array(PrimaryShopType Object) | true | 一级类型列表
 
 ### PrimaryShopType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 一级类型Id
 name | String | true | 一级类型名称
@@ -1627,7 +1627,7 @@ secondaryShopTypeList | Array(SecondaryShopType Object) | true | 二级类型列
 
 ### SecondaryShopType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 二级类型Id
 name | String | true | 二级类型名称
@@ -1660,14 +1660,14 @@ name | String | true | 二级类型名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 店铺Id
 recommendedProductIdList | Array(int) | true | 推荐产品Id列表
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1709,13 +1709,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 shopId | int | true | 店铺Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1723,7 +1723,7 @@ secondaryShopTypeList | Array(SecondaryShopType Object) | true | 二级类型列
 
 ### SecondaryShopType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 二级类型Id
 name | String | true | 二级类型名称
@@ -1784,14 +1784,14 @@ name | String | true | 二级类型名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 shopId | int | true | 店铺Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1799,7 +1799,7 @@ productList | Array(Product object) | true | 商品列表
 
 ### Product Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -1906,13 +1906,13 @@ image_url | string | false | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 shopId | int | true | 店铺Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -1920,7 +1920,7 @@ productTypeList | Array(ProductType object) | true | 商品类型列表
 
 ### ProductType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 类型id
 name | string | true | 类型名称
@@ -1928,7 +1928,7 @@ productList | Array(Product object) | true | 产品列表
 
 ### Product Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -2032,14 +2032,14 @@ image_url | string | false | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 productId | int | true | 产品Id
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2047,7 +2047,7 @@ productDetail | Array(Product object) | true | 商品类型列表
 
 ### Product Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -2077,14 +2077,14 @@ sampleComment | Comment object | false | 评论实例
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
 
 ### Comment Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 user_phone | string | true | 评论人
@@ -2154,14 +2154,14 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 productId | int | true | 产品id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2169,7 +2169,7 @@ commentList | Array(Comment object) | true | 评论列表
 
 ### Comment Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 user_phone | string | true | 评论人电话
@@ -2179,7 +2179,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -2236,13 +2236,13 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 productId | int | true | 商品Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2250,7 +2250,7 @@ productList | Array(Product object) | true | 商品列表
 
 ### ProductType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -2313,14 +2313,14 @@ image_url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2328,7 +2328,7 @@ productList | Array(Product object) | true | 商品列表
 
 ### ProductType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -2367,14 +2367,14 @@ image_url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 productId | int | true | 商品Id
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2407,14 +2407,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 shopId | int | true | 店铺Id
 productTypeName | int | true | 货架名称
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2446,13 +2446,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 productTypeId | int | true | 货架Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2503,7 +2503,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 productTypeId | int | true | 货架Id
 secondaryShopTypeId | int | true | 店铺二级类型id
@@ -2525,7 +2525,7 @@ referenceImageList | Array(string) | true | 参考图列表(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2586,14 +2586,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2601,7 +2601,7 @@ groupActivityList | Array(GroupActivity object) | true | 团购活动列表
 
 ### GroupActivity Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
 product_name | string | true | 商品名称
@@ -2710,14 +2710,14 @@ end_time | datetime | true | 结束时间
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 activityId | int | true | 活动Id
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2725,7 +2725,7 @@ groupActivityDetail | Array(GroupActivity object) | true | 商品类型列表
 
 ### GroupActivity Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
 shop_id | int | true | 店铺Id
@@ -2760,14 +2760,14 @@ sampleComment | Comment object | false | 评论例子
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
 
 ### Comment Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 user_phone | string | true | 评论人
@@ -2831,14 +2831,14 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2846,7 +2846,7 @@ promotionActivityList | Array(PromotionActivity object) | true | 团购活动列
 
 ### PromotionActivity Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
 product_name | string | true | 商品名称
@@ -2953,14 +2953,14 @@ end_time | datetime | true | 活动结束时间
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 activityId | int | true | 活动Id
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -2968,7 +2968,7 @@ promotionActivityDetail | Array(GroupActivity object) | true | 商品类型列�
 
 ### GroupActivity Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
 shop_id | int | true | 店铺Id
@@ -3001,14 +3001,14 @@ sampleComment | Comment object | false | 评论例子
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
 
 ### Comment Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
 user_phone | string | true | 评论人
@@ -3091,7 +3091,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 topicTypeId | int | true | 帖子类型Id, 1~5
@@ -3099,7 +3099,7 @@ page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3107,7 +3107,7 @@ topicList | Array(Topic object) | true | 帖子列表
 
 ### Topic Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 帖子id
 topic_type_id | int | true | 帖子类型Id
@@ -3122,7 +3122,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -3171,13 +3171,13 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicId | int | true | 帖子Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3185,7 +3185,7 @@ topicDetail | Topic object | true | 帖子详情
 
 ### Topic Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 topicTypeName | string | true | 帖子类型名称
 content | string | true | 帖子内容
@@ -3196,7 +3196,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -3233,7 +3233,7 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicTypeId | int | true | 帖子类型Id
 content | string | true | 帖子内容
@@ -3243,7 +3243,7 @@ imageList | Array(String) | true | 图片列表(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3321,14 +3321,14 @@ topicId | int | true | 帖子Id
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3336,7 +3336,7 @@ topicList | Array(Topic object) | true | 帖子列表
 
 ### Topic Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 帖子id
 topic_type_id | int | true | 帖子类型Id
@@ -3351,7 +3351,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -3451,13 +3451,13 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 cartId | int | true | 购物车id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3467,7 +3467,7 @@ cartItemGroups | Array(CartItemGroup object) | true | 购物车店铺列表
 
 ### CartItemGroup Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 shop_id | int | true | 店铺id
 shop_name | string | true | 店铺名称
@@ -3478,7 +3478,7 @@ cartItemList | Array(CartItem object) | true | 购物车内店铺售卖产品列
 
 ### CartItem Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 cart_item_id | int | true | 购物车条目id
 product_id | int | true | 产品Id
@@ -3520,7 +3520,7 @@ image_url | string | true | 产品图片地址
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 cartId | int | true | 购物车id
 productId | int | true | 产品id
@@ -3529,7 +3529,7 @@ productActivityId | int | false | 活动id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3561,13 +3561,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 cartItemId | int | true | 购物车条目id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3617,13 +3617,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3631,7 +3631,7 @@ deliveryAddressList | Array(DeliveryAddress object) | true | 配送地址列表
 
 ### DeliveryAddress object:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 配送地址id
 contact_person | String | true | 联系人
@@ -3669,7 +3669,7 @@ is_default | int | true | 是否为默认收货地址 1:是 0:否
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
 contactPerson | String | true | 联系人
@@ -3678,7 +3678,7 @@ address | string | true | 地址
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3713,7 +3713,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 deliveryAddressId | int | true | 配送地址id
 contact_person | String | true | 联系人
@@ -3722,7 +3722,7 @@ address | string | true | 地址
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -3754,13 +3754,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 deliveryAddressId | int | true | 配送地址id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -3792,13 +3792,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 deliveryAddressId | int | true | 配送地址id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -3836,21 +3836,21 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1:成功 3:无默认配送地址
 msg | String | true | 
-defaultDeliveryAddress | Array(DeliveryAddress object) | true | 配送地址
+MandatoryDeliveryAddress | Array(DeliveryAddress object) | true | 配送地址
 
 ### DeliveryAddress object:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 配送地址id
 contact_person | String | true | 联系人
@@ -3886,13 +3886,13 @@ address | string | true | 地址
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 cartItemIdList | Array(int) | true | 购物车条目id列表
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -3925,14 +3925,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderIdList | Array(int) | true | 订单id列表
 deliveryAddressId | int | true | 配送地址id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -3965,14 +3965,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderIdList | Array(int) | true | 订单id列表
 note | string | true | 备注
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4064,13 +4064,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4080,7 +4080,7 @@ orderList | Array(Order object) | true | 订单列表
 
 ### Ordre object
 
- Name | Type | Default | Description
+ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 订单id
 shop_name | string | true | 店铺名称
@@ -4092,7 +4092,7 @@ orderItemList | Array(OrderItem object) | true | 订单条目列表
 
 ### OrdreItem object
 
- Name | Type | Default | Description
+ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 订单条目id
 product_id | string | true | 商品Id
@@ -4193,7 +4193,7 @@ image_url | string | true | 商品图片Url
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户id
 orderType | int | true | 1:待付款 2:待发货 3:待收货 4:待评价 99:全部
@@ -4201,7 +4201,7 @@ page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4209,7 +4209,7 @@ orderList | Array(Order object) | true | 订单列表
 
 ### Ordre object
 
- Name | Type | Default | Description
+ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 订单id
 order_status_id | int | true | 订单状态id 1:待付款 3,4:待发货 5:申请取消中 6:待收货 7:待评价 8:已完成 9:已取消
@@ -4223,7 +4223,7 @@ orderItemList | Array(OrderItem object) | true | 订单条目列表
 
 ### OrdreItem object
 
- Name | Type | Default | Description
+ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 订单条目id
 product_id | string | true | 商品Id
@@ -4265,7 +4265,7 @@ image_url | string | true | 商品图片Url
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderId | int | true | 订单id
 content | string | true | 内容
@@ -4273,7 +4273,7 @@ imageList | Array(string) | true | base64编码图片数组
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4305,13 +4305,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderId | int | true | 订单id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4343,14 +4343,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderId | int | true | 订单id
 cancelReason | string | true | 退货理由
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4389,13 +4389,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderId | int | true | 订单id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4403,7 +4403,7 @@ logisticsInfo | Logistics object | true | 物流详情
 
 ### Logistics:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 deliveryInfo_id | int | true | 物流条目id
 logistics_id | String | true | 物流编号
@@ -4438,13 +4438,13 @@ image_url | string | true | 发货单据图片地址
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderId | int | true | 订单id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4479,7 +4479,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderId | int | true | 订单id
 logisticsId | string | true | 物流订单Id
@@ -4488,7 +4488,7 @@ image | string | true | 发货单据照片(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -4540,7 +4540,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 sectionId | int | true | 展区id 1:小车配件 2:农用 3:大车 4:加装 5:汽车用品 6:电子产品 7:空调 8:灯具 9:其它 
 page | int | true | 页数
@@ -4548,7 +4548,7 @@ provinceId | int | true | 省份Id, 99为全国
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -4556,7 +4556,7 @@ exhibitionSpotList | Array(Exhibition object) | true | 展位列表
 
 ### Exhibition Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展位Id
 name | String | true | 厂家名称
@@ -4616,14 +4616,14 @@ image_url | string | true | 店铺图片
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 exhibitionSpotId | int | true | 展位id
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -4631,7 +4631,7 @@ exhibitionSpot | ExhibitionSpot | true | 展位列表
 
 ### ExhibitionSpot Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展位Id
 shop_id | int | true | 商铺Id
@@ -4649,7 +4649,7 @@ imageList | string | true | 店铺图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -4692,12 +4692,12 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -4705,7 +4705,7 @@ chargeList | Array(ExhibitionCharge Object) | true | 展费列表
 
 ### ExhibitionCharge Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展费Id
 name | String | true | 名称
@@ -4750,7 +4750,7 @@ price | int | true | 价格
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 name | string | true | 厂家名称
@@ -4767,7 +4767,7 @@ idFront | string | true | 身份证正面base64编码照片
 idBack | string | true | 身份证背面base64编码照片
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -4816,14 +4816,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 searchContent | string | true | 搜索内容
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -4831,13 +4831,75 @@ factoryList | Array(Exhibition object) | true | 展位列表
 
 ### Exhibition Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展位Id
 name | String | true | 厂家名称
 sale_description | String | true | 主营描述
 address | string | true | 地址
 image_url | string | true | 店铺图片
+
+## <font color="blue">Update Exhibition Spot</font>
+
+> Request:
+
+```json
+{
+"userId": 1,
+"name": "asdfsa",
+"contactPerson": "fdsaf",
+"phone_1": "fdsaf",
+"phone_2": "fdjsaf",
+"phone_3": "fjdskf",
+"address": "fdsafds",
+"sectionId": 3,
+"saleDescription": "fdsfasf",
+"exhibitionChargeId": 3,
+"description": "dasff",
+"bankName": "dsfasa",
+"bankNumber": "2353252435435643"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新展位</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_exhibition_spot</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+name | string | false | 厂家名称
+contactPerson | string | false | 联系人
+phone_1 | string | false | 联系电话
+phone_2 | string | false | 订货电话
+phone_3 | string | false | 技术咨询
+address | string | false | 地址
+sectionId | int | false | 展区id
+saleDescription | string | false | 主营描述
+exhibitionChargeId | int | false | 展费Id
+description | string | false | 店铺描述
+bankName | string | false | 银行名称
+bankNumber | string | false | 银行账号
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
 
 # Buyer Info
 
@@ -4874,14 +4936,14 @@ image_url | string | true | 店铺图片
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
 shopId | int | true | 店铺Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -4922,14 +4984,14 @@ gift_2 | string | false | 30天礼物名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
 shopId | int | true | 店铺Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -4991,14 +5053,14 @@ gift | string | true | 奖品名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5006,7 +5068,7 @@ collectList | Array(Product Object) | true | 收藏列表
 
 ### Product Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -5063,14 +5125,14 @@ image_url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5078,7 +5140,7 @@ collectList | Array(Shop Object) | true | 收藏列表
 
 ### Shop Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
@@ -5113,13 +5175,13 @@ image_url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 collectIdList | Array(int) | true | 收藏Id列表
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5159,13 +5221,13 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5173,7 +5235,7 @@ profileInfo | Profile Object | true | 个人信息
 
 ### Profile Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 realName | string | true | 真实姓名
 image_url | String | true | 头像url
@@ -5211,7 +5273,7 @@ saleDescription | string | true | 主营业务
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 realName | string | false | 真实姓名
@@ -5219,7 +5281,7 @@ image | string | false | 图片(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5284,14 +5346,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5299,7 +5361,7 @@ collectList | Array(Product Object) | true | 收藏列表
 
 ### Product Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 商品id
 name | string | true | 商品名称
@@ -5361,14 +5423,14 @@ is_vip | string | true | 知否为vip 1为是， 2为否
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5376,7 +5438,7 @@ collectList | Array(Shop Object) | true | 收藏列表
 
 ### Shop Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
@@ -5414,7 +5476,7 @@ is_vip | string | true | 知否为vip 1为是， 2为否
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 买家Id
 imageList | int | false | 新增图片列表(base64编码)
@@ -5422,14 +5484,14 @@ existingImageIdList | Array(int) | false | 保留的原有图片id列表
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
 
 ### Shop Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
@@ -5490,14 +5552,14 @@ is_vip | string | true | 知否为vip 1为是， 2为否
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5505,7 +5567,7 @@ needProductList | Array(NeedProduct Object) | true | 急件求购列表
 
 ### NeedProduct Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 急件求购Id;
 productName | string | true | 商品名称
@@ -5588,14 +5650,14 @@ visitCount | int | true | 浏览次数
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5603,7 +5665,7 @@ transferProductList | Array(TransferProduct Object) | true | 急件转让列表
 
 ### NeedProduct Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 急件转让Id;
 publisherId | int | true | 发布者Id
@@ -5618,7 +5680,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -5679,14 +5741,14 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 needProductId | int | true | 急件求购id
 useId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5694,7 +5756,7 @@ needProduct | NeedProduct Object | true | 急件求购详情
 
 ### NeedProduct Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 帖子Id;
 publisherId | int | true | 发帖人id
@@ -5716,7 +5778,7 @@ imageList | Array(Image) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -5774,14 +5836,14 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 transferProductId | int | true | 急件转让id
 useId | int | true | 用户Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5789,7 +5851,7 @@ transferProduct | TransferProduct Object | true | 急件求购详情
 
 ### TransferProduct Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 帖子Id;
 publisherId | int | true | 发帖人id
@@ -5808,7 +5870,7 @@ imageList | Array(Image) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -5841,13 +5903,13 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 transferProductId | int | true | 急件转让id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5895,7 +5957,7 @@ contactCount | int | true | 联系次数
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份id
 useId | int | true | 用户Id
@@ -5912,7 +5974,7 @@ imageList | Array(Image) | true | 图片列表(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -5956,7 +6018,7 @@ needProductId | int | true | 急件求购Id
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 useId | int | true | 用户Id
@@ -5970,7 +6032,7 @@ imageList | Array(Image) | true | 图片列表
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6026,14 +6088,14 @@ transferProductId | int | true | 急件求购Id
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6041,7 +6103,7 @@ needProductList | Array(NeedProduct Object) | true | 急件求购列表
 
 ### NeedProduct Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 急件求购Id;
 productName | string | true | 商品名称
@@ -6124,14 +6186,14 @@ visitCount | int | true | 浏览次数
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6139,7 +6201,7 @@ transferProductList | Array(TransferProduct Object) | true | 急件转让列表
 
 ### NeedProduct Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 急件转让Id;
 publisherId | int | true | 发布者Id
@@ -6154,7 +6216,7 @@ imageList | Array(Image object) | true | 图片列表
 
 ### Image Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
@@ -6187,14 +6249,14 @@ url | string | true | 图片URL
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicId | int | true | 求购/转让Id
 topicType | int | true | 类型 1.急件求购 2.急件转让
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6227,14 +6289,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicId | int | true | 求购/转让Id
 topicType | int | true | 类型 1.急件求购 2.急件转让
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -6277,12 +6339,12 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6290,7 +6352,7 @@ jobTypeList | Array(JobType Object) | true | 职位类型
 
 ### JobType Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 职位类型Id;
 name | string | true | 职位类型名称
@@ -6347,7 +6409,7 @@ name | string | true | 职位类型名称
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 filterType | int | false | 过滤条件类型 1.区域 2.职位 3.薪资 4.工龄 不填为不过滤
 filterValue | string | false | 根据条件类型添置 条件为区域，传cityId, 条件为职位，传jobTypeId, 其他的传所选的值
@@ -6356,7 +6418,7 @@ page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6364,7 +6426,7 @@ jobRecruitList | Array(JobRecruit Object) | true | 招聘列表
 
 ### JobRecruit Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 招聘Id;
 jobTypeName | string | true | 职位名称
@@ -6424,13 +6486,13 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 jobRecruitId | int | true | 招聘Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6438,7 +6500,7 @@ jobRecruit | JobRecruit Object | true | 招聘详情
 
 ### JobRecruit Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 招聘Id;
 jobTypeName | string | false | 职位名称
@@ -6506,7 +6568,7 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 useId | int | true | 发布人Id
 jobTypeId | int | false | 工作种类Id
@@ -6530,7 +6592,7 @@ contactPerson | string | false | 联系人
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6586,7 +6648,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 search | int | false | 搜索内容
 provinceId | int | true | 省份Id
@@ -6594,7 +6656,7 @@ page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6602,7 +6664,7 @@ jobRecruitList | Array(JobRecruit Object) | true | 招聘列表
 
 ### JobRecruit Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 招聘Id;
 jobName | string | true | 职位名称
@@ -6669,7 +6731,7 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 filterType | int | false | 过滤条件类型 1.区域 2.职位 3.薪资 4.工龄 不填为不过滤
 filterValue | string | false | 根据条件类型添置 条件为区域，传cityId, 条件为职位，传jobTypeId, 其他的传所选的值
@@ -6678,7 +6740,7 @@ page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6686,7 +6748,7 @@ jobApplicationList | Array(JobApplication Object) | true | 求职列表
 
 ### JobApplication Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 求职Id
 name | string | true | 求职人姓名
@@ -6741,13 +6803,13 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 jobApplicationId | int | true | 招聘Id
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6755,7 +6817,7 @@ jobApplication | JobApplication Object | true | 求职详情
 
 ### JobApplication Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 求职Id
 name | string | true | 求职人姓名
@@ -6808,7 +6870,7 @@ phone | string | false | 联系电话
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 useId | int | true | 发布人Id
 jobTypeId | int | false | 工作种类Id
@@ -6824,7 +6886,7 @@ phone | string | false | 联系电话
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6883,14 +6945,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6898,7 +6960,7 @@ jobApplicationList | Array(JobApplication Object) | true | 求职列表
 
 ### JobApplication Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 求职Id
 name | string | true | 求职人姓名
@@ -6959,14 +7021,14 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 page | int | true | 页数
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -6974,7 +7036,7 @@ jobRecruitList | Array(JobRecruit Object) | true | 招聘列表
 
 ### JobRecruit Object
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 招聘Id;
 jobTypeName | string | true | 职位名称
@@ -7021,7 +7083,7 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 jobApplicationId | int | true | 求职Id
 jobTypeId | int | false | 工作种类Id
@@ -7037,7 +7099,7 @@ phone | string | false | 联系电话
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -7086,7 +7148,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 jobRecruitId | int | true | 招聘Id
 jobTypeId | int | false | 工作种类Id
@@ -7110,7 +7172,7 @@ contactPerson | string | false | 联系人
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -7143,14 +7205,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 jobId | int | true | 工作Id
 jobType | int | true | 类型 1.求职 2.招聘
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -7183,14 +7245,14 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 jobId | int | true | 工作Id
 jobType | int | true | 类型 1.求职 2.招聘
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
@@ -7236,7 +7298,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 needProductId | int | true | 急件求购id
 productName | string | true | 商品名称
@@ -7253,7 +7315,7 @@ imageList | Array(Image) | false | 新增图片列表(base64编码)
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
@@ -7295,7 +7357,7 @@ msg | String | true |
 
 ### Request
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 transferProductId | int | true | 急件转让Id
 title | string | true | 标题
@@ -7309,7 +7371,7 @@ imageList | Array(Image) | true | 新增图片列表
 
 ### Response:
 
-Name | Type | Default | Description
+Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
