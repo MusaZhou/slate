@@ -10872,7 +10872,9 @@
                     </span><span class="nt">"companyName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"contact"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"companyAddress"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafkjk"</span><span class="p">,</span><span class="w">
-                    </span><span class="nt">"saleDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsjfj"</span><span class="w">
+                    </span><span class="nt">"saleDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsjfj"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"wechat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdasf"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"alipay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdajkf"</span><span class="w">
                 </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
@@ -10950,32 +10952,44 @@
 <tr>
 <td>image_url</td>
 <td>String</td>
-<td>true</td>
+<td>false</td>
 <td>头像url</td>
 </tr>
 <tr>
 <td>companyName</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>公司名称</td>
 </tr>
 <tr>
 <td>contact</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>联系方式</td>
 </tr>
 <tr>
 <td>companyAddress</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>公司地址</td>
 </tr>
 <tr>
 <td>saleDescription</td>
 <td>string</td>
-<td>true</td>
+<td>false</td>
 <td>主营业务</td>
+</tr>
+<tr>
+<td>wechat</td>
+<td>string</td>
+<td>false</td>
+<td>微信支付账号</td>
+</tr>
+<tr>
+<td>alipay</td>
+<td>string</td>
+<td>false</td>
+<td>支付宝账号</td>
 </tr>
 </tbody></table>
 
@@ -10987,7 +11001,9 @@
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
 </span><span class="nt">"realName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
-</span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fjksdajfsdkaj"</span><span class="w">
+</span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fjksdajfsdkaj"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"wechat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"alipay"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdssfj"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -11033,6 +11049,18 @@
 <td>string</td>
 <td>false</td>
 <td>图片(base64编码)</td>
+</tr>
+<tr>
+<td>wechat</td>
+<td>string</td>
+<td>false</td>
+<td>微信支付账号</td>
+</tr>
+<tr>
+<td>alipay</td>
+<td>string</td>
+<td>false</td>
+<td>支付宝账号</td>
 </tr>
 </tbody></table>
 
@@ -13255,6 +13283,279 @@
 <td>int</td>
 <td>true</td>
 <td>类型 1.急件求购 2.急件转让</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="update-need-product"><font color="blue">Update Need Product</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"needProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"productName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"carBrand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"carModel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"engineModel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafas"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaklfj"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafa"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23242234"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsajklfdj"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"wechat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdskfj"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"imageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+                </span><span class="s2">"fsdafdsjfkasjfkasljf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fdsakfjasdkfjkasdfjkas"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+</span><span class="nt">"existingImageIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 更新急件求购</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-update_need_product">Path:   <font color="green">/update_need_product</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>needProductId</td>
+<td>int</td>
+<td>true</td>
+<td>急件求购id</td>
+</tr>
+<tr>
+<td>productName</td>
+<td>string</td>
+<td>true</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td>carBrand</td>
+<td>string</td>
+<td>false</td>
+<td>汽车品牌</td>
+</tr>
+<tr>
+<td>carModel</td>
+<td>string</td>
+<td>false</td>
+<td>具体车型</td>
+</tr>
+<tr>
+<td>engineModel</td>
+<td>string</td>
+<td>false</td>
+<td>发动机型号</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>false</td>
+<td>详情描述</td>
+</tr>
+<tr>
+<td>contactPerson</td>
+<td>string</td>
+<td>true</td>
+<td>联系人</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>true</td>
+<td>电话</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>false</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>wechat</td>
+<td>string</td>
+<td>false</td>
+<td>微信</td>
+</tr>
+<tr>
+<td>imageList</td>
+<td>Array(Image)</td>
+<td>false</td>
+<td>新增图片列表(base64编码)</td>
+</tr>
+<tr>
+<td>existingImageIdList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>原有保留图片Id列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="update-transfer-product"><font color="blue">Update Transfer Product</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"transferProductId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+</span><span class="nt">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fadsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="p">,</span><span class="w">
+</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaklfj"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"contactPerson"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafa"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone"</span><span class="p">:</span><span class="w"> </span><span class="s2">"23242234"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"imageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+                </span><span class="s2">"fsdafdsjfkasjfkasljf"</span><span class="p">,</span><span class="w">
+                </span><span class="s2">"fdsakfjasdkfjkasdfjkas"</span><span class="w">
+            </span><span class="p">],</span><span class="w">
+</span><span class="nt">"existingImageIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 更新急件转让</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-update_transfer_product">Path:   <font color="green">/update_transfer_product</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>transferProductId</td>
+<td>int</td>
+<td>true</td>
+<td>急件转让Id</td>
+</tr>
+<tr>
+<td>title</td>
+<td>string</td>
+<td>true</td>
+<td>标题</td>
+</tr>
+<tr>
+<td>price</td>
+<td>double</td>
+<td>true</td>
+<td>转让价格</td>
+</tr>
+<tr>
+<td>contactCount</td>
+<td>int</td>
+<td>true</td>
+<td>联系次数</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>true</td>
+<td>详情描述</td>
+</tr>
+<tr>
+<td>contactPerson</td>
+<td>string</td>
+<td>true</td>
+<td>联系人</td>
+</tr>
+<tr>
+<td>phone</td>
+<td>string</td>
+<td>true</td>
+<td>电话</td>
+</tr>
+<tr>
+<td>imageList</td>
+<td>Array(Image)</td>
+<td>false</td>
+<td>新增图片列表(base64编码)</td>
+</tr>
+<tr>
+<td>existingImageIdList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>原有保留图片Id列表</td>
 </tr>
 </tbody></table>
 
