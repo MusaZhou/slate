@@ -5208,7 +5208,9 @@ msg | String | true |
 					"companyName": "fdsf",
 					"contact": "fdsf",
 					"companyAddress": "fdsafkjk",
-					"saleDescription": "fdsjfj"
+					"saleDescription": "fdsjfj",
+					"wechat": "fdasf",
+					"alipay": "fsdajkf"
 				}
 }
 ```
@@ -5238,11 +5240,13 @@ profileInfo | Profile Object | true | 个人信息
 Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 realName | string | true | 真实姓名
-image_url | String | true | 头像url
-companyName | string | true | 公司名称
-contact | string | true | 联系方式
-companyAddress | string | true | 公司地址
-saleDescription | string | true | 主营业务
+image_url | String | false | 头像url
+companyName | string | false | 公司名称
+contact | string | false | 联系方式
+companyAddress | string | false | 公司地址
+saleDescription | string | false | 主营业务
+wechat | string | false | 微信支付账号
+alipay | string | false | 支付宝账号
 
 ## <font color="blue">Update User Profile </font>
 
@@ -5252,7 +5256,9 @@ saleDescription | string | true | 主营业务
 {
 "userId": 3,
 "realName": "fdsf",
-"image": "fjksdajfsdkaj"
+"image": "fjksdajfsdkaj",
+"wechat": "fdsaf",
+"alipay": "fdssfj"
 }
 ```
 
@@ -5278,6 +5284,8 @@ Name | Type | Mandatory | Description
 userId | int | true | 用户Id
 realName | string | false | 真实姓名
 image | string | false | 图片(base64编码)
+wechat | string | false | 微信支付账号
+alipay | string | false | 支付宝账号
 
 ### Response:
 
@@ -6300,6 +6308,126 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true |
+
+## <font color="blue">Update Need Product</font>
+
+> Request:
+
+```json
+{
+"needProductId": 2,
+"productName": "fadsf",
+"carBrand": "fdsf",
+"carModel": "fdsaf",
+"engineModel": "fdsafas",
+"description": "fdsaklfj",
+"contactPerson": "fdsafa",
+"phone": "23242234",
+"address": "fdsajklfdj",
+"wechat": "fdskfj",
+"imageList": [ 
+				"fsdafdsjfkasjfkasljf",
+				"fdsakfjasdkfjkasdfjkas"
+			],
+"existingImageIdList": [1, 2]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新急件求购</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_need_product</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+needProductId | int | true | 急件求购id
+productName | string | true | 商品名称
+carBrand | string | false | 汽车品牌
+carModel | string | false | 具体车型
+engineModel | string | false | 发动机型号
+description | string | false | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+address | string | false | 地址
+wechat | string | false | 微信
+imageList | Array(Image) | false | 新增图片列表(base64编码)
+existingImageIdList | Array(int) | true | 原有保留图片Id列表
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Update Transfer Product</font>
+
+> Request:
+
+```json
+{
+"transferProductId": 2,
+"userId": 3,
+"title": "fadsf",
+"price": 15,
+"description": "fdsaklfj",
+"contactPerson": "fdsafa",
+"phone": "23242234",
+"imageList": [ 
+				"fsdafdsjfkasjfkasljf",
+				"fdsakfjasdkfjkasdfjkas"
+			],
+"existingImageIdList": [1, 2]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新急件转让</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_transfer_product</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+transferProductId | int | true | 急件转让Id
+title | string | true | 标题
+price | double | true | 转让价格
+contactCount | int | true | 联系次数
+description | string | true | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+imageList | Array(Image) | false | 新增图片列表(base64编码)
+existingImageIdList | Array(int) | true | 原有保留图片Id列表
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
 
 # Job
 
