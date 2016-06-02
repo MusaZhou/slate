@@ -6071,7 +6071,25 @@ transferProductId | int | true | 急件求购Id
 							"carModel": "fdsaf",
 							"engineModel": "fdsafas",
 							"status": 1,
-							"visitCount": 12
+							"visitCount": 12,
+							"publisherId": 3,
+							"publisherName": "fdsf",
+							"publisherImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"description": "fdsafdsa",
+							"contactPerson": "fsadfs",
+							"phone": "fdsaf",
+							"address": "fdsfd",
+							"wechat": "dfaskfj",
+							"imageList": [
+											{
+												"id": 2,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 3,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
 						},
 						{
 							"id": 2,
@@ -6081,7 +6099,25 @@ transferProductId | int | true | 急件求购Id
 							"carModel": "fdsaf",
 							"engineModel": "fdsafas",
 							"status": 1,
-							"visitCount": 12
+							"visitCount": 12,
+							"publisherId": 3,
+							"publisherName": "fdsf",
+							"publisherImage": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"description": "fdsafdsa",
+							"contactPerson": "fsadfs",
+							"phone": "fdsaf",
+							"address": "fdsfd",
+							"wechat": "dfaskfj",
+							"imageList": [
+											{
+												"id": 2,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											},
+											{
+												"id": 3,
+												"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+											}
+										]
 						}
 					]
 }
@@ -6120,6 +6156,22 @@ carModel | string | true | 具体车型
 engineModel | string | true | 发动机型号
 status | int | true | 1:求购中 2.已下架
 visitCount | int | true | 浏览次数
+publisherId | int | true | 发帖人id
+publisherName | string | true | 发帖人名字
+publisherImage | string | false | 发帖人头像url地址
+description | string | true | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+address | string | true | 地址
+wechat | string | true | 微信
+imageList | Array(Image) | true | 图片列表
+
+### Image Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
 
 ## <font color="blue">Get My Transfer Product List</font>
 
@@ -6143,12 +6195,16 @@ visitCount | int | true | 浏览次数
 							"id": 1,
 							"publisherId": 2,
 							"publisherName": "fjdskf",
-							"publisherImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publisherImage": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"publishTime": "2016-05-05 12:00:00",
 							"title": "fdsf",
 							"description": "fdsaf",
 							"status": 1,
 							"visitCount": 12,
+							"price": 12,
+							"contactCount": 4,
+							"contactPerson": "fdsf",
+							"phone": "fdjsakf",
 							"imageList": [
 											{
 												"id": 2,
@@ -6164,12 +6220,16 @@ visitCount | int | true | 浏览次数
 							"id": 2,
 							"publisherId": 2,
 							"publisherName": "fjdskf",
-							"publisherImageUrl": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"publisherImage": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"publishTime": "2016-05-05 12:00:00",
 							"title": "fdsf",
 							"description": "fdsaf",
 							"status": 1,
 							"visitCount": 12,
+							"price": 12,
+							"contactCount": 4,
+							"contactPerson": "fdsf",
+							"phone": "fdjsakf",
 							"imageList": [
 											{
 												"id": 4,
@@ -6206,19 +6266,23 @@ status | int | true | 1.成功
 msg | String | true | 
 transferProductList | Array(TransferProduct Object) | true | 急件转让列表
 
-### NeedProduct Object
+### TransferProduct Object
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 id | int | true | 急件转让Id;
 publisherId | int | true | 发布者Id
 publisherName | string | true | 发布者姓名
-publisherImageUrl | string | true | 发布者头像url
+publisherImage | string | true | 发布者头像url
 publishTime | datetime | true | 发布时间
 title | string | true | 标题
 description | string | true | 描述
 status | int | true | 1:转让中 2.已下架
 visitCount | int | true | 浏览次数
+price | double | true | 转让价格
+contactCount | int | true | 联系次数
+contactPerson | string | true | 联系人
+phone | string | true | 电话
 imageList | Array(Image object) | true | 图片列表
 
 ### Image Object
@@ -7046,7 +7110,10 @@ msg | String | true |
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
 							"experience": "fdsaf",
-							"status": 1
+							"status": 1,
+							"age": 20,
+							"phone": "fdsaf",
+							"description": "fdsafj"
 						},
 						{
 							"id": 2,
@@ -7058,7 +7125,10 @@ msg | String | true |
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
 							"experience": "fdsaf",
-							"status": 1
+							"status": 1,
+							"age": 20,
+							"phone": "fdsaf",
+							"description": "fdsafj"
 						}
 					]
 }
@@ -7099,6 +7169,9 @@ salary | string | true | 薪资
 education | string | false | 学历
 experience | string | false | 经验
 status | int | true | 状态 1.发布中 2.停止发布
+age | string | false | 年龄
+description | string | false | 个人简介
+phone | string | false | 联系电话
 
 ## <font color="blue">Get My Job Recruit List</font>
 
@@ -7125,7 +7198,20 @@ status | int | true | 状态 1.发布中 2.停止发布
 							"companyAddress": "fdsf",
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
-							"status": 1
+							"status": 1,
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"cityName": "fds",
+							"education": "education",
+							"gender": "fd",
+							"number": "fd",
+							"experience": "dafd",
+							"age": "fds",
+							"companyProperty": "fds",
+							"companyScale": "fd",
+							"companyWelfare": "fd",
+							"phone": "fdsf",
+							"description": "fsd",
+							"contactPerson": "fed"
 						},
 						{
 							"id": 2,
@@ -7134,7 +7220,20 @@ status | int | true | 状态 1.发布中 2.停止发布
 							"companyAddress": "fdsf",
 							"publishTime": "2016-05-05 12:00:00",
 							"salary": "fdsafas",
-							"status": 1
+							"status": 1,
+							"image": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"cityName": "fds",
+							"education": "education",
+							"gender": "fd",
+							"number": "fd",
+							"experience": "dafd",
+							"age": "fds",
+							"companyProperty": "fds",
+							"companyScale": "fd",
+							"companyWelfare": "fd",
+							"phone": "fdsf",
+							"description": "fsd",
+							"contactPerson": "fed"
 						}
 					]
 }
@@ -7172,6 +7271,19 @@ companyAddress | string | true | 公司地址
 publishTime | string | true | 发布时间
 salary | string | true | 薪资
 status | int | true | 状态 1.发布中 2.停止发布
+image | int | false | 公司logo
+cityName | string | false | 城市名称
+education | string | false | 学历
+gender | string | true | 性别
+number | string | false | 招聘人数
+experience | string | false | 工作经验
+age | string | false | 年龄
+companyProperty | string | false | 公司性质
+companyScale | string | false | 公司规模
+companyWelfare | string | false | 公司福利
+phone | string | false | 联系电话
+description | string | false | 岗位描述
+contactPerson | string | false | 联系人
 
 ## <font color="blue">Update Job Application</font>
 
