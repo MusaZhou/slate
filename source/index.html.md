@@ -1000,6 +1000,100 @@ Name | Type | Mandatory | Description
 id | int | true | 城市Id;
 name | string | true | 城市名称
 
+## <font color="blue">Get Payment Params </font>
+
+> Request:
+
+```json
+{
+"userId": 3,
+"paymentType": 1,
+"paymentMethod": 2,
+"amount": 15.00,
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"alipayData": {
+					"service": "mobile.securitypay.pay",
+					"partner": "03202390932",
+					"_input_charset": "utf-8",
+					"out_trade_no": "fskldafjsadkj",
+					"subject": "fsdafkj",
+					"payment_type": 1,
+					"seller_id": "fdsfkjd@qq.com",
+					"total_fee": 10,
+					"body": "fsdafjksadj",
+					"full": "_input_charset="utf-8"&body="用户ID-6:易配-申请展位"&notify_url="/app/alipay_notify_url.php"&out_trade_no="2016060217353313335"&partner="2088221980524436"&payment_type="1"&seller_id="1598881018@qq.com"&service="mobile.securitypay.pay"&subject="易配-申请展位"&total_fee="0.01"&sign="hF4xVV%2BbIUC8TW64tn8ctzperATjcevvzbveBYh0zRo6ffTkIvlTEE%2BBCRIu9kCNqGxNpHtmh710fo5H6NeIkpvdUCx239tyjbgbzkuzYbH76zEb777EsndqCk%2BbFrSV7weEq%2BYIrHnjTx4Nn3x8tX2NL8XQOZQd4Rc8l6167j0%3D"&sign_type="RSA""
+				}
+"wechatData:":{
+					"appId": "909230293",
+					"partnerId": "432423",
+					"prepay_id": "jfksdjfk",
+					"package": "fdsakfj",
+					"noncestr": "fdsakfj",
+					"timestamp": 2342342,
+					"sign": "fksdfdsjafkjsadkfjsdaklfjsdaklfjsdkj"
+				}
+}
+```
+
+<font size="4"><b> 获得支付信息</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_user_profile</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+paymentType | int | true | 支付场景 1.商品订单 2.展位 3.VIP
+paymentMethod | int | true | 支付方式 1.支付宝 2.微信
+amount | double | true | 金额
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+alipayData | Alipay Object | false | 支付宝支付信息
+wechatData | Wechat Object | false | 微信支付信息
+
+### Alipay Object
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+service | string | true | 
+partner | string | true |
+_input_charset | string | true |
+out_trade_no | string | true |
+subject | string | true | 
+payment_type | string | true | 
+seller_id | string | true | 
+total_fee | double | true | 
+body | string | true | 
+full | string | true | 拼接好签名的所有字符串
+
+### Wechat Object
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+appId | string | true |
+partnerId | string | true |
+prepay_id | string | true | 
+package | string | true | 
+noncestr | string | true |
+timestamp | string | true |
+sign | string | true | 签名
+
 # Shop
 
 ## <font color="blue">Get Shop Type List</font>
@@ -1322,6 +1416,8 @@ image_url | string | false | 图片URL
 					"address": "fsdafsadkfj",
 					"sale_description": "fsdfjsdkfkfjasf",
 					"description": "djfaksdjfkdsajfaks",
+					"vipStartDate": "2016-05-05",
+					"vipEndDate": "2016-10-05",
 					"bannerList": [
 										{
 											"id": 1,
@@ -1372,6 +1468,8 @@ phone_3 | int | 电话3
 sale_description | string | 主营描述
 description | string | true | 描述
 address | string | true | 地址
+vipStartDate | date | false | vip起始时间
+vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
 
 ### Image Object
@@ -4446,7 +4544,7 @@ orderId | int | true | 订单id
 
 Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
-status | int | true | 1.成功
+status | int | true | 1.成功 4.用户未设置微信或支付宝账号
 msg | String | true |
 
 ## <font color="blue">Confirm Order Delivered</font>
@@ -5019,6 +5117,7 @@ gift | string | true | 奖品名称
 "collectList": [
 					{
 						"id": 3,
+						"product_id": 4,
 						"name": "fdsa",
 						"original_price": 23,
 						"price": 31,
@@ -5030,7 +5129,9 @@ gift | string | true | 奖品名称
 						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 					},
 					{
+
 						"id": 4,
+						"product_id": 4,
 						"name": "fdsa",
 						"original_price": 23,
 						"price": 31,
@@ -5070,7 +5171,8 @@ collectList | Array(Product Object) | true | 收藏列表
 
 Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
-id | int | true | 商品id
+id | int | true | 收藏ID
+product_id | int | true | 商品id
 name | string | true | 商品名称
 original_price | double | true | 原价
 price | double | true | 现价
@@ -5101,6 +5203,7 @@ image_url | string | true | 图片URL
 "collectList": [
 					{
 						"id": 3,
+						"shop_id": 4,
 						"name": "fdsa",
 						"address": "fdasf",
 						"sale_description": "fdsaf",
@@ -5108,6 +5211,7 @@ image_url | string | true | 图片URL
 					},
 					{
 						"id": 4,
+						"shop_id": 4,
 						"name": "fdsa",
 						"address": "fdasf",
 						"sale_description": "fdsaf",
@@ -5142,7 +5246,8 @@ collectList | Array(Shop Object) | true | 收藏列表
 
 Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
-id | int | true | 店铺id
+id | int | true | 收藏ID
+shop_id | int | true | 店铺id
 name | string | true | 店铺名称
 sale_description | string | 主营描述
 address | string | true | 地址
