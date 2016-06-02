@@ -2114,6 +2114,253 @@
 </tr>
 </tbody></table>
 
+<h2 id="get-payment-params"><font color="blue">Get Payment Params </font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+</span><span class="nt">"paymentType"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"paymentMethod"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.00</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"alipayData"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"service"</span><span class="p">:</span><span class="w"> </span><span class="s2">"mobile.securitypay.pay"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"partner"</span><span class="p">:</span><span class="w"> </span><span class="s2">"03202390932"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"_input_charset"</span><span class="p">:</span><span class="w"> </span><span class="s2">"utf-8"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"out_trade_no"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fskldafjsadkj"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdafkj"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"payment_type"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"seller_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsfkjd@qq.com"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"total_fee"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdafjksadj"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"full"</span><span class="p">:</span><span class="w"> </span><span class="s2">"_input_charset="</span><span class="err">utf</span><span class="mi">-8</span><span class="s2">"&amp;body="</span><span class="err">用户ID</span><span class="mi">-6</span><span class="err">:易配-申请展位</span><span class="s2">"&amp;notify_url="</span><span class="err">/app/alipay_notify_url.php</span><span class="s2">"&amp;out_trade_no="</span><span class="mi">2016060217353313335</span><span class="s2">"&amp;partner="</span><span class="mi">2088221980524436</span><span class="s2">"&amp;payment_type="</span><span class="mi">1</span><span class="s2">"&amp;seller_id="</span><span class="mi">1598881018</span><span class="err">@qq.com</span><span class="s2">"&amp;service="</span><span class="err">mobile.securitypay.pay</span><span class="s2">"&amp;subject="</span><span class="err">易配-申请展位</span><span class="s2">"&amp;total_fee="</span><span class="mf">0.01</span><span class="s2">"&amp;sign="</span><span class="err">hF</span><span class="mi">4</span><span class="err">xVV%</span><span class="mi">2</span><span class="err">BbIUC</span><span class="mi">8</span><span class="err">TW</span><span class="mi">64</span><span class="err">tn</span><span class="mi">8</span><span class="err">ctzperATjcevvzbveBYh</span><span class="mi">0</span><span class="err">zRo</span><span class="mi">6</span><span class="err">ffTkIvlTEE%</span><span class="mi">2</span><span class="err">BBCRIu</span><span class="mi">9</span><span class="err">kCNqGxNpHtmh</span><span class="mi">710</span><span class="err">fo</span><span class="mi">5</span><span class="err">H</span><span class="mi">6</span><span class="err">NeIkpvdUCx</span><span class="mi">239</span><span class="err">tyjbgbzkuzYbH</span><span class="mi">76</span><span class="err">zEb</span><span class="mi">777</span><span class="err">EsndqCk%</span><span class="mi">2</span><span class="err">BbFrSV</span><span class="mi">7</span><span class="err">weEq%</span><span class="mi">2</span><span class="err">BYIrHnjTx</span><span class="mi">4</span><span class="err">Nn</span><span class="mi">3</span><span class="err">x</span><span class="mi">8</span><span class="err">tX</span><span class="mi">2</span><span class="err">NL</span><span class="mi">8</span><span class="err">XQOZQd</span><span class="mi">4</span><span class="err">Rc</span><span class="mi">8</span><span class="err">l</span><span class="mi">6167</span><span class="err">j</span><span class="mi">0</span><span class="err">%</span><span class="mi">3</span><span class="err">D</span><span class="s2">"&amp;sign_type="</span><span class="err">RSA</span><span class="s2">""</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+</span><span class="s2">"wechatData:"</span><span class="err">:</span><span class="p">{</span><span class="w">
+                    </span><span class="nt">"appId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"909230293"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"partnerId"</span><span class="p">:</span><span class="w"> </span><span class="s2">"432423"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"prepay_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"jfksdjfk"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"package"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsakfj"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"noncestr"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsakfj"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="mi">2342342</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"sign"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fksdfdsjafkjsadkfjsdaklfjsdaklfjsdkj"</span><span class="w">
+                </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得支付信息</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-update_user_profile">Path:   <font color="green">/update_user_profile</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户Id</td>
+</tr>
+<tr>
+<td>paymentType</td>
+<td>int</td>
+<td>true</td>
+<td>支付场景 1.商品订单 2.展位 3.VIP</td>
+</tr>
+<tr>
+<td>paymentMethod</td>
+<td>int</td>
+<td>true</td>
+<td>支付方式 1.支付宝 2.微信</td>
+</tr>
+<tr>
+<td>amount</td>
+<td>double</td>
+<td>true</td>
+<td>金额</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>alipayData</td>
+<td>Alipay Object</td>
+<td>false</td>
+<td>支付宝支付信息</td>
+</tr>
+<tr>
+<td>wechatData</td>
+<td>Wechat Object</td>
+<td>false</td>
+<td>微信支付信息</td>
+</tr>
+</tbody></table>
+
+<h3 id="alipay-object">Alipay Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>service</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>partner</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>_input_charset</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>out_trade_no</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>subject</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>payment_type</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>seller_id</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>total_fee</td>
+<td>double</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>body</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>full</td>
+<td>string</td>
+<td>true</td>
+<td>拼接好签名的所有字符串</td>
+</tr>
+</tbody></table>
+
+<h3 id="wechat-object">Wechat Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>appId</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>partnerId</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>prepay_id</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>package</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>noncestr</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>string</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>sign</td>
+<td>string</td>
+<td>true</td>
+<td>签名</td>
+</tr>
+</tbody></table>
+
 <h1 id="shop">Shop</h1>
 
 <h2 id="get-shop-type-list"><font color="blue">Get Shop Type List</font></h2>
@@ -2673,6 +2920,8 @@
                     </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdafsadkfj"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fsdfjsdkfkfjasf"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"djfaksdjfkdsajfaks"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"vipStartDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-05-05"</span><span class="p">,</span><span class="w">
+                    </span><span class="nt">"vipEndDate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2016-10-05"</span><span class="p">,</span><span class="w">
                     </span><span class="nt">"bannerList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                                         </span><span class="p">{</span><span class="w">
                                             </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
@@ -2822,6 +3071,18 @@
 <td>string</td>
 <td>true</td>
 <td>地址</td>
+</tr>
+<tr>
+<td>vipStartDate</td>
+<td>date</td>
+<td>false</td>
+<td>vip起始时间</td>
+</tr>
+<tr>
+<td>vipEndDate</td>
+<td>date</td>
+<td>false</td>
+<td>vip结束时间</td>
 </tr>
 <tr>
 <td>bannerList</td>
@@ -9250,7 +9511,7 @@
 <td>status</td>
 <td>int</td>
 <td>true</td>
-<td>1.成功</td>
+<td>1.成功 4.用户未设置微信或支付宝账号</td>
 </tr>
 <tr>
 <td>msg</td>
@@ -10487,6 +10748,7 @@
 </span><span class="nt">"collectList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsa"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
@@ -10498,7 +10760,9 @@
                         </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                     </span><span class="p">},</span><span class="w">
                     </span><span class="p">{</span><span class="w">
+
                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"product_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsa"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="mi">23</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="mi">31</span><span class="p">,</span><span class="w">
@@ -10587,6 +10851,12 @@
 <td>id</td>
 <td>int</td>
 <td>true</td>
+<td>收藏ID</td>
+</tr>
+<tr>
+<td>product_id</td>
+<td>int</td>
+<td>true</td>
 <td>商品id</td>
 </tr>
 <tr>
@@ -10665,6 +10935,7 @@
 </span><span class="nt">"collectList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsa"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdasf"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
@@ -10672,6 +10943,7 @@
                     </span><span class="p">},</span><span class="w">
                     </span><span class="p">{</span><span class="w">
                         </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
+                        </span><span class="nt">"shop_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsa"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdasf"</span><span class="p">,</span><span class="w">
                         </span><span class="nt">"sale_description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
@@ -10753,6 +11025,12 @@
 </thead><tbody>
 <tr>
 <td>id</td>
+<td>int</td>
+<td>true</td>
+<td>收藏ID</td>
+</tr>
+<tr>
+<td>shop_id</td>
 <td>int</td>
 <td>true</td>
 <td>店铺id</td>
