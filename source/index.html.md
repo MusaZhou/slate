@@ -3454,6 +3454,44 @@ Name | Type | Mandatory | Description
 id | int | true | 图片id
 url | string | true | 图片URL
 
+## <font color="blue">Delete Topic</font>
+
+> Request:
+
+```json
+{
+"topicId": 3
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除帖子</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/delete_topic</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+topicId | int | true | 帖子Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Cart
 
 ## <font color="blue">Get Cart Detail</font>
@@ -6813,7 +6851,7 @@ publishTime | datetime | false | 发布时间
 experience | string | false | 工作经验
 age | string | false | 年龄
 companyProperty | string | false | 公司性质
-companyScale | string | false | 公司规模
+companyScale | string | false | 公司简介
 companyWelfare | string | false | 公司福利
 phone | string | false | 联系电话
 description | string | false | 岗位描述
@@ -6880,7 +6918,7 @@ number | string | false | 招聘人数
 experience | string | false | 工作经验
 age | string | false | 年龄
 companyProperty | string | false | 公司性质
-companyScale | string | false | 公司规模
+companyScale | string | false | 公司简介
 companyWelfare | string | false | 公司福利
 phone | string | false | 联系电话
 description | string | false | 岗位描述
@@ -7507,7 +7545,7 @@ gender | string | true | 性别 1.男性 2.女性
 number | string | false | 招聘人数
 experience | string | false | 工作经验
 age | string | false | 年龄
-companyProperty | string | false | 公司性质
+companyProperty | string | false | 公司简介
 companyScale | string | false | 公司规模
 companyWelfare | string | false | 公司福利
 phone | string | false | 联系电话
