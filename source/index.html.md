@@ -3530,6 +3530,7 @@ msg | String | true |
 													"product_brand": "abc",
 													"product_spec": "adb",
 													"quantity": 4,
+													"product_activity_id": 4,
 													"price": 4.00,
 													"cart_item_amount": 16.00,
 													"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
@@ -3541,6 +3542,7 @@ msg | String | true |
 													"product_brand": "abc",
 													"product_spec": "adb",
 													"quantity": 4,
+													"product_activity_id": 4,
 													"price": 4.00,
 													"cart_item_amount": 16.00,
 													"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
@@ -3625,6 +3627,7 @@ product_name | string | true | 产品名称
 product_brand | string | false | 产品品牌
 product_spec | string | false | 产品规格
 quantity | int | true | 数量
+product_activity_id | int | false | 活动Id
 price | double | true | 价格
 cart_item_amount | double | true | 金额
 image_url | string | true | 产品图片地址
@@ -5668,11 +5671,11 @@ is_vip | string | true | 知否为vip 1为是， 2为否
 }
 ```
 
-<font size="4"><b> 获得用户历史足迹-店铺</b></font>
+<font size="4"><b> 更新店铺轮播图</b></font>
 
 ### Method:   POST
 
-### Path:   <font color="green">/get_buyer_shop_visits</font>
+### Path:   <font color="green">/update_shop_images</font>
 
 ### Request
 
