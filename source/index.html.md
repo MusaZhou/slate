@@ -2893,6 +2893,7 @@ imageList | Array(Image object) | true | 图片列表
 "promotionActivityList": [
 						{
 							"id": 1,
+							"product_id": 3,
 							"product_name": "abc",
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"original_price": 15,
@@ -2906,6 +2907,7 @@ imageList | Array(Image object) | true | 图片列表
 						},
 						{
 							"id": 2,
+							"product_id": 3,
 							"product_name": "abc",
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"original_price": 15,
@@ -2947,6 +2949,7 @@ promotionActivityList | Array(PromotionActivity object) | true | 团购活动列
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
+product_id | int | true | 商品Id
 product_name | string | true | 商品名称
 image_url | string | true | 商品图片地址
 original_price | double | true | 原价
@@ -4629,6 +4632,44 @@ Name | Type | Mandatory | Description
 status | int | true | 1.成功
 msg | String | true |
 
+## <font color="blue">Confirm Orders</font>
+
+> Request:
+
+```json
+{
+"orderIdList": [1, 2, 3]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 确认新订单</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/order_confirmed</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+orderIdList | Array(int) | true | 订单id列表
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Exhibition
 
 ## <font color="blue">Get Exhibition Factories</font>
@@ -4652,6 +4693,7 @@ msg | String | true |
 "exhibitionSpotList": [
 						{
 							"id": 1,
+							"shop_id": 3,
 							"name": "fsadf",
 							"sale_description": "fdsafsa",
 							"address": "fasdf",
@@ -4659,6 +4701,7 @@ msg | String | true |
 						},
 						{
 							"id": 2,
+							"shop_id": 3,
 							"name": "fsadf",
 							"sale_description": "fdsafsa",
 							"address": "fasdf",
@@ -4695,6 +4738,7 @@ exhibitionSpotList | Array(Exhibition object) | true | 展位列表
 Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展位Id
+shop_id | int | true | 店铺Id
 name | String | true | 厂家名称
 sale_description | String | true | 主营描述
 address | string | true | 地址
@@ -4928,6 +4972,7 @@ msg | String | true |
 "factoryList": [
 						{
 							"id": 1,
+							"shop_id": 3,
 							"name": "fsadf",
 							"sale_description": "fdsafsa",
 							"address": "fasdf",
@@ -4935,6 +4980,7 @@ msg | String | true |
 						},
 						{
 							"id": 2,
+							"shop_id": 3,
 							"name": "fsadf",
 							"sale_description": "fdsafsa",
 							"address": "fasdf",
@@ -4970,6 +5016,7 @@ factoryList | Array(Exhibition object) | true | 展位列表
 Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 id | int | true | 展位Id
+shop_id | int | true | 店铺Id
 name | String | true | 厂家名称
 sale_description | String | true | 主营描述
 address | string | true | 地址
@@ -5409,6 +5456,7 @@ alipay | string | false | 支付宝账号
 
 ```json
 {
+"head_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 "status": 1,
 "msg": "Ok"
 }
@@ -5434,6 +5482,7 @@ alipay | string | false | 支付宝账号
 
 Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
+head_url | string | true | 头像url
 status | int | true | 1.成功
 msg | String | true | 
 
