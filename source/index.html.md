@@ -1826,6 +1826,95 @@ Name | Type | Mandatory | Description
 id | int | true | 二级类型Id
 name | String | true | 二级类型名称
 
+## <font color="blue">Get My Shop Detail</font>
+
+> Request:
+
+```json
+{
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"shopDetail": {
+					"id": 1,
+					"name": "test",
+					"service_time": "08:00-19:00",
+					"collect_count": 12,
+					"phone_1": "32423452",
+					"phone_2": "23223252",
+					"phone_3": "23542423",
+					"address": "fsdafsadkfj",
+					"sale_description": "fsdfjsdkfkfjasf",
+					"description": "djfaksdjfkdsajfaks",
+					"vipStartDate": "2016-05-05",
+					"vipEndDate": "2016-10-05",
+					"bannerList": [
+										{
+											"id": 1,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 2,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+				}
+}
+```
+
+<font size="4"><b> 获得我的店铺详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_shop_detail</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+shopDetail | Shop object | true | 店铺详情
+
+### Shop Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 店铺id
+name | string | true | 店铺名称
+service_time | time | 营业时间
+collect_count | int | 收藏人数
+visit_count | int | 浏览人数
+phone_1 | int | 电话1
+phone_2 | int | 电话2
+phone_3 | int | 电话3
+sale_description | string | 主营描述
+description | string | true | 描述
+address | string | true | 地址
+vipStartDate | date | false | vip起始时间
+vipEndDate | date | false | vip结束时间
+bannerList | Array(Image object) | false | 轮播图列表
+
+### Image Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
+
 # Product
 
 ## <font color="blue">Get Owner Recommended Products</font>
@@ -3340,7 +3429,7 @@ topicTypeId | int | true | 帖子类型Id
 content | string | true | 帖子内容
 userId | int | true | 发布人Id
 provinceId | int | true | 省份Id
-imageList | Array(String) | true | 图片列表(base64编码)
+imageList | Array(String) | false | 图片列表(base64编码)
 
 ### Response:
 
@@ -5086,6 +5175,94 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Get My Exhibition Detail</font>
+
+> Request:
+
+```json
+{
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"exhibitionSpot": {
+						"id": 1,
+						"shop_id": 1,
+						"name": "fsdf",
+						"address": "fdsafasf",
+						"sale_description": "fdsafdsaf",
+						"phone_1": "fadsfsaf",
+						"phone_2": "fdajksfd",
+						"phone_3": "fajdskfs",
+						"service_time": "12:00-18:00",
+						"description": "fdsakf",
+						"wechat": "weafa",
+						"visit_count": 20,
+						"imageList": [
+										{
+											"id": 1,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 2,
+											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+					}
+}
+```
+
+<font size="4"><b> 获得我的展位详情</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_exhibition_spot_detail</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+exhibitionSpot | ExhibitionSpot | true | 展位列表
+
+### ExhibitionSpot Object
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 展位Id
+shop_id | int | true | 商铺Id
+name | String | true | 厂家名称
+sale_description | String | true | 主营描述
+address | string | true | 地址
+description | string | true | 店铺描述
+phone_1 | string | true | 业务联系
+phone_2 | string | true | 订货电话
+phone_3 | string | true | 技术咨询
+service_time | string | true | 营业时间
+wechat | string | true | 微信号
+visit_count | int | true | 浏览人数
+imageList | string | true | 店铺图片列表
+
+### Image Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 图片id
+url | string | true | 图片URL
 
 # Buyer Info
 
