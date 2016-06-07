@@ -2739,6 +2739,7 @@ msg | String | true |
 "groupActivityList": [
 						{
 							"id": 1,
+							"product_id": 2,
 							"product_name": "abc",
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"original_price": 15,
@@ -2750,7 +2751,8 @@ msg | String | true |
 							"end_time": "2016-05-06 21:00:00"
 						},
 						{
-							"id": 1,
+							"id": 2,
+							"product_id": 3,
 							"product_name": "abc",
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 							"original_price": 15,
@@ -2791,6 +2793,7 @@ groupActivityList | Array(GroupActivity object) | true | 团购活动列表
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
+product_id | int | true | 商品Id
 product_name | string | true | 商品名称
 image_url | string | true | 商品图片地址
 original_price | double | true | 原价
@@ -2821,6 +2824,7 @@ end_time | datetime | true | 结束时间
 "groupActivityDetail": [
 						{
 							"id": 1,
+							"product_id": 2,
 							"shop_id": 2,
 							"shop_name": "djfak",
 							"shop_address": "fadsfj",
@@ -2915,6 +2919,7 @@ groupActivityDetail | Array(GroupActivity object) | true | 商品类型列表
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 活动id
+product_id | int | true | 商品Id
 shop_id | int | true | 店铺Id
 shop_name | string | true | 店铺名称
 shop_address | string | true | 店铺地址
@@ -3069,6 +3074,7 @@ end_time | datetime | true | 活动结束时间
 "promotionActivityDetail": [
 						{
 							"id": 1,
+							"product_id": 3,
 							"shop_id": 2,
 							"shop_name": "djfak",
 							"shop_address": "fadsfj",
