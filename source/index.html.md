@@ -4768,6 +4768,44 @@ Name | Type | Mandatory | Description
 status | int | true | 1.成功
 msg | String | true | 
 
+## <font color="blue">Remind Order Delivery</font>
+
+> Request:
+
+```json
+{
+"orderId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 提醒发货</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/remind_delivery</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+orderId | int | true | 订单id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Exhibition
 
 ## <font color="blue">Get Exhibition Factories</font>
