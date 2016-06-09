@@ -6972,8 +6972,10 @@ name | string | true | 职位类型名称
 
 ```json
 {
-"filterType": 1,
-"filterValue": "fdsa",
+"filterCity": 1,
+"filterJob": 2,
+"filterSalary": "1000~2000",
+"filterExperience": "1 year",
 "provinceId": 2,
 "page": 1
 }
@@ -7020,8 +7022,10 @@ name | string | true | 职位类型名称
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
-filterType | int | false | 过滤条件类型 1.区域 2.职位 3.薪资 4.工龄 不填为不过滤
-filterValue | string | false | 根据条件类型添置 条件为区域，传cityId, 条件为职位，传jobTypeId, 其他的传所选的值
+filterCity | int | false | 过滤城市Id
+filterJob | int | false | 过滤工种Id
+filterSalary | string | false | 过滤工资
+filterExperience | string | false | 过滤经验
 provinceId | int | true | 省份Id
 page | int | true | 页数
 
@@ -7290,8 +7294,10 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 ```json
 {
-"filterType": 1,
-"filterValue": "fdsa",
+"filterCity": 1,
+"filterJob": 2,
+"filterSalary": "1000~2000",
+"filterExperience": "1 year",
 "provinceId": 2,
 "page": 1
 }
@@ -7342,8 +7348,10 @@ status | int | true | 状态 1.发布中 2.停止发布
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
-filterType | int | false | 过滤条件类型 1.区域 2.职位 3.薪资 4.工龄 不填为不过滤
-filterValue | string | false | 根据条件类型添置 条件为区域，传cityId, 条件为职位，传jobTypeId, 其他的传所选的值
+filterCity | int | false | 过滤城市Id
+filterJob | int | false | 过滤工种Id
+filterSalary | string | false | 过滤工资
+filterExperience | string | false | 过滤经验
 provinceId | int | true | 省份Id
 page | int | true | 页数
 
