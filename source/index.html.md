@@ -144,7 +144,7 @@ status | int | true | 1.成功 3.手机号未注册 4.密码不正确
 msg | String | true | 
 cartId | string | true | 购物车id
 userId | int | true | 用户id
-user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商
+user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商 5.正在申请商铺 6.正在申请展会
 image_url | string | false | 用户头像url
 real_name | string | false | 真实姓名
 
@@ -568,6 +568,100 @@ Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 city_id | int | true | 城市id
 city_name | string | true | 城市名称
+
+## <font color="blue">Home Products</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"promotion": {
+				"productActivityId": 2,
+				"productId": 1,
+				"productName": "fjdskf",
+				"startTime": "2013-10-12 12:00:00",
+				"endTime": "2013-10-12 12:00:00",
+				"imageUrl": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+				},
+"group": {
+				"productActivityId": 2,
+				"productId": 1,
+				"productName": "fjdskf",
+				"startTime": "2013-10-12 12:00:00",
+				"endTime": "2013-10-12 12:00:00",
+				"imageUrl": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+				},
+"promotion": {
+				"productActivityId": 2,
+				"productId": 1,
+				"productName": "fjdskf",
+				"imageUrl": "http://123.123.12.1/image_download/brand_logo_images/2.png"
+				}
+}
+```
+
+<font size="4"><b> 首页产品</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/home_products</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+provinceId | String | true | 省份Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+status | int | true | 1.成功 3.curl false 4.baidu map error
+msg | String | true | 
+promotion | Promotion Object | true | 促销产品
+group | Group Object | true | 团购产品
+comsumable | Consumbale Object | true | 消耗品产品
+
+### Promotion Object:
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+productActivityId | int | true | 活动Id
+productId | int | true | 产品Id
+productName | String | true | 产品名称
+startTime | Datetime | true | 开始时间
+endTime | Datetime | true | 结束时间
+imageUrl | string | true | 图片URL
+
+### Group Object:
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+productActivityId | int | true | 活动Id
+productId | int | true | 产品Id
+productName | String | true | 产品名称
+startTime | Datetime | true | 开始时间
+endTime | Datetime | true | 结束时间
+imageUrl | string | true | 图片URL
+
+### Consumable Object:
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+productActivityId | int | true | 活动Id
+productId | int | true | 产品Id
+productName | String | true | 产品名称
+imageUrl | string | true | 图片URL
 
 # General
 
@@ -1102,7 +1196,8 @@ sign | string | true | 签名
 
 ```json
 {
-"provinceId": 1
+"provinceId": 1,
+"search": "fdsaf"
 }
 ```
 
@@ -1224,6 +1319,7 @@ sign | string | true | 签名
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
+search | string | false | 搜索内容
 
 ### Response:
 
@@ -1257,7 +1353,7 @@ secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
 
-## <font color="blue">Shop Type Search</font>
+## <font color="blue">Shop Type Search(depreciated)</font>
 
 > Request:
 
@@ -1291,7 +1387,7 @@ image_url | string | true | 图片URL
 }
 ```
 
-<font size="4"><b> 店铺类别搜索</b></font>
+<font size="4"><b> 店铺类别搜索(不用)</b></font>
 
 ### Method:   POST
 
@@ -5925,6 +6021,48 @@ sale_description | string | 主营描述
 address | string | true | 地址
 image_url | string | true | 图片URL
 is_vip | string | true | 知否为vip 1为是， 2为否
+
+## <font color="blue">User Feedback</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"image": "fdsakfjfdsafsaf",
+"content": "fadsjklfj"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 用户反馈</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/user_feedback</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 买家Id
+image | string | false | 图片(base64编码)
+content | string | true | 内容
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
 
 # Product Topic
 
