@@ -1853,6 +1853,7 @@ name | String | true | 二级类型名称
 					"address": "fsdafsadkfj",
 					"sale_description": "fsdfjsdkfkfjasf",
 					"description": "djfaksdjfkdsajfaks",
+					"wechat": "fdsfj",
 					"vipStartDate": "2016-05-05",
 					"vipEndDate": "2016-10-05",
 					"bannerList": [
@@ -1895,15 +1896,16 @@ Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
-service_time | time | 营业时间
-collect_count | int | 收藏人数
-visit_count | int | 浏览人数
-phone_1 | int | 电话1
-phone_2 | int | 电话2
-phone_3 | int | 电话3
-sale_description | string | 主营描述
+service_time | time | true | 营业时间
+collect_count | int | true | 收藏人数
+visit_count | int | true | 浏览人数
+phone_1 | int | false | 电话1
+phone_2 | int | false | 电话2
+phone_3 | int | false | 电话3
+sale_description | string | true | 主营描述
 description | string | true | 描述
 address | string | true | 地址
+wechat | string | false | 微信账号
 vipStartDate | date | false | vip起始时间
 vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
