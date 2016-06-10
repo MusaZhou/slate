@@ -496,7 +496,8 @@
                 </span><span class="nt">"service_time_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20:00"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"phone1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12312432211"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adfa"</span><span class="w">
+                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"adfa"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"isVip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
@@ -508,7 +509,8 @@
                 </span><span class="nt">"service_time_end"</span><span class="p">:</span><span class="w"> </span><span class="s2">"20:00"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"phone1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"12312432211"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dasfas"</span><span class="w">
+                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dasfas"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"isVip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">],</span><span class="w">
 </span><span class="nt">"products"</span><span class="p">:</span><span class="w">
@@ -522,7 +524,8 @@
                 </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaf"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sadf"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfaasdf"</span><span class="w">
+                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfaasdf"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"isVip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
             </span><span class="p">},</span><span class="w">
             </span><span class="p">{</span><span class="w">
                 </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2"</span><span class="p">,</span><span class="w">
@@ -533,7 +536,8 @@
                 </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"aaf"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sadf"</span><span class="p">,</span><span class="w">
                 </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
-                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfaasdf"</span><span class="w">
+                </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"dsfaasdf"</span><span class="p">,</span><span class="w">
+                </span><span class="nt">"isVip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
             </span><span class="p">}</span><span class="w">
         </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -687,6 +691,12 @@
 <td>false</td>
 <td>图片URL</td>
 </tr>
+<tr>
+<td>isVip</td>
+<td>int</td>
+<td>true</td>
+<td>是否为vip 1.是 2.否</td>
+</tr>
 </tbody></table>
 
 <h4 id="product-object">Product object</h4>
@@ -758,6 +768,12 @@
 <td>string</td>
 <td>true</td>
 <td>图片URL</td>
+</tr>
+<tr>
+<td>isVip</td>
+<td>int</td>
+<td>true</td>
+<td>是否为vip 1.是 2.否</td>
 </tr>
 </tbody></table>
 
@@ -3007,7 +3023,8 @@
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
 </span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-</span><span class="nt">"secondaryShopTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="nt">"secondaryShopTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -3023,6 +3040,7 @@
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"isVip"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                         </span><span class="p">},</span><span class="w">
                         </span><span class="p">{</span><span class="w">
@@ -3030,6 +3048,7 @@
                             </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"内容1"</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"小明"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"isVip"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
                             </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
                         </span><span class="p">}</span><span class="w">
             </span><span class="p">]</span><span class="w">
@@ -3063,6 +3082,12 @@
 <td>int</td>
 <td>true</td>
 <td>店铺二级类型Id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
 </tr>
 </tbody></table>
 
@@ -3129,6 +3154,12 @@
 <td>string</td>
 <td>true</td>
 <td>地址</td>
+</tr>
+<tr>
+<td>isVip</td>
+<td>int</td>
+<td>true</td>
+<td>是否为vip 1.是 2.否</td>
 </tr>
 <tr>
 <td>image_url</td>
@@ -4296,7 +4327,6 @@
 </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafsda"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"vipChargeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
-</span><span class="nt">"saleTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w">
 </span><span class="nt">"saleDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
@@ -4362,12 +4392,6 @@
 <td>int</td>
 <td>false</td>
 <td>VIP资费Id</td>
-</tr>
-<tr>
-<td>saleTypeList</td>
-<td>Array(int)</td>
-<td>true</td>
-<td>主营类型id列表</td>
 </tr>
 <tr>
 <td>saleDescription</td>
