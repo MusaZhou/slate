@@ -3892,13 +3892,51 @@ msg | String | true |
 
 ### Method:   POST
 
-### Path:   <font color="green">/update_cart_item</font>
+### Path:   <font color="green">/remove_cart_item</font>
 
 ### Request
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 cartItemId | int | true | 购物车条目id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Remove Cart Items</font>
+
+> Request:
+
+```json
+{
+"cartItemIdList": [1, 2, 3]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除购物车条目(多条)</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/remove_cart_items</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+cartItemIdList | Array(int) | true | 购物车条目id列表
 
 ### Response:
 
