@@ -8335,7 +8335,7 @@
 
 <h3 id="method-post">Method:   POST</h3>
 
-<h3 id="path-update_cart_item">Path:   <font color="green">/update_cart_item</font></h3>
+<h3 id="path-remove_cart_item">Path:   <font color="green">/remove_cart_item</font></h3>
 
 <h3 id="request">Request</h3>
 
@@ -8352,6 +8352,73 @@
 <td>int</td>
 <td>true</td>
 <td>购物车条目id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="remove-cart-items"><font color="blue">Remove Cart Items</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"cartItemIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 删除购物车条目(多条)</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-remove_cart_items">Path:   <font color="green">/remove_cart_items</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>cartItemIdList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>购物车条目id列表</td>
 </tr>
 </tbody></table>
 
