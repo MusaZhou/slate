@@ -777,7 +777,7 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
-user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商
+user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商 5.正在申请商铺 6.正在申请展会
 
 ## <font color="blue">Get Comments By Type</font>
 
@@ -2012,6 +2012,112 @@ Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 图片id
 url | string | true | 图片URL
+
+## <font color="blue">Update Shop Info</font>
+
+> Request:
+
+```json
+{
+"provinceId": 2,
+"userId": 2,
+"name": "fdsaf",
+"address": "fdsafsda",
+"vipChargeId": 2,
+"saleTypeList": [ 1, 2, 3],
+"saleDescription": "fdsaf",
+"phone_1": "fdsaf",
+"phone_2": "fdsf",
+"phone_3": "fdsf",
+"wechat": "fdsaf",
+"description": "fdsf",
+"bankName": "fdsafdsa",
+"bankAccount": "fdsafdas"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新店铺信息</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_shop_info</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+userId | int | true | 用户Id
+name | string | true | 名称
+address | string | true | 地址
+vipChargeId | int | false | VIP资费Id
+saleTypeList | Array(int) | true | 主营类型id列表
+saleDescription | string | true | 主营品牌
+phone_1 | string | true | 联系电话
+phone_2 | string | true | 订货电话
+phone_3 | string | true | 技术咨询
+wechat | string | true | 微信账号
+description | string | true | 店铺描述
+bankName | string | true | 收款账户银行
+bankAccount | string | true | 收款账户账号
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Update Shop Images</font>
+
+> Request:
+
+```json
+{
+"shopId": 3,
+"imageList": ["fdksajfksadjfksdaj", "fdsaklfjksdajfk"],
+"existingImageIdList": [1, 3, 4]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新店铺图片</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_shop_images</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+imageList | Array(String) | false | 新增图片列表(base64编码)
+existingImageIdList | Array(int) | true | 原有保留图片Id列表
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
 
 # Product
 
