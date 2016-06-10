@@ -6064,6 +6064,106 @@ Name | Type | Mandatory | Description
 status | int | true | 1.成功
 msg | String | true | 
 
+## <font color="blue">Get My Messages </font>
+
+> Request:
+
+```json
+{
+"userId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"messageList": [
+					{
+						"id": 2,
+						"title": "fdsfj",
+						"content": "fjdsakfj",
+						"created_time": "2013-10-12 12:00:00",
+					},
+					{
+						"id": 2,
+						"title": "fdsfj",
+						"content": "fjdsakfj",
+						"created_time": "2013-10-12 12:00:00",
+					}
+				]
+}
+```
+
+<font size="4"><b> 获得我的消息</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_my_messages</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+messageList | Array(Message Object) | true | 消息列表
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 消息Id
+title | String | true | 标题
+content | String | true | 内容
+created_time | datetime | true | 时间
+
+## <font color="blue">Delete Messages </font>
+
+> Request:
+
+```json
+{
+"messageIdList": [1, 2, 3]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除我的消息</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/remove_messages</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+messageIdList | Array(int) | true | 消息Id列表
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Product Topic
 
 ## <font color="blue">Get Need Product List</font>
