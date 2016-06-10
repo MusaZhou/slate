@@ -223,7 +223,8 @@ msg | String | true |
 				"service_time_end": "20:00",
 				"description": "abc",
 				"phone1": "12312432211",
-				"image_url": "adfa"
+				"image_url": "adfa",
+				"isVip": 1
 			},
 			{
 				"id": "2",
@@ -235,7 +236,8 @@ msg | String | true |
 				"service_time_end": "20:00",
 				"description": "abc",
 				"phone1": "12312432211",
-				"image_url": "dasfas"
+				"image_url": "dasfas",
+				"isVip": 1
 			}
 		],
 "products":
@@ -249,7 +251,8 @@ msg | String | true |
 				"model": "aaf",
 				"car_model": "sadf",
 				"description": "abc",
-				"image_url": "dsfaasdf"
+				"image_url": "dsfaasdf",
+				"isVip": 1
 			},
 			{
 				"id": "2",
@@ -260,7 +263,8 @@ msg | String | true |
 				"model": "aaf",
 				"car_model": "sadf",
 				"description": "abc",
-				"image_url": "dsfaasdf"
+				"image_url": "dsfaasdf",
+				"isVip": 1
 			}
 		]
 }
@@ -304,6 +308,7 @@ service_time_end | time | true | 营业结束时间
 description | string | true | 
 phone_1 | string | true |
 image_url | string | false | 图片URL
+isVip | int | true | 是否为vip 1.是 2.否
 
 #### Product object
 
@@ -319,6 +324,7 @@ model | string | true |
 car_model | string | true |
 description | string | true | 
 image_url | string | true | 图片URL
+isVip | int | true | 是否为vip 1.是 2.否
 
 ## <font color="blue">Get City By GPS</font>
 
@@ -1424,7 +1430,8 @@ primary_shop_type_name | string | true | 一级类型名称
 ```json
 {
 "provinceId": 2,
-"secondaryShopTypeId": 1
+"secondaryShopTypeId": 1,
+"page": 1
 }
 ```
 
@@ -1440,6 +1447,7 @@ primary_shop_type_name | string | true | 一级类型名称
 							"name": "标题1",
 							"description": "内容1",
 							"address": "小明",
+							"isVip": 1,
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						},
 						{
@@ -1447,6 +1455,7 @@ primary_shop_type_name | string | true | 一级类型名称
 							"name": "标题1",
 							"description": "内容1",
 							"address": "小明",
+							"isVip": 2,
 							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 						}
 			]
@@ -1465,6 +1474,7 @@ Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
 secondaryShopTypeId | int | true | 店铺二级类型Id
+page | int | true | 页数
 
 ### Response:
 
@@ -1482,6 +1492,7 @@ id | int | true | 店铺id
 name | string | true | 店铺名称
 description | string | true | 描述
 address | string | true | 地址
+isVip | int | true | 是否为vip 1.是 2.否
 image_url | string | false | 图片URL
 
 ## <font color="blue">Get Shop Detail</font>
@@ -2024,7 +2035,6 @@ url | string | true | 图片URL
 "name": "fdsaf",
 "address": "fdsafsda",
 "vipChargeId": 2,
-"saleTypeList": [ 1, 2, 3],
 "saleDescription": "fdsaf",
 "phone_1": "fdsaf",
 "phone_2": "fdsf",
@@ -2060,7 +2070,6 @@ userId | int | true | 用户Id
 name | string | true | 名称
 address | string | true | 地址
 vipChargeId | int | false | VIP资费Id
-saleTypeList | Array(int) | true | 主营类型id列表
 saleDescription | string | true | 主营品牌
 phone_1 | string | true | 联系电话
 phone_2 | string | true | 订货电话
