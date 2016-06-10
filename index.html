@@ -1715,7 +1715,7 @@
 <td>user_status</td>
 <td>int</td>
 <td>true</td>
-<td>用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商</td>
+<td>用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商 5.正在申请商铺 6.正在申请展会</td>
 </tr>
 </tbody></table>
 
@@ -4282,6 +4282,245 @@
 <td>string</td>
 <td>true</td>
 <td>图片URL</td>
+</tr>
+</tbody></table>
+
+<h2 id="update-shop-info"><font color="blue">Update Shop Info</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"address"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafsda"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"vipChargeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"saleTypeList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">],</span><span class="w">
+</span><span class="nt">"saleDescription"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone_1"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone_2"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"phone_3"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"wechat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsaf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsf"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"bankName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafdsa"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"bankAccount"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsafdas"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 更新店铺信息</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-update_shop_info">Path:   <font color="green">/update_shop_info</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>provinceId</td>
+<td>int</td>
+<td>true</td>
+<td>省份Id</td>
+</tr>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户Id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>名称</td>
+</tr>
+<tr>
+<td>address</td>
+<td>string</td>
+<td>true</td>
+<td>地址</td>
+</tr>
+<tr>
+<td>vipChargeId</td>
+<td>int</td>
+<td>false</td>
+<td>VIP资费Id</td>
+</tr>
+<tr>
+<td>saleTypeList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>主营类型id列表</td>
+</tr>
+<tr>
+<td>saleDescription</td>
+<td>string</td>
+<td>true</td>
+<td>主营品牌</td>
+</tr>
+<tr>
+<td>phone_1</td>
+<td>string</td>
+<td>true</td>
+<td>联系电话</td>
+</tr>
+<tr>
+<td>phone_2</td>
+<td>string</td>
+<td>true</td>
+<td>订货电话</td>
+</tr>
+<tr>
+<td>phone_3</td>
+<td>string</td>
+<td>true</td>
+<td>技术咨询</td>
+</tr>
+<tr>
+<td>wechat</td>
+<td>string</td>
+<td>true</td>
+<td>微信账号</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>true</td>
+<td>店铺描述</td>
+</tr>
+<tr>
+<td>bankName</td>
+<td>string</td>
+<td>true</td>
+<td>收款账户银行</td>
+</tr>
+<tr>
+<td>bankAccount</td>
+<td>string</td>
+<td>true</td>
+<td>收款账户账号</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+</tbody></table>
+
+<h2 id="update-shop-images"><font color="blue">Update Shop Images</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"shopId"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+</span><span class="nt">"imageList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"fdksajfksadjfksdaj"</span><span class="p">,</span><span class="w"> </span><span class="s2">"fdsaklfjksdajfk"</span><span class="p">],</span><span class="w">
+</span><span class="nt">"existingImageIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 更新店铺图片</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-update_shop_images">Path:   <font color="green">/update_shop_images</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>shopId</td>
+<td>int</td>
+<td>true</td>
+<td>店铺Id</td>
+</tr>
+<tr>
+<td>imageList</td>
+<td>Array(String)</td>
+<td>false</td>
+<td>新增图片列表(base64编码)</td>
+</tr>
+<tr>
+<td>existingImageIdList</td>
+<td>Array(int)</td>
+<td>true</td>
+<td>原有保留图片Id列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
 </tr>
 </tbody></table>
 
