@@ -2031,7 +2031,7 @@ url | string | true | 图片URL
 ```json
 {
 "provinceId": 2,
-"userId": 2,
+"shopId": 2,
 "name": "fdsaf",
 "address": "fdsafsda",
 "vipChargeId": 2,
@@ -2066,7 +2066,7 @@ url | string | true | 图片URL
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 provinceId | int | true | 省份Id
-userId | int | true | 用户Id
+shopId | int | true | 店铺Id
 name | string | true | 名称
 address | string | true | 地址
 vipChargeId | int | false | VIP资费Id
