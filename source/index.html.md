@@ -1576,7 +1576,8 @@ image_url | string | false | 图片URL
 											"id": 2,
 											"url": "http://121.12.11.11/image_download/brand_logo_images/2"
 										}
-									]
+									],
+					"hasCollected": 1
 				}
 }
 ```
@@ -1620,6 +1621,7 @@ address | string | true | 地址
 vipStartDate | date | false | vip起始时间
 vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
+hasCollected | int | true | 是否被该用户收藏 1.是 2.否
 
 ### Image Object
 
@@ -2424,6 +2426,7 @@ image_url | string | false | 图片URL
 							"phone_1": "1212412",
 							"phone_2": "1212412",
 							"phone_3": "1212412",
+							"hasCollected": 1,
 							"bannerImageList": [
 													{
 														"id": 1,
@@ -2513,6 +2516,7 @@ phone_1 | string | true |  联系电话
 phone_1 | string | true |  订货电话
 phone_1 | string | true |  技术咨询
 inventory | int | true |  库存
+hasCollected | int | true | 是否被该用户收藏 1.是 2.否
 bannerImageList | Array(Image object) | false | 轮播图列表
 referenceImageList | Array(Image object) | false | 参考图列表
 sampleComment | Comment object | false | 评论实例
@@ -5140,6 +5144,137 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Get Shop Orders</font>
+
+> Request:
+
+```json
+{
+"userId": 1,
+"orderType": 1,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"orderList": [
+				{
+					"id": 1,
+					"order_status_id": 1,
+					"shop_name": "abc",
+					"shop_address": "fasdfajsdkfl",
+					"note": "fdsak",
+					"quantity": 10,
+					"amount": 10,
+					"created_time": "2016-05-05 12:00:00",
+					"orderItemList": [
+										{
+											"id": 1,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 2,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+				},
+				{
+					"id": 2,
+					"order_status_id": 2,
+					"shop_name": "abc",
+					"shop_address": "fasdfajsdkfl",
+					"note": "fdsak",
+					"quantity": 10,
+					"amount": 10,
+					"created_time": "2016-05-05 12:00:00",
+					"orderItemList": [
+										{
+											"id": 3,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										},
+										{
+											"id": 4,
+											"product_id": 1,
+											"quantity": 20,
+											"amount": 30,
+											"price": 10,
+											"product_name": "fdsaf",
+											"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+										}
+									]
+				}
+			]
+}
+```
+
+<font size="4"><b> 根据类型获得订单</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_shop_orders</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户id
+orderType | int | true | 1:待发货 2:已发货 
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
+orderList | Array(Order object) | true | 订单列表
+
+### Ordre object
+
+ Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 订单id
+order_status_id | int | true | 订单状态id 1:待付款 3,4:待发货 5:申请取消中 6:待收货 7:待评价 8:已完成 9:已取消
+shop_name | string | true | 店铺名称
+shop_address | string | true | 店铺地址
+note | string | false | 备注
+quantity | int | true | 店铺商品数量
+amount | double | true | 店铺商品金额
+created_time | datetime | true | 下单时间
+orderItemList | Array(OrderItem object) | true | 订单条目列表
+
+### OrdreItem object
+
+ Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+id | int | true | 订单条目id
+product_id | string | true | 商品Id
+product_name | string | true | 商品名称
+quantity | int | true | 商品数量
+amount | double | true | 商品金额
+price | double | true | 商品价格
+image_url | string | true | 商品图片Url
 
 # Exhibition
 
