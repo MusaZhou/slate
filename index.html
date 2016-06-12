@@ -2444,7 +2444,7 @@
 <td>paymentMethod</td>
 <td>int</td>
 <td>true</td>
-<td>支付方式 1.支付宝 2.微信</td>
+<td>支付方式 1.微信 2.支付宝</td>
 </tr>
 <tr>
 <td>amount</td>
@@ -10669,7 +10669,8 @@
 <p>Request:</p>
 </blockquote>
 <pre class="highlight json"><code><span class="p">{</span><span class="w">
-</span><span class="nt">"orderIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="w">
+</span><span class="nt">"orderIdList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">]</span><span class="err">，</span><span class="w">
+</span><span class="s2">"paymentMethod"</span><span class="err">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 
@@ -10703,6 +10704,12 @@
 <td>Array(int)</td>
 <td>true</td>
 <td>订单id列表</td>
+</tr>
+<tr>
+<td>paymentMethod</td>
+<td>int</td>
+<td>true</td>
+<td>支付方式 1.微信 2.支付宝 3.货到付款</td>
 </tr>
 </tbody></table>
 
