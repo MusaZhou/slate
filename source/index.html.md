@@ -2837,7 +2837,8 @@ msg | String | true |
 ```json
 {
 "status": 1,
-"msg": "Ok"
+"msg": "Ok",
+"productTypeId": 2
 }
 ```
 
@@ -2860,6 +2861,7 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+productTypeId | int | true | 货架Id
 
 ## <font color="blue">Delete Product Type</font>
 
@@ -2971,6 +2973,44 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Delete Product</font>
+
+> Request:
+
+```json
+{
+"productId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 删除商品</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/delete_product</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+productId | int | true | 商品Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true |
 
 # Product Activity
 
