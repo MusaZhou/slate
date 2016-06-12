@@ -1155,7 +1155,7 @@ Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 userId | int | true | 用户Id
 paymentType | int | true | 支付场景 1.商品订单 2.展位 3.VIP
-paymentMethod | int | true | 支付方式 1.支付宝 2.微信
+paymentMethod | int | true | 支付方式 1.微信 2.支付宝
 amount | double | true | 金额
 
 ### Response:
@@ -5069,7 +5069,8 @@ msg | String | true |
 
 ```json
 {
-"orderIdList": [1, 2, 3]
+"orderIdList": [1, 2, 3]，
+"paymentMethod": 1
 }
 ```
 
@@ -5093,6 +5094,7 @@ msg | String | true |
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 orderIdList | Array(int) | true | 订单id列表
+paymentMethod | int | true | 支付方式 1.微信 2.支付宝 3.货到付款
 
 ### Response:
 
