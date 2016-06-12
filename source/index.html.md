@@ -1109,7 +1109,7 @@ name | string | true | 城市名称
 "userId": 3,
 "paymentType": 1,
 "paymentMethod": 2,
-"amount": 15.00,
+"amount": 15.00
 }
 ```
 
@@ -1129,9 +1129,9 @@ name | string | true | 城市名称
 					"seller_id": "fdsfkjd@qq.com",
 					"total_fee": 10,
 					"body": "fsdafjksadj",
-					"full": "_input_charset="utf-8"&body="用户ID-6:易配-申请展位"&notify_url="/app/alipay_notify_url.php"&out_trade_no="2016060217353313335"&partner="2088221980524436"&payment_type="1"&seller_id="1598881018@qq.com"&service="mobile.securitypay.pay"&subject="易配-申请展位"&total_fee="0.01"&sign="hF4xVV%2BbIUC8TW64tn8ctzperATjcevvzbveBYh0zRo6ffTkIvlTEE%2BBCRIu9kCNqGxNpHtmh710fo5H6NeIkpvdUCx239tyjbgbzkuzYbH76zEb777EsndqCk%2BbFrSV7weEq%2BYIrHnjTx4Nn3x8tX2NL8XQOZQd4Rc8l6167j0%3D"&sign_type="RSA""
+					"full": "_input_charset=&#34;utf-8&#34;&body=&#34;用户ID-6:易配-申请展位&#34;&notify_url=&#34;/app/alipay_notify_url.php&#34;&out_trade_no=&#34;2016060217353313335&#34;&partner=&#34;2088221980524436&#34;&payment_type=&#34;1&#34;&seller_id=&#34;1598881018@qq.com&#34;&service=&#34;mobile.securitypay.pay&#34;&subject=&#34;易配-申请展位&#34;&total_fee=&#34;0.01&#34;&sign=&#34;hF4xVV%2BbIUC8TW64tn8ctzperATjcevvzbveBYh0zRo6ffTkIvlTEE%2BBCRIu9kCNqGxNpHtmh710fo5H6NeIkpvdUCx239tyjbgbzkuzYbH76zEb777EsndqCk%2BbFrSV7weEq%2BYIrHnjTx4Nn3x8tX2NL8XQOZQd4Rc8l6167j0%3D&#34;&sign_type=&#34;RSA#34;"
 				}
-"wechatData:":{
+"wechatData": {
 					"appId": "909230293",
 					"partnerId": "432423",
 					"prepay_id": "jfksdjfk",
@@ -1147,7 +1147,7 @@ name | string | true | 城市名称
 
 ### Method:   POST
 
-### Path:   <font color="green">/update_user_profile</font>
+### Path:   <font color="green">/get_payment_params</font>
 
 ### Request
 
@@ -1193,6 +1193,48 @@ package | string | true |
 noncestr | string | true |
 timestamp | string | true |
 sign | string | true | 签名
+
+## <font color="blue">Update Device Token</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"deviceType": 1,
+"deviceToken": "fjdsakfjsadkfj"
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新推送消息机器识别码deviceToken</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_device_token</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+deviceType | int | true | 1.Android 2.IOS
+deviceToken | string | true | 识别码
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
 
 # Shop
 
