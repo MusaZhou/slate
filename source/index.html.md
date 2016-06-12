@@ -1567,6 +1567,8 @@ image_url | string | false | 图片URL
 					"description": "djfaksdjfkdsajfaks",
 					"vipStartDate": "2016-05-05",
 					"vipEndDate": "2016-10-05",
+					"bankName": "fdsf",
+					"bankAccount": "fdskfjsdjfkdsj",
 					"bannerList": [
 										{
 											"id": 1,
@@ -1618,6 +1620,8 @@ phone_3 | int | 电话3
 sale_description | string | 主营描述
 description | string | true | 描述
 address | string | true | 地址
+bankName | string | true | 用户名
+bankAccount | string | true | 银行账号
 vipStartDate | date | false | vip起始时间
 vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
@@ -3608,6 +3612,7 @@ id | int | true | 帖子id
 topic_type_id | int | true | 帖子类型Id
 topic_type_name | string | true | 帖子类型名称
 content | string | true | 帖子内容
+user_id | int | true | 发帖人id
 user_name | string | true | 发帖人名字
 user_url | string | true | 发帖人头像
 created_time | string | true | 发布时间
@@ -3628,7 +3633,8 @@ url | string | true | 图片URL
 
 ```json
 {
-"topicId": 1
+"topicId": 1,
+"userId": 2
 }
 ```
 
@@ -3640,10 +3646,14 @@ url | string | true | 图片URL
 "msg": "Ok",
 "topicDetail": {
 					"topicTypeName": "ttest",
+					"user_id": 3,
+					"user_name": "ffdsf",
+					"user_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 					"content": "内容1",
 					"likeCount": 13,
 					"commentCount": 13,
 					"createdTime": "2016-05-05 17:33:00",
+					"hasLiked": 1,
 					"imageList": [
 									{
 										"id": 1,
@@ -3669,6 +3679,7 @@ url | string | true | 图片URL
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
 topicId | int | true | 帖子Id
+useId | int | true | 用户Id
 
 ### Response:
 
@@ -3683,8 +3694,12 @@ topicDetail | Topic object | true | 帖子详情
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 topicTypeName | string | true | 帖子类型名称
+user_id | int | true | 发帖人Id
+user_name | string | 发帖人名字
+user_url | string | 发帖人头像
 content | string | true | 帖子内容
 createdTime | string | true | 发布时间
+hasLiked | int | true | 该用户是否已点赞 1.已点赞 2.为点赞
 commentCount | int | true | 评价次数
 likeCount | int | true | 点赞次数
 imageList | Array(Image object) | true | 图片列表
@@ -5228,7 +5243,7 @@ msg | String | true |
 }
 ```
 
-<font size="4"><b> 根据类型获得订单</b></font>
+<font size="4"><b> 获得商铺订单</b></font>
 
 ### Method:   POST
 
