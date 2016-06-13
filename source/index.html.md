@@ -5874,6 +5874,9 @@ msg | String | true |
 						"description": "fdsakf",
 						"wechat": "weafa",
 						"visit_count": 20,
+						"bankName": "fdsfdas",
+						"bankAccount": "fdsjafk",
+						"collect_count": 23,
 						"imageList": [
 										{
 											"id": 1,
@@ -5924,6 +5927,9 @@ phone_3 | string | true | 技术咨询
 service_time | string | true | 营业时间
 wechat | string | true | 微信号
 visit_count | int | true | 浏览人数
+bankName | string | true | 用户名
+bankAccount | string | true | 银行账号
+collect_count | int | true | 收藏人数
 imageList | string | true | 店铺图片列表
 
 ### Image Object
@@ -7952,7 +7958,6 @@ useId | int | true | 发布人Id
 jobTypeId | int | false | 工作种类Id
 companyName | datetime | false | 公司名称
 companyAddress | string | false | 公司地址
-publishTime | string | false | 发布时间
 salary | string | false | 薪资
 image | int | false | 公司logo
 cityId | int | false | 城市Id
@@ -8586,7 +8591,6 @@ jobRecruitId | int | true | 招聘Id
 jobTypeId | int | false | 工作种类Id
 companyName | datetime | false | 公司名称
 companyAddress | string | false | 公司地址
-publishTime | string | false | 发布时间
 salary | string | false | 薪资
 image | int | false | 公司logo
 cityId | string | false | 城市Id
