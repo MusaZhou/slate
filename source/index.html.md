@@ -1567,8 +1567,6 @@ image_url | string | false | 图片URL
 					"description": "djfaksdjfkdsajfaks",
 					"vipStartDate": "2016-05-05",
 					"vipEndDate": "2016-10-05",
-					"bankName": "fdsf",
-					"bankAccount": "fdskfjsdjfkdsj",
 					"bannerList": [
 										{
 											"id": 1,
@@ -1620,8 +1618,6 @@ phone_3 | int | 电话3
 sale_description | string | 主营描述
 description | string | true | 描述
 address | string | true | 地址
-bankName | string | true | 用户名
-bankAccount | string | true | 银行账号
 vipStartDate | date | false | vip起始时间
 vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
@@ -2011,6 +2007,8 @@ name | String | true | 二级类型名称
 					"wechat": "fdsfj",
 					"vipStartDate": "2016-05-05",
 					"vipEndDate": "2016-10-05",
+					"bankName": "fdsf",
+					"bankAccount": "fdskfjsdjfkdsj",
 					"bannerList": [
 										{
 											"id": 1,
@@ -2061,6 +2059,8 @@ sale_description | string | true | 主营描述
 description | string | true | 描述
 address | string | true | 地址
 wechat | string | false | 微信账号
+bankName | string | true | 用户名
+bankAccount | string | true | 银行账号
 vipStartDate | date | false | vip起始时间
 vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
@@ -2175,6 +2175,146 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Get Shop Visit History</font>
+
+> Request:
+
+```json
+{
+"shopId": "abc",
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"visitList": [
+						{
+							"visitor_id": 1,
+							"visitor_name": "sdf",
+							"visitor_image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"visit_time": "2016-05-05 12:00:00",
+							"company_name": "fdskfj",
+							"company_address": "fjdskfjdk"
+						},
+						{
+							"visitor_id": 2,
+							"visitor_name": "sdf",
+							"visitor_image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"visit_time": "2016-05-05 12:00:00",
+							"company_name": "fdskfj",
+							"company_address": "fjdskfjdk"
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得店铺用户访问历史</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_shop_visit_history</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+visitList | Array(Visit object) | true | 用户访问列表
+
+### Visit Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+visitor_id | int | true | 用户Id
+visitor_name | string | true | 用户名称
+visitor_image_url | string | false | 用户头像
+visit_time | datetime | true | 访问时间
+company_name | string | true | 公司名称
+company_address | string | true | 公司地址
+
+## <font color="blue">Get Shop Collect List</font>
+
+> Request:
+
+```json
+{
+"shopId": "abc",
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"collectList": [
+						{
+							"collector_id": 1,
+							"collector_name": "sdf",
+							"collector_image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"collect_time": "2016-05-05 12:00:00",
+							"company_name": "fdskfj",
+							"company_address": "fjdskfjdk"
+						},
+						{
+							"collector_id": 2,
+							"collector_name": "sdf",
+							"collector_image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"collect_time": "2016-05-05 12:00:00",
+							"company_name": "fdskfj",
+							"company_address": "fjdskfjdk"
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得店铺用户收藏列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_shop_collect_history</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+collectList | Array(Collect object) | true | 用户收藏列表
+
+### Collect Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+collector_id | int | true | 用户Id
+collector_name | string | true | 用户名称
+collector_image_url | string | false | 用户头像
+collect_time | datetime | true | 访问时间
+company_name | string | true | 公司名称
+company_address | string | true | 公司地址
 
 # Product
 
