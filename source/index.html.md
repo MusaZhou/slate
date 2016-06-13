@@ -7955,7 +7955,7 @@ companyAddress | string | false | 公司地址
 publishTime | string | false | 发布时间
 salary | string | false | 薪资
 image | int | false | 公司logo
-cityId | string | false | 城市Id
+cityId | int | false | 城市Id
 education | string | false | 学历
 gender | string | true | 性别 1.男性 2.女性
 number | string | false | 招聘人数
@@ -8163,6 +8163,7 @@ status | int | true | 状态 1.发布中 2.停止发布
 					"id": 2,
 					"jobTypeName": "fadsf",
 					"name": "dsfsaf",
+					"cityId": 2,
 					"city": "fdsf",
 					"gender": "fdsf",
 					"education": "fdsaf",
@@ -8204,6 +8205,7 @@ Name | Type | Mandatory | Description
 id | int | true | 求职Id
 name | string | true | 求职人姓名
 jobTypeName | string | true | 职位名称
+cityId | int | true | 城市Id
 city | string | true | 城市名称
 gender | string | true | 性别
 publishTime | string | true | 发布时间
@@ -8257,7 +8259,7 @@ Name | Type | Mandatory | Description
 useId | int | true | 发布人Id
 jobTypeId | int | false | 工作种类Id
 name | string | true | 求职人姓名
-city | string | true | 城市名称
+cityId | int | true | 城市Id
 gender | string | true | 性别
 salary | string | true | 薪资
 education | string | true | 学历
