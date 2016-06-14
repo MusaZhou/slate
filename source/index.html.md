@@ -632,7 +632,7 @@ provinceId | String | true | 省份Id
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
-status | int | true | 1.成功 3.curl false 4.baidu map error
+status | int | true | 1.成功
 msg | String | true | 
 promotion | Promotion Object | true | 促销产品
 group | Group Object | true | 团购产品
@@ -1911,7 +1911,7 @@ name | String | true | 二级类型名称
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
-userId | int | true | 店铺Id
+shopId | int | true | 店铺Id
 recommendedProductIdList | Array(int) | true | 推荐产品Id列表
 
 ### Response:
@@ -3294,6 +3294,7 @@ end_time | datetime | true | 结束时间
 							"customized_value_2": "abc",
 							"customized_value_3": "abc",
 							"quantity": 30,
+							"hasCollected": 1,
 							"bannerImageList": [
 													{
 														"id": 1,
@@ -3389,6 +3390,7 @@ customized_value_3 | string | false | 自定义属性3值
 start_time | datetime | true | 开始时间
 end_time | datetime | true | 结束时间
 inventory | int | true |  库存
+hasCollected | int | true | 1.已收藏 2.未收藏
 bannerImageList | Array(Image object) | false | 轮播图列表
 referenceImageList | Array(Image object) | false | 参考图列表
 sampleComment | Comment object | false | 评论例子
@@ -3542,6 +3544,7 @@ end_time | datetime | true | 活动结束时间
 							"customized_value_2": "abc",
 							"customized_value_3": "abc",
 							"quantity": 30,
+							"hasCollected": 2,
 							"bannerImageList": [
 													{
 														"id": 1,
@@ -3634,6 +3637,7 @@ customized_value_3 | string | false | 自定义属性3值
 start_time | datetime | true | 开始时间
 end_time | datetime | true | 结束时间
 inventory | int | true |  库存
+hasCollected | int | true | 1.已收藏 2.未收藏
 bannerImageList | Array(Image object) | false | 轮播图列表
 referenceImageList | Array(Image object) | false | 参考图列表
 sampleComment | Comment object | false | 评论例子
