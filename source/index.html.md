@@ -3102,18 +3102,21 @@ secondaryShopTypeId | int | true | 店铺二级类型id
 name | string | true | 产品名称
 originalPrice | double | true | 原价
 price | double | true | 价格
-brand | string | true | 品牌
-spec | string | true | 规格
-model | string | true | 型号
-carModel | string | true | 车型
-itemNo | string | true | 零件号
-customizedName1 | string | true | 自定义类型名称1
-customizedName2 | string | true | 自定义类型名称2
-customizedName3 | string | true | 自定义类型名称3
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+carModel | string | false | 车型
+itemNo | string | false | 零件号
+customizedName1 | string | false | 自定义类型名称1
+customizedName2 | string | false | 自定义类型名称2
+customizedName3 | string | false | 自定义类型名称3
+customizedValue1 | string | false | 自定义类型1值
+customizedValue2 | string | false | 自定义类型2值
+customizedValue3 | string | false | 自定义类型3值
 description | string | true | 商品描述
 firstImage | string | true | 首页图片(base64编码)
-bannerImageList | Array(string) | true | 轮播图列表(base64编码)
-referenceImageList | Array(string) | true | 参考图列表(base64编码)
+bannerImageList | Array(string) | false | 轮播图列表(base64编码)
+referenceImageList | Array(string) | false | 参考图列表(base64编码)
 
 ### Response:
 
