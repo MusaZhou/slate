@@ -741,7 +741,7 @@ Name | Type | Mandatory | Description
 ad_id | int | true | 广告id
 ad_name | string | false | 名称
 ad_type | int | true | 广告类型(1:店铺 2:产品 3:url 4:店铺(仅显示名字))
-adable_id | int | true | 广告实体id(商店Id或产品Id)
+adable_id | int | true | 广告实体id(商店Id或产品Id或厂家Id)
 ad_url | string | false | 若广告类型为3,为url地址
 image_url | string | false | 若广告类型为1,2,3,为广告图片
 
