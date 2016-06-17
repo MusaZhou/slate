@@ -2593,7 +2593,10 @@ image_url | string | false | 图片URL
 												],
 							"sampleComment": {
 												"id": 1,
+												"user_id": 2,
 												"user_phone": "32424342",
+												"user_name": "fjdsakfj",
+												"head_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 												"content": "fasdfjsadkfj",
 												"created_time": "2016-05-15 15:00:00",
 												"imageList": [
@@ -2677,7 +2680,10 @@ url | string | true | 图片URL
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
+user_id | int | true | 评论人Id 
 user_phone | string | true | 评论人
+user_name | string | true | 评论人姓名
+head_url | string | true | 头像url
 content | string | true | 内容
 created_time | datetime | true | 评论时间
 imageList | Array(Image object) | true | 图片列表
@@ -2702,7 +2708,10 @@ imageList | Array(Image object) | true | 图片列表
 "commentList": [
 						{
 							"id": 1,
+							"user_id": 2,
 							"user_phone": "2312412411",
+							"user_name": "fdsjkf",
+							"head_url": "fdjskf",
 							"content": "内容1",
 							"created_time": "2016-05-05 17:33:00",
 							"imageList": [
@@ -2762,7 +2771,10 @@ commentList | Array(Comment object) | true | 评论列表
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
-user_phone | string | true | 评论人电话
+user_id | int | true | 评论人Id 
+user_phone | string | true | 评论人
+user_name | string | true | 评论人姓名
+head_url | string | true | 头像url
 content | string | true | 评论内容
 created_time | datetime | true | 评论时间
 imageList | Array(Image object) | true | 图片列表
@@ -3169,7 +3181,7 @@ msg | String | true |
 
 ```json
 {
-"hotSaleTypeId": 2,
+"hotSaleProductTypeId": 2,
 "provinceId": 2,
 "page": 1
 }
@@ -3404,7 +3416,10 @@ end_time | datetime | true | 结束时间
 												],
 							"sampleComment": {
 												"id": 1,
+												"user_id", 2,
 												"user_phone": "32424342",
+												"user_name": "fjdsakfj",
+												"head_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 												"content": "fasdfjsadkfj",
 												"created_time": "2016-05-15 15:00:00",
 												"imageList": [
@@ -3494,7 +3509,10 @@ url | string | true | 图片URL
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
+user_id | int | true | 评论人Id 
 user_phone | string | true | 评论人
+user_name | string | true | 评论人姓名
+head_url | string | true | 头像url
 content | string | true | 内容
 created_time | datetime | true | 评论时间
 imageList | Array(Image object) | true | 图片列表
@@ -3654,7 +3672,10 @@ end_time | datetime | true | 活动结束时间
 												],
 							"sampleComment": {
 												"id": 1,
+												"user_id": 2,
 												"user_phone": "32424342",
+												"user_name": "fjdsakfj",
+												"head_url": "http://121.12.11.11/image_download/brand_logo_images/2",
 												"content": "fasdfjsadkfj",
 												"created_time": "2016-05-15 15:00:00",
 												"imageList": [
@@ -3741,7 +3762,10 @@ url | string | true | 图片URL
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 评论id
+user_id | int | true | 评论人Id 
 user_phone | string | true | 评论人
+user_name | string | true | 评论人姓名
+head_url | string | true | 头像url
 content | string | true | 内容
 created_time | datetime | true | 评论时间
 imageList | Array(Image object) | true | 图片列表
@@ -5626,6 +5650,7 @@ image_url | string | true | 店铺图片
 						"description": "fdsakf",
 						"wechat": "weafa",
 						"visit_count": 20,
+						"collect_count": 12,
 						"hasCollected": 1,
 						"imageList": [
 										{
@@ -5678,6 +5703,7 @@ phone_3 | string | true | 技术咨询
 service_time | string | true | 营业时间
 wechat | string | true | 微信号
 visit_count | int | true | 浏览人数
+collect_count | int | true | 收藏人数
 hasCollected | int | true | 是否被该用户收藏 1.已收藏 2.未收藏
 imageList | string | true | 店铺图片列表
 
