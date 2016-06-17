@@ -6743,6 +6743,191 @@
 </tr>
 </tbody></table>
 
+<h2 id="get-hot-sale-product-list"><font color="blue">Get Hot Sale Product List</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"hotSaleTypeId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"provinceId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"page"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
+</span><span class="nt">"productList"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.8</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BMW"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"spec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3*4"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benze"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">},</span><span class="w">
+                        </span><span class="p">{</span><span class="w">
+                            </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"标题1"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"original_price"</span><span class="p">:</span><span class="w"> </span><span class="mf">15.8</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"price"</span><span class="p">:</span><span class="w"> </span><span class="s2">"10.00"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"brand"</span><span class="p">:</span><span class="w"> </span><span class="s2">"BMW"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"spec"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3*4"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"car_model"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Benze"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"abc"</span><span class="p">,</span><span class="w">
+                            </span><span class="nt">"image_url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://121.12.11.11/image_download/brand_logo_images/2"</span><span class="w">
+                        </span><span class="p">}</span><span class="w">
+            </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 获得热卖产品商品列表</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-get_hot_sale_product_list">Path:   <font color="green">/get_hot_sale_product_list</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>shopId</td>
+<td>int</td>
+<td>true</td>
+<td>店铺Id</td>
+</tr>
+<tr>
+<td>page</td>
+<td>int</td>
+<td>true</td>
+<td>页数</td>
+</tr>
+<tr>
+<td>provinceId</td>
+<td>int</td>
+<td>true</td>
+<td>省份Id</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
+</tr>
+<tr>
+<td>productList</td>
+<td>Array(Product object)</td>
+<td>true</td>
+<td>商品列表</td>
+</tr>
+</tbody></table>
+
+<h3 id="product-object">Product Object</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>id</td>
+<td>int</td>
+<td>true</td>
+<td>商品id</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>true</td>
+<td>商品名称</td>
+</tr>
+<tr>
+<td>original_price</td>
+<td>double</td>
+<td>true</td>
+<td>原价</td>
+</tr>
+<tr>
+<td>price</td>
+<td>double</td>
+<td>true</td>
+<td>现价</td>
+</tr>
+<tr>
+<td>brand</td>
+<td>string</td>
+<td>false</td>
+<td>品牌</td>
+</tr>
+<tr>
+<td>spec</td>
+<td>string</td>
+<td>false</td>
+<td>规格</td>
+</tr>
+<tr>
+<td>model</td>
+<td>string</td>
+<td>false</td>
+<td>型号</td>
+</tr>
+<tr>
+<td>car_model</td>
+<td>string</td>
+<td>false</td>
+<td>汽车型号</td>
+</tr>
+<tr>
+<td>description</td>
+<td>string</td>
+<td>false</td>
+<td>描述</td>
+</tr>
+<tr>
+<td>image_url</td>
+<td>string</td>
+<td>false</td>
+<td>图片URL</td>
+</tr>
+</tbody></table>
+
 <h1 id="product-activity">Product Activity</h1>
 
 <h2 id="get-group-activities"><font color="blue">Get Group Activities</font></h2>
