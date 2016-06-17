@@ -3220,7 +3220,7 @@ msg | String | true |
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
-shopId | int | true | 店铺Id
+hotSaleProductTypeId | int | true | 热卖商品类型Id
 page | int | true | 页数
 provinceId | int | true | 省份Id
 
@@ -5626,6 +5626,7 @@ image_url | string | true | 店铺图片
 						"description": "fdsakf",
 						"wechat": "weafa",
 						"visit_count": 20,
+						"hasCollected": 1,
 						"imageList": [
 										{
 											"id": 1,
@@ -5677,6 +5678,7 @@ phone_3 | string | true | 技术咨询
 service_time | string | true | 营业时间
 wechat | string | true | 微信号
 visit_count | int | true | 浏览人数
+hasCollected | int | true | 是否被该用户收藏 1.已收藏 2.未收藏
 imageList | string | true | 店铺图片列表
 
 ### Image Object
