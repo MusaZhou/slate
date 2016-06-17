@@ -3163,6 +3163,90 @@ Name | Type | Mandatory | Description
 status | int | true | 1.成功
 msg | String | true |
 
+## <font color="blue">Get Hot Sale Product List</font>
+
+> Request:
+
+```json
+{
+"hotSaleTypeId": 2,
+"provinceId": 2,
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"productList": [
+						{
+							"id": 1,
+							"name": "标题1",
+							"original_price": 15.8,
+							"price": "10.00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"description": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+						},
+						{
+							"id": 2,
+							"name": "标题1",
+							"original_price": 15.8,
+							"price": "10.00",
+							"brand": "BMW",
+							"spec": "3*4",
+							"model": "a",
+							"car_model": "Benze",
+							"description": "abc",
+							"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得热卖产品商品列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_hot_sale_product_list</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+page | int | true | 页数
+provinceId | int | true | 省份Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+productList | Array(Product object) | true | 商品列表
+
+### Product Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+id | int | true | 商品id
+name | string | true | 商品名称
+original_price | double | true | 原价
+price | double | true | 现价
+brand | string | false | 品牌
+spec | string | false | 规格
+model | string | false | 型号
+car_model | string | false | 汽车型号
+description | string | false | 描述
+image_url | string | false | 图片URL
+
 # Product Activity
 
 ## <font color="blue">Get Group Activities</font>
