@@ -6742,12 +6742,14 @@ msg | String | true |
 						"title": "fdsfj",
 						"content": "fjdsakfj",
 						"created_time": "2013-10-12 12:00:00",
+						"head_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 					},
 					{
 						"id": 2,
 						"title": "fdsfj",
 						"content": "fjdsakfj",
 						"created_time": "2013-10-12 12:00:00",
+						"head_url": "http://121.12.11.11/image_download/brand_logo_images/2"
 					}
 				]
 }
@@ -6781,6 +6783,7 @@ id | int | true | 消息Id
 title | String | true | 标题
 content | String | true | 内容
 created_time | datetime | true | 时间
+head_url | string | true | 头像url
 
 ## <font color="blue">Delete Messages </font>
 
