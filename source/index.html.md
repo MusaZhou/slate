@@ -695,7 +695,8 @@ imageUrl | string | true | 图片URL
 							"ad_id": 1,
 							"ad_name": "abc",
 							"ad_type": 1,
-							"adable_id": 1,
+							"adable_id": 6,
+							"shop_id": 1,
 							"ad_url": "http://123.123.12.1/index.html",
 							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
 						},
@@ -703,7 +704,8 @@ imageUrl | string | true | 图片URL
 							"ad_id": 1,
 							"ad_name": "abc",
 							"ad_type": 1,
-							"adable_id": 1,
+							"adable_id": 6,
+							"shop_id": 1,
 							"ad_url": "http://123.123.12.1/index.html",
 							"image_url": "http://123.123.12.1/image_download/brand_logo_images/2.png"
 						}
@@ -742,6 +744,7 @@ ad_id | int | true | 广告id
 ad_name | string | false | 名称
 ad_type | int | true | 广告类型(1:店铺 2:产品 3:url 4:店铺(仅显示名字))
 adable_id | int | true | 广告实体id(商店Id或产品Id或厂家Id)
+shop_id | int | false | 当locationId为6时，有此返回值
 ad_url | string | false | 若广告类型为3,为url地址
 image_url | string | false | 若广告类型为1,2,3,为广告图片
 
