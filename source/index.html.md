@@ -8964,7 +8964,45 @@ msg | String | true |
 
 ### Method:   POST
 
-### Path:   <font color="green">/get_agreement</font>
+### Path:   <font color="green">/get_user_agreement</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+htmlContent | string | true | 用户协议html内容
+
+## <font color="blue">Get Shop Owner Agreement</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"htmlContent": "<html><head><title>fdjsfkj</title></head><body>fjdsjfsja</body></html>"
+}
+```
+
+<font size="4"><b> 获得商铺协议</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_shop_owner_agreement</font>
 
 ### Request
 
