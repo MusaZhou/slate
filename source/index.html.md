@@ -8940,3 +8940,41 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
+
+## <font color="blue">Get Agreement</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"htmlContent": "<html><head><title>fdjsfkj</title></head><body>fjdsjfsja</body></html>"
+}
+```
+
+<font size="4"><b> 获得用户协议</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_agreement</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+htmlContent | string | true | 用户协议html内容
