@@ -1570,6 +1570,7 @@ image_url | string | false | 图片URL
 					"description": "djfaksdjfkdsajfaks",
 					"vipStartDate": "2016-05-05",
 					"vipEndDate": "2016-10-05",
+					"wechat": "fdsajfkj",
 					"bannerList": [
 										{
 											"id": 1,
@@ -1612,19 +1613,20 @@ Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
 id | int | true | 店铺id
 name | string | true | 店铺名称
-service_time | time | 营业时间
-collect_count | int | 收藏人数
-visit_count | int | 浏览人数
-phone_1 | int | 电话1
-phone_2 | int | 电话2
-phone_3 | int | 电话3
-sale_description | string | 主营描述
+service_time | time | false |营业时间
+collect_count | int | true | 收藏人数
+visit_count | int | true | 浏览人数
+phone_1 | int | false | 电话1
+phone_2 | int | false | 电话2
+phone_3 | int | false | 电话3
+sale_description | string | true | 主营描述
 description | string | true | 描述
 address | string | true | 地址
 vipStartDate | date | false | vip起始时间
 vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
 hasCollected | int | true | 是否被该用户收藏 1.是 2.否
+wechat | string | false | 微信号
 
 ### Image Object
 
