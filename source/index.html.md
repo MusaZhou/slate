@@ -433,7 +433,7 @@ secondary_shop_type_id | int | true | 店铺类型id
 secondary_shop_type_name | string | true | 店铺类型名称
 image_url | string | true | 图片url
 
-## <font color="blue">Get Recommended Product Types</font>
+## <font color="blue">Get Recommended Product Types(depreciated)</font>
 
 > Request:
 
@@ -464,7 +464,7 @@ image_url | string | true | 图片url
 }
 ```
 
-<font size="4"><b> 首页热门商品类型</b></font>
+<font size="4"><b> 首页热门商品类型(不用)</b></font>
 
 ### Method:   POST
 
@@ -3237,7 +3237,7 @@ msg | String | true |
 
 Name | Type | Mandatory | Description
 --------- | ------- | ------- | -----------
-hotSaleProductTypeId | int | true | 热卖商品类型Id
+hotSaleProductTypeId | int | true | 热卖商品类型Id 1.机油 2.氙气灯 3.坐垫/座套 4.行车记录仪 5.汽车导航 6.电瓶 7.脚垫 8.车载电源 9.雨刮片
 page | int | true | 页数
 provinceId | int | true | 省份Id
 
@@ -8943,78 +8943,49 @@ Name | Type | Mandatory | Description
 status | int | true | 1.成功
 msg | String | true | 
 
-## <font color="blue">Get Agreement</font>
+## <font color="blue">Get User Agreement</font>
 
 > Request:
 
-```json
-{
-}
-```
-
 > Response:
 
-```json
-{
-"status": 1,
-"msg": "Ok",
-"htmlContent": "<html><head><title>fdjsfkj</title></head><body>fjdsjfsja</body></html>"
-}
+```html
+<html>
+</html>
 ```
 
 <font size="4"><b> 获得用户协议</b></font>
 
-### Method:   POST
+### Method:   POST/GET
 
 ### Path:   <font color="green">/get_user_agreement</font>
 
 ### Request
 
-Name | Type | Mandatory | Description
---------- | ------- | ------- | -----------
-
 ### Response:
 
-Name | Type | Mandatory | Description
--------------------- | ----------------------- | ------- | -----------
-status | int | true | 1.成功
-msg | String | true | 
-htmlContent | string | true | 用户协议html内容
+HTML
 
 ## <font color="blue">Get Shop Owner Agreement</font>
 
 > Request:
 
-```json
-{
-}
-```
 
 > Response:
 
-```json
-{
-"status": 1,
-"msg": "Ok",
-"htmlContent": "<html><head><title>fdjsfkj</title></head><body>fjdsjfsja</body></html>"
-}
+```html
+<html>
+</html>
 ```
 
 <font size="4"><b> 获得商铺协议</b></font>
 
-### Method:   POST
+### Method:   POST/GET
 
 ### Path:   <font color="green">/get_shop_owner_agreement</font>
 
 ### Request
 
-Name | Type | Mandatory | Description
---------- | ------- | ------- | -----------
-
 ### Response:
 
-Name | Type | Mandatory | Description
--------------------- | ----------------------- | ------- | -----------
-status | int | true | 1.成功
-msg | String | true | 
-htmlContent | string | true | 用户协议html内容
+HTML
