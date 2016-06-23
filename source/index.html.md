@@ -1239,6 +1239,109 @@ Name | Type | Mandatory | Description
 status | int | true | 1.成功
 msg | String | true | 
 
+## <font color="blue">Update Transfer Product</font>
+
+> Request:
+
+```json
+{
+"transferProductId": 2,
+"title": "fadsf",
+"price": 15,
+"description": "fdsaklfj",
+"contactPerson": "fdsafa",
+"phone": "23242234",
+"existingImageIdList": [1, 2],
+"imageList": [ 
+				"fsdafdsjfkasjfkasljf",
+				"fdsakfjasdkfjkasdfjkas"
+			]
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 更新急件转让</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/update_transfer_product</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+transferProductId | int | true | 急件转让Id
+title | string | true | 标题
+price | double | true | 转让价格
+contactCount | int | true | 联系次数
+description | string | true | 详情描述
+contactPerson | string | true | 联系人
+phone | string | true | 电话
+existingImageIdList | Array(int) | false | 原有保留图片Id列表
+imageList | Array(Image) | true | 新增图片列表
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
+## <font color="blue">Get User Agreement</font>
+
+> Request:
+
+> Response:
+
+```html
+<html>
+</html>
+```
+
+<font size="4"><b> 获得用户协议</b></font>
+
+### Method:   POST/GET
+
+### Path:   <font color="green">/get_user_agreement</font>
+
+### Request
+
+### Response:
+
+HTML
+
+## <font color="blue">Get Shop Owner Agreement</font>
+
+> Request:
+
+
+> Response:
+
+```html
+<html>
+</html>
+```
+
+<font size="4"><b> 获得商铺协议</b></font>
+
+### Method:   POST/GET
+
+### Path:   <font color="green">/get_shop_owner_agreement</font>
+
+### Request
+
+### Response:
+
+HTML
+
 # Shop
 
 ## <font color="blue">Get Shop Type List</font>
@@ -8886,106 +8989,3 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
-
-## <font color="blue">Update Transfer Product</font>
-
-> Request:
-
-```json
-{
-"transferProductId": 2,
-"title": "fadsf",
-"price": 15,
-"description": "fdsaklfj",
-"contactPerson": "fdsafa",
-"phone": "23242234",
-"existingImageIdList": [1, 2],
-"imageList": [ 
-				"fsdafdsjfkasjfkasljf",
-				"fdsakfjasdkfjkasdfjkas"
-			]
-}
-```
-
-> Response:
-
-```json
-{
-"status": 1,
-"msg": "Ok"
-}
-```
-
-<font size="4"><b> 更新急件转让</b></font>
-
-### Method:   POST
-
-### Path:   <font color="green">/update_transfer_product</font>
-
-### Request
-
-Name | Type | Mandatory | Description
---------- | ------- | ------- | -----------
-transferProductId | int | true | 急件转让Id
-title | string | true | 标题
-price | double | true | 转让价格
-contactCount | int | true | 联系次数
-description | string | true | 详情描述
-contactPerson | string | true | 联系人
-phone | string | true | 电话
-existingImageIdList | Array(int) | false | 原有保留图片Id列表
-imageList | Array(Image) | true | 新增图片列表
-
-### Response:
-
-Name | Type | Mandatory | Description
--------------------- | ----------------------- | ------- | -----------
-status | int | true | 1.成功
-msg | String | true | 
-
-## <font color="blue">Get User Agreement</font>
-
-> Request:
-
-> Response:
-
-```html
-<html>
-</html>
-```
-
-<font size="4"><b> 获得用户协议</b></font>
-
-### Method:   POST/GET
-
-### Path:   <font color="green">/get_user_agreement</font>
-
-### Request
-
-### Response:
-
-HTML
-
-## <font color="blue">Get Shop Owner Agreement</font>
-
-> Request:
-
-
-> Response:
-
-```html
-<html>
-</html>
-```
-
-<font size="4"><b> 获得商铺协议</b></font>
-
-### Method:   POST/GET
-
-### Path:   <font color="green">/get_shop_owner_agreement</font>
-
-### Request
-
-### Response:
-
-HTML
