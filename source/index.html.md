@@ -66,7 +66,10 @@ msg | String | true |
 {
 "mobile": "17791865815",
 "code": "21342",
-"password": "12345"
+"password": "12345",
+"companyName": "fdsaf",
+"companyAddress": "fdsakfjk",
+"saleDescription": "fjadsfj"
 }
 ```
 
@@ -92,6 +95,9 @@ Name | Type | Mandatory | Description
 mobile | String | true | 手机号码
 code | String | true | 验证码
 password | String | true | 密码
+companyName | string | true | 公司名称
+companyAddress | string | true | 公司地址
+saleDescription | string | true | 主营类型
 
 ### Response
 
@@ -6517,10 +6523,10 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 realName | string | true | 真实姓名
 image_url | String | false | 头像url
-companyName | string | false | 公司名称
-contact | string | false | 联系方式
-companyAddress | string | false | 公司地址
-saleDescription | string | false | 主营业务
+companyName | string | true | 公司名称
+contact | string | true | 联系方式
+companyAddress | string | true | 公司地址
+saleDescription | string | true | 主营业务
 wechat | string | false | 微信支付账号
 alipay | string | false | 支付宝账号
 
@@ -6534,7 +6540,10 @@ alipay | string | false | 支付宝账号
 "realName": "fdsf",
 "image": "fjksdajfsdkaj",
 "wechat": "fdsaf",
-"alipay": "fdssfj"
+"alipay": "fdssfj",
+"companyName": "fjdsakfj",
+"companyAddress": "fjdsakfjkds",
+"saleDescription": "fdsjfk"
 }
 ```
 
@@ -6563,6 +6572,9 @@ realName | string | false | 真实姓名
 image | string | false | 图片(base64编码)
 wechat | string | false | 微信支付账号
 alipay | string | false | 支付宝账号
+companyName | string | false | 公司名称
+companyAddress | string | false | 公司地址
+saleDescription | string | false | 主营类型
 
 ### Response:
 
