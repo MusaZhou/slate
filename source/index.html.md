@@ -1513,6 +1513,176 @@ secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
 
+## <font color="blue">Get Secondary Shop Type List</font>
+
+> Request:
+
+```json
+{
+"provinceId": 1,
+"search": "fdsaf",
+"primaryShopTypeId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"secondaryShopTypeList": {
+							"primary_shop_type_id": 1,
+							"primary_shop_type_name": "小车",
+							"firstLetterList": [
+													{
+														"firstLetter": "A",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 1,
+																						"secondary_shop_type_name": "宝马",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 2,
+																						"secondary_shop_type_name": "奔驰",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													},
+													{
+														"firstLetter": "B",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 3,
+																						"secondary_shop_type_name": "法拉利",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 4,
+																						"secondary_shop_type_name": "劳斯莱斯",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													}
+												],
+							"recommandedSecondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 3,
+																						"secondary_shop_type_name": "法拉利",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 4,
+																						"secondary_shop_type_name": "劳斯莱斯",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																]
+						}
+}
+```
+
+<font size="4"><b> 获得二级店铺类别列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_secondary_shop_types_by_primary</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+search | string | false | 搜索内容
+primaryShopTypeId | int | true | 一级店铺类别Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+secondaryShopTypeList | ShopType object | true | 店铺类别列表
+
+### ShopType Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+primary_shop_type_id | int | true | 一级类别id
+primary_shop_type_name | string | true | 一级类别名称
+firstLetterList | Array(FirstLetter object) | true | 首字母列表
+recommandedSecondaryShopTypeList | Array(SecondaryShopType object) | true | 热门二级类别
+
+### FirstLetter Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+firstLetter | string | true | 首字母
+secondaryShopTypeList | Array(SecondaryShopType object) | true | 二级类别列表
+
+### SecondaryShopType Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+secondary_shop_type_id | int | true | 二级类别id
+secondary_shop_type_name | string | true | 二级类别名称
+image_url | string | true | 图片URL
+
+## <font color="blue">Get Primary Shop Types List</font>
+
+> Request:
+
+```json
+{
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"primaryShopTypeList": [
+						{
+							"primary_shop_type_id": 1,
+							"primary_shop_type_name": "小车"
+							
+						},
+						{
+							"primary_shop_type_id": 2,
+							"primary_shop_type_name": "单品专卖"
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得一级店铺类别列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_primary_shop_types</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+primaryShopTypeList | Array(PrimaryShopType object) | true | 一级店铺类别列表
+
+### PrimaryShopType Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+primary_shop_type_id | int | true | 一级类别id
+primary_shop_type_name | string | true | 一级类别名称
+
 ## <font color="blue">Shop Type Search(depreciated)</font>
 
 > Request:
