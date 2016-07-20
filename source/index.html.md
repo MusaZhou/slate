@@ -1468,7 +1468,7 @@ HTML
 }
 ```
 
-<font size="4"><b> 获得店铺类别列表</b></font>
+<font size="4"><b> 根据店铺一级类别获得店铺二级类别列表</b></font>
 
 ### Method:   POST
 
@@ -1513,7 +1513,7 @@ secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
 
-## <font color="blue">Get Secondary Shop Type List</font>
+## <font color="blue">Get Secondary Shop Type List By Primary Shop Type</font>
 
 > Request:
 
@@ -1746,6 +1746,199 @@ secondary_shop_type_id | int | true | 二级类别id
 secondary_shop_type_name | string | true | 二级类别名称
 image_url | string | true | 图片URL
 primary_shop_type_name | string | true | 一级类型名称
+
+## <font color="blue">Get Secondary Shop Type List</font>
+
+> Request:
+
+```json
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"ShopTypeList": [
+						{
+							"primary_shop_type_id": 1,
+							"primary_shop_type_name": "小车",
+							"firstLetterList": [
+													{
+														"firstLetter": "A",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 1,
+																						"secondary_shop_type_name": "宝马",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 2,
+																						"secondary_shop_type_name": "奔驰",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													},
+													{
+														"firstLetter": "B",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 3,
+																						"secondary_shop_type_name": "法拉利",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 4,
+																						"secondary_shop_type_name": "劳斯莱斯",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													}
+												]
+						},
+						{
+							"primary_shop_type_id": 2,
+							"primary_shop_type_name": "单品专卖",
+							"firstLetterList": [
+													{
+														"firstLetter": "A",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 5,
+																						"secondary_shop_type_name": "影音",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 6,
+																						"secondary_shop_type_name": "座套",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													},
+													{
+														"firstLetter": "B",
+														"secondaryShopTypeList": [
+																					{
+																						"secondary_shop_type_id": 7,
+																						"secondary_shop_type_name": "内部装饰",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					},
+																					{
+																						"secondary_shop_type_id": 8,
+																						"secondary_shop_type_name": "外部装饰",
+																						"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+																					}
+																				]
+													}
+												]
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得店铺二级类别列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_secondary_shop_types</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+shopTypeList | Array(Shop object) | true | 店铺类别列表
+
+### Shop Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+primary_shop_type_id | int | true | 一级类别id
+primary_shop_type_name | string | true | 一级类别名称
+firstLetterList | Array(FirstLetter object) | true | 首字母列表
+
+### FirstLetter Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+firstLetter | string | true | 首字母
+secondaryShopTypeList | Array(SecondaryShopType object) | true | 二级类别列表
+
+### SecondaryShopType Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+secondary_shop_type_id | int | true | 二级类别id
+secondary_shop_type_name | string | true | 二级类别名称
+image_url | string | true | 图片URL
+
+## <font color="blue">Get Recommanded Secondary Shop Type List By Primary Shop Type</font>
+
+> Request:
+
+```json
+{
+"provinceId": 1,
+"primaryShopTypeId": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"recommandedSecondaryShopTypeList": [
+														{
+															"secondary_shop_type_id": 3,
+															"secondary_shop_type_name": "法拉利",
+															"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+														},
+														{
+															"secondary_shop_type_id": 4,
+															"secondary_shop_type_name": "劳斯莱斯",
+															"image_url": "http://121.12.11.11/image_download/brand_logo_images/2"
+														}
+									]
+}
+```
+
+<font size="4"><b> 根据一级类别获得推荐二级店铺类别列表</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_recommaned_secdonary_shop_types_by_primary</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+provinceId | int | true | 省份Id
+primaryShopTypeId | int | true | 一级店铺类别Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+recommandedSecondaryShopTypeList | Array(SecondaryShopType object) | true | 热门二级类别
+
+### SecondaryShopType Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+secondary_shop_type_id | int | true | 二级类别id
+secondary_shop_type_name | string | true | 二级类别名称
+image_url | string | true | 图片URL
 
 ## <font color="blue">Get Shops By Secondary Shop Type</font>
 
