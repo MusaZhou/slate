@@ -2793,6 +2793,46 @@ collect_time | datetime | true | 访问时间
 company_name | string | true | 公司名称
 company_address | string | true | 公司地址
 
+## <font color="blue">Call Shop</font>
+
+> Request:
+
+```json
+{
+"shopId": 2,
+"userId": 2
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 给店铺打电话</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/make_shop_phone_call</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+userId | int | true | 用户Id
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+
 # Product
 
 ## <font color="blue">Get Owner Recommended Products</font>
