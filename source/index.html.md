@@ -2833,6 +2833,76 @@ Name | Type | Mandatory | Description
 status | int | true | 1.成功
 msg | String | true | 
 
+## <font color="blue">Get Shop Call History</font>
+
+> Request:
+
+```json
+{
+"shopId": "abc",
+"page": 1
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok",
+"callList": [
+						{
+							"user_id": 1,
+							"user_name": "sdf",
+							"user_image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"call_time": "2016-05-05 12:00:00",
+							"company_name": "fdskfj",
+							"company_address": "fjdskfjdk"
+						},
+						{
+							"user_id": 2,
+							"user_name": "sdf",
+							"user_image_url": "http://121.12.11.11/image_download/brand_logo_images/2",
+							"call_time": "2016-05-05 12:00:00",
+							"company_name": "fdskfj",
+							"company_address": "fjdskfjdk"
+						}
+			]
+}
+```
+
+<font size="4"><b> 获得店铺电话记录</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/get_shop_call_history</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+shopId | int | true | 店铺Id
+page | int | true | 页数
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
+callList | Array(Visit object) | true | 电话记录
+
+### Visit Object
+
+Name | Type | Mandatory | Description
+---------------------- | ------- | ------- | -----------
+user_id | int | true | 用户Id
+user_name | string | true | 用户名称
+user_image_url | string | false | 用户头像
+call_time | datetime | true | 联系时间
+company_name | string | true | 公司名称
+company_address | string | true | 公司地址
+
 # Product
 
 ## <font color="blue">Get Owner Recommended Products</font>
