@@ -125,7 +125,8 @@ msg | String | true |
 "msg": "Ok",
 "cartId": 2,
 "userId": 1,
-"user_status": 2
+"user_status": 2,
+"view_price_status": 1,
 }
 ```
 
@@ -153,6 +154,7 @@ userId | int | true | 用户id
 user_status | int | true | 用户类型 1.普通用户 2.普通商户 3.vip商户 4.参展厂商 5.正在申请商铺 6.正在申请展会
 image_url | string | false | 用户头像url
 real_name | string | false | 真实姓名
+view_price_status | int | true | 1.已审核 2.审核中 3.未申请
 
 ## <font color="blue">Forget Password</font>
 
@@ -2890,9 +2892,9 @@ Name | Type | Mandatory | Description
 -------------------- | ----------------------- | ------- | -----------
 status | int | true | 1.成功
 msg | String | true | 
-callList | Array(Visit object) | true | 电话记录
+callList | Array(Shop Call object) | true | 电话记录
 
-### Visit Object
+### Shop Call Object
 
 Name | Type | Mandatory | Description
 ---------------------- | ------- | ------- | -----------
@@ -2902,6 +2904,46 @@ user_image_url | string | false | 用户头像
 call_time | datetime | true | 联系时间
 company_name | string | true | 公司名称
 company_address | string | true | 公司地址
+
+## <font color="blue">Apply View Price</font>
+
+> Request:
+
+```json
+{
+"userId": 2,
+"photo": "fdsjfksdjfkj",
+}
+```
+
+> Response:
+
+```json
+{
+"status": 1,
+"msg": "Ok"
+}
+```
+
+<font size="4"><b> 申请查看价格</b></font>
+
+### Method:   POST
+
+### Path:   <font color="green">/apply_view_price</font>
+
+### Request
+
+Name | Type | Mandatory | Description
+--------- | ------- | ------- | -----------
+userId | int | true | 用户Id
+照片 | string | true | 图片(base64编码)
+
+### Response:
+
+Name | Type | Mandatory | Description
+-------------------- | ----------------------- | ------- | -----------
+status | int | true | 1.成功
+msg | String | true | 
 
 # Product
 
