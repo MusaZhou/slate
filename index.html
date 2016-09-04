@@ -315,8 +315,9 @@
 </span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="p">,</span><span class="w">
 </span><span class="nt">"cartId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
 </span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
-</span><span class="nt">"user_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w">
-</span><span class="p">}</span><span class="w">
+</span><span class="nt">"user_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"view_price_status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
 </span></code></pre>
 
 <p><font size="4"><b> 登录</b></font></p>
@@ -400,6 +401,12 @@
 <td>string</td>
 <td>false</td>
 <td>真实姓名</td>
+</tr>
+<tr>
+<td>view_price_status</td>
+<td>int</td>
+<td>true</td>
+<td>1.已审核 2.审核中 3.未申请</td>
 </tr>
 </tbody></table>
 
@@ -5985,13 +5992,13 @@
 </tr>
 <tr>
 <td>callList</td>
-<td>Array(Visit object)</td>
+<td>Array(Shop Call object)</td>
 <td>true</td>
 <td>电话记录</td>
 </tr>
 </tbody></table>
 
-<h3 id="visit-object">Visit Object</h3>
+<h3 id="shop-call-object">Shop Call Object</h3>
 
 <table><thead>
 <tr>
@@ -6036,6 +6043,80 @@
 <td>string</td>
 <td>true</td>
 <td>公司地址</td>
+</tr>
+</tbody></table>
+
+<h2 id="apply-view-price"><font color="blue">Apply View Price</font></h2>
+
+<blockquote>
+<p>Request:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"userId"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+</span><span class="nt">"photo"</span><span class="p">:</span><span class="w"> </span><span class="s2">"fdsjfksdjfkj"</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+
+<blockquote>
+<p>Response:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+</span><span class="nt">"status"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+</span><span class="nt">"msg"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Ok"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+
+<p><font size="4"><b> 申请查看价格</b></font></p>
+
+<h3 id="method-post">Method:   POST</h3>
+
+<h3 id="path-apply_view_price">Path:   <font color="green">/apply_view_price</font></h3>
+
+<h3 id="request">Request</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>userId</td>
+<td>int</td>
+<td>true</td>
+<td>用户Id</td>
+</tr>
+<tr>
+<td>照片</td>
+<td>string</td>
+<td>true</td>
+<td>图片(base64编码)</td>
+</tr>
+</tbody></table>
+
+<h3 id="response">Response:</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Mandatory</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>int</td>
+<td>true</td>
+<td>1.成功</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>String</td>
+<td>true</td>
+<td></td>
 </tr>
 </tbody></table>
 
