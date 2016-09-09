@@ -2488,6 +2488,7 @@ name | String | true | 二级类型名称
 					"vipEndDate": "2016-10-05",
 					"bankName": "fdsf",
 					"bankAccount": "fdskfjsdjfkdsj",
+					"callCount": 4,
 					"bannerList": [
 										{
 											"id": 1,
@@ -2540,6 +2541,7 @@ address | string | true | 地址
 wechat | string | false | 微信账号
 bankName | string | true | 用户名
 bankAccount | string | true | 银行账号
+callCount | int | true | 拨打次数
 vipStartDate | date | false | vip起始时间
 vipEndDate | date | false | vip结束时间
 bannerList | Array(Image object) | false | 轮播图列表
