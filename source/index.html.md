@@ -6589,6 +6589,7 @@ msg | String | true |
 						"bankName": "fdsfdas",
 						"bankAccount": "fdsjafk",
 						"collect_count": 23,
+						"callCount": 12,
 						"startDate": "2016-05-05",
 						"endDate": "2016-05-06",
 						"imageList": [
@@ -6644,6 +6645,7 @@ visit_count | int | true | 浏览人数
 bankName | string | true | 用户名
 bankAccount | string | true | 银行账号
 collect_count | int | true | 收藏人数
+callCount | int | true | 电话拨打次数
 startDate | date | true | 开始时间
 endDate | date | true | 结束时间
 imageList | string | true | 店铺图片列表
